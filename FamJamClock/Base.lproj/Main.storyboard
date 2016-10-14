@@ -64,22 +64,54 @@
             <point key="canvasLocation" x="-2031" y="1341"/>
         </scene>
         <!--Locations-->
-        <scene sceneID="ILV-fp-7wW">
+        <scene sceneID="04D-F9-oec">
             <objects>
-                <viewController id="Wwe-cR-Rjb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b3z-i3-AG4"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Ar-q6-8il"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="O7L-xP-74i">
+                <collectionViewController id="NFg-xh-QNb" customClass="LocationsCollectionViewController" customModule="FamJamClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="2w7-PA-mfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Locations" image="locations-icon" id="qFZ-J8-r4H"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="em7-yf-5p8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9t5-vh-Zb5">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locationIconIdentifier" id="6CM-Ab-2CD" customClass="LocationsIconCollectionViewCell" customModule="FamJamClock" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3J-T1-yRk"/>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="z3J-T1-yRk" secondAttribute="bottom" id="5Rt-n0-bc0"/>
+                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="leading" secondItem="6CM-Ab-2CD" secondAttribute="leading" id="9Sb-2l-sHP"/>
+                                    <constraint firstAttribute="trailing" secondItem="z3J-T1-yRk" secondAttribute="trailing" id="pCK-Vl-f1p"/>
+                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="top" secondItem="6CM-Ab-2CD" secondAttribute="top" id="rFX-Mb-aCG"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="z3J-T1-yRk" id="NLL-eP-XuC"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="NFg-xh-QNb" id="Xag-FO-aUc"/>
+                            <outlet property="delegate" destination="NFg-xh-QNb" id="Qah-XG-gaK"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Locations" image="locations-icon" id="awP-WZ-YW4"/>
+                    <connections>
+                        <outlet property="collectionView" destination="2w7-PA-mfP" id="p2Z-8Y-C5Z"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ChR-it-OEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-938" y="-602"/>
+            <point key="canvasLocation" x="-3357.5999999999999" y="-477.21139430284859"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IWa-rP-BAz">
@@ -91,7 +123,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Wwe-cR-Rjb" kind="relationship" relationship="viewControllers" id="UH3-su-x4Y"/>
+                        <segue destination="NFg-xh-QNb" kind="relationship" relationship="viewControllers" id="4Na-h0-l2W"/>
                         <segue destination="t3t-VH-mGm" kind="relationship" relationship="viewControllers" id="7KK-BO-sHC"/>
                         <segue destination="DsF-5x-WYZ" kind="relationship" relationship="viewControllers" id="R9B-Lh-6Ci"/>
                         <segue destination="zy1-Sn-Uep" kind="relationship" relationship="viewControllers" id="oOZ-Sm-Xdr"/>

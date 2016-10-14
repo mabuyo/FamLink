@@ -15,6 +15,8 @@
 		FF42B6C51DAAE8AC00D8A3FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF42B6C31DAAE8AC00D8A3FF /* LaunchScreen.storyboard */; };
 		FF42B6D01DAAE8AC00D8A3FF /* FamJamClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6CF1DAAE8AC00D8A3FF /* FamJamClockTests.swift */; };
 		FF42B6DB1DAAE8AC00D8A3FF /* FamJamClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6DA1DAAE8AC00D8A3FF /* FamJamClockUITests.swift */; };
+		FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */; };
+		FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FF42B6D61DAAE8AC00D8A3FF /* FamJamClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamJamClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF42B6DA1DAAE8AC00D8A3FF /* FamJamClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamJamClockUITests.swift; sourceTree = "<group>"; };
 		FF42B6DC1DAAE8AC00D8A3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsCollectionViewController.swift; sourceTree = "<group>"; };
+		FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsIconCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		FF42B6B61DAAE8AC00D8A3FF /* FamJamClock */ = {
 			isa = PBXGroup;
 			children = (
+				FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */,
+				FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */,
 				FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */,
 				FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */,
 				FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */,
@@ -266,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */,
+				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
+				FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */,
 				FF42B6C01DAAE8AC00D8A3FF /* FamJamClock.xcdatamodeld in Sources */,
 				FF42B6B81DAAE8AC00D8A3FF /* AppDelegate.swift in Sources */,
 			);
@@ -518,6 +526,7 @@
 				FF42B6E11DAAE8AC00D8A3FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF42B6E21DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamJamClockTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +535,7 @@
 				FF42B6E41DAAE8AC00D8A3FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF42B6E51DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamJamClockUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +544,7 @@
 				FF42B6E71DAAE8AC00D8A3FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
