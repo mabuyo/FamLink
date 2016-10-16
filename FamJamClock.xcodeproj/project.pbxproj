@@ -18,6 +18,8 @@
 		FFA1B54F1DB31224000D6041 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B54E1DB31224000D6041 /* Location.swift */; };
 		FFA1B5511DB31447000D6041 /* LocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */; };
 		FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */; };
+		FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5541DB33A76000D6041 /* LocationSearchResultsTableViewController.swift */; };
+		FFA1B5571DB33B35000D6041 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5561DB33B35000D6041 /* LocationSearchViewController.swift */; };
 		FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */; };
 		FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		FFA1B54E1DB31224000D6041 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataSource.swift; sourceTree = "<group>"; };
 		FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		FFA1B5541DB33A76000D6041 /* LocationSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		FFA1B5561DB33B35000D6041 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 		FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsCollectionViewController.swift; sourceTree = "<group>"; };
 		FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsIconCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +118,8 @@
 				FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */,
 				FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */,
 				FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */,
+				FFA1B5561DB33B35000D6041 /* LocationSearchViewController.swift */,
+				FFA1B5541DB33A76000D6041 /* LocationSearchResultsTableViewController.swift */,
 				FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */,
 				FFA1B54E1DB31224000D6041 /* Location.swift */,
 				FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */,
@@ -283,9 +289,11 @@
 				FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */,
 				FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */,
 				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
+				FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */,
 				FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */,
 				FF42B6C01DAAE8AC00D8A3FF /* FamJamClock.xcdatamodeld in Sources */,
 				FFA1B54F1DB31224000D6041 /* Location.swift in Sources */,
+				FFA1B5571DB33B35000D6041 /* LocationSearchViewController.swift in Sources */,
 				FFA1B5511DB31447000D6041 /* LocationsDataSource.swift in Sources */,
 				FF42B6B81DAAE8AC00D8A3FF /* AppDelegate.swift in Sources */,
 			);
