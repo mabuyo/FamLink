@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class LocationsDataSource {
     
@@ -33,6 +34,9 @@ class LocationsDataSource {
         let transit = Location(name: "transit", icon: UIImage(named: "truck")!, number: 9)
         let lab = Location(name: "lab", icon: UIImage(named: "beaker")!, number: 10)
         let bug = Location(name: "bug", icon: UIImage(named: "bug")!, number: 11)
+        
+        // set locations
+        home.coordinates = CLLocation(latitude: 53.485179, longitude: -113.504746)
 
         locations = [home, concert, work, coffee, school, bar, restaurant, hospital, airport, transit, lab, bug]
     }

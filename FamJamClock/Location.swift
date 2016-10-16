@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class Location {
     var name: String
     var icon: UIImage
-    var address: String? // TODO: change to Geolocation? Placemark?
+    var coordinates: CLLocation?
     var number: Int
     
     init(name: String, icon: UIImage, number: Int) {
