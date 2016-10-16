@@ -32,15 +32,33 @@ class LocationsCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+     
+         assert(sender as? UICollectionViewCell != nil, "sender is not a collection view")
+         
+         if let indexPath = self.collectionView?.indexPath(for: sender as! UICollectionViewCell) {
+             if segue.identifier == "showLocationDetail" {
+                 let detailVC: LocationDetailViewController = segue.destination as! LocationDetailViewController
+                 detailVC.selectedLocation = locations[indexPath.row]
+             }
+         } else {
+             // Error sender is not a cell or cell is not in collectionView.
+         }
     }
-    */
+ 
+    
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if let cell = collectionView.cellForItem(at: indexPath) {
+//            performSegue(withIdentifier: "showLocationDetail", sender: cell)
+//        } else {
+//            // Error indexPath is not on screen: this should never happen.
+//        }
+//    }
 
     // MARK: UICollectionViewDataSource
 
@@ -57,7 +75,7 @@ class LocationsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationsIconCollectionViewCell
     
         // Configure the cell
-        let icon = UIImage(named: locations[indexPath.row].icon)
+        let icon = locations[indexPath.row].icon
         cell.imageView.image = icon
         
         return cell

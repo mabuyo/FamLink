@@ -17,6 +17,7 @@
 		FF42B6DB1DAAE8AC00D8A3FF /* FamJamClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6DA1DAAE8AC00D8A3FF /* FamJamClockUITests.swift */; };
 		FFA1B54F1DB31224000D6041 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B54E1DB31224000D6041 /* Location.swift */; };
 		FFA1B5511DB31447000D6041 /* LocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */; };
+		FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */; };
 		FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */; };
 		FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		FF42B6DC1DAAE8AC00D8A3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFA1B54E1DB31224000D6041 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataSource.swift; sourceTree = "<group>"; };
+		FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsCollectionViewController.swift; sourceTree = "<group>"; };
 		FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsIconCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */,
 				FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */,
 				FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */,
+				FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */,
 				FFA1B54E1DB31224000D6041 /* Location.swift */,
 				FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */,
 				FF42B6C11DAAE8AC00D8A3FF /* Assets.xcassets */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */,
 				FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */,
 				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
 				FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */,

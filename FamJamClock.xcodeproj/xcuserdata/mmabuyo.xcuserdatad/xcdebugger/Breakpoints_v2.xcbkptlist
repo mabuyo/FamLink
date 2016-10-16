@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FamJamClock/LocationsDataSource.swift"
-            timestampString = "498276508.524208"
+            timestampString = "498280832.584423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "populateData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,12 +58,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FamJamClock/LocationsDataSource.swift"
-            timestampString = "498276508.524208"
+            timestampString = "498280832.584423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "populateData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FamJamClock/Location.swift"
+            timestampString = "498280832.584423"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "Location"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FamJamClock.Location.icon.getter : Swift.String"
+                  moduleName = "FamJamClock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmabuyo/Documents/famjam-startup/app/FamJamClock/FamJamClock/Location.swift"
+                  timestampString = "498280615.645909"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FamJamClock.Location.icon.setter : Swift.String"
+                  moduleName = "FamJamClock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmabuyo/Documents/famjam-startup/app/FamJamClock/FamJamClock/Location.swift"
+                  timestampString = "498280615.647736"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "85">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FamJamClock/LocationsCollectionViewController.swift"
+            timestampString = "498281645.096968"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

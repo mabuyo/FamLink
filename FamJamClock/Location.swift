@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class Location {
     var name: String
-    var icon: String
+    var icon: UIImage
     var address: String? // TODO: change to Geolocation? Placemark?
     var number: Int
     
-    init(name: String, icon: String, number: Int) {
+    init(name: String, icon: UIImage, number: Int) {
         self.name = name
         self.icon = icon
         self.number = number
