@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlG-DH-z4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-938" y="163"/>
+            <point key="canvasLocation" x="0.80000000000000004" y="162.3688155922039"/>
         </scene>
         <!--Chat-->
         <scene sceneID="N4h-TW-ySP">
@@ -44,55 +44,36 @@
             </objects>
             <point key="canvasLocation" x="-938" y="992"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="d0L-Q3-BDT">
-            <objects>
-                <viewController id="zy1-Sn-Uep" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lPF-ia-qNA"/>
-                        <viewControllerLayoutGuide type="bottom" id="ngS-i4-CcY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sHk-mD-jn9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-icon" id="lJ7-ll-7yo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wig-jf-Pfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2031" y="1341"/>
-        </scene>
-        <!--Locations-->
+        <!--Locations Collection View Controller-->
         <scene sceneID="04D-F9-oec">
             <objects>
                 <collectionViewController id="NFg-xh-QNb" customClass="LocationsCollectionViewController" customModule="FamJamClock" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="2w7-PA-mfP">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2w7-PA-mfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9t5-vh-Zb5">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="60" height="60"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locationIconIdentifier" id="6CM-Ab-2CD" customClass="LocationsIconCollectionViewCell" customModule="FamJamClock" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3J-T1-yRk"/>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="z3J-T1-yRk" secondAttribute="bottom" id="5Rt-n0-bc0"/>
-                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="leading" secondItem="6CM-Ab-2CD" secondAttribute="leading" id="9Sb-2l-sHP"/>
-                                    <constraint firstAttribute="trailing" secondItem="z3J-T1-yRk" secondAttribute="trailing" id="pCK-Vl-f1p"/>
-                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="top" secondItem="6CM-Ab-2CD" secondAttribute="top" id="rFX-Mb-aCG"/>
+                                    <constraint firstAttribute="bottom" secondItem="z3J-T1-yRk" secondAttribute="bottom" constant="10" id="5Rt-n0-bc0"/>
+                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="leading" secondItem="6CM-Ab-2CD" secondAttribute="leading" constant="10" id="9Sb-2l-sHP"/>
+                                    <constraint firstAttribute="trailing" secondItem="z3J-T1-yRk" secondAttribute="trailing" constant="10" id="pCK-Vl-f1p"/>
+                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="top" secondItem="6CM-Ab-2CD" secondAttribute="top" constant="10" id="rFX-Mb-aCG"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="z3J-T1-yRk" id="NLL-eP-XuC"/>
@@ -104,14 +85,14 @@
                             <outlet property="delegate" destination="NFg-xh-QNb" id="Qah-XG-gaK"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Locations" image="locations-icon" id="awP-WZ-YW4"/>
+                    <navigationItem key="navigationItem" id="9Jb-sh-Gac"/>
                     <connections>
                         <outlet property="collectionView" destination="2w7-PA-mfP" id="p2Z-8Y-C5Z"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChR-it-OEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3357.5999999999999" y="-477.21139430284859"/>
+            <point key="canvasLocation" x="-2418.4000000000001" y="-477.21139430284859"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IWa-rP-BAz">
@@ -123,21 +104,38 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="NFg-xh-QNb" kind="relationship" relationship="viewControllers" id="4Na-h0-l2W"/>
+                        <segue destination="i6G-wl-Kst" kind="relationship" relationship="viewControllers" id="4Na-h0-l2W"/>
                         <segue destination="t3t-VH-mGm" kind="relationship" relationship="viewControllers" id="7KK-BO-sHC"/>
                         <segue destination="DsF-5x-WYZ" kind="relationship" relationship="viewControllers" id="R9B-Lh-6Ci"/>
-                        <segue destination="zy1-Sn-Uep" kind="relationship" relationship="viewControllers" id="oOZ-Sm-Xdr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vby-cP-8eR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2030" y="60"/>
+            <point key="canvasLocation" x="-1092" y="59.820089955022496"/>
+        </scene>
+        <!--Locations-->
+        <scene sceneID="2cq-qq-Ouo">
+            <objects>
+                <navigationController id="i6G-wl-Kst" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locations" image="locations-icon" id="awP-WZ-YW4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i7c-jl-AJW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NFg-xh-QNb" kind="relationship" relationship="rootViewController" id="gJm-ZB-BR1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZ7-OV-c27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3357.5999999999999" y="-477.21139430284859"/>
         </scene>
     </scenes>
     <resources>
         <image name="chat-icon" width="32" height="32"/>
         <image name="clock-icon" width="32" height="32"/>
         <image name="locations-icon" width="32" height="32"/>
-        <image name="settings-icon" width="32" height="32"/>
     </resources>
 </document>
