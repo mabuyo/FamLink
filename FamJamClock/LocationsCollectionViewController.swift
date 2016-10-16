@@ -12,7 +12,7 @@ private let reuseIdentifier = "locationIconIdentifier"
 
 class LocationsCollectionViewController: UICollectionViewController {
     
-    var locationIcons = [String]()
+    var locations = LocationsDataSource().locations
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,20 +24,7 @@ class LocationsCollectionViewController: UICollectionViewController {
         //self.collectionView!.register(LocationsIconCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        locationIcons = [
-            "beaker.jpg",
-            "clock.jpg",
-            "delivery-truck-silhouette.jpg",
-            "book.jpg",
-            "briefcase.jpg",
-            "bug.jpg",
-            "cocktail-glass.jpg",
-            "coffee-cup-on-a-plate-black-silhouettes.jpg",
-            "fork-and-knife-silhouette.png",
-            "home.jpg",
-            "hostpital-building.jpg",
-            "plane.jpg"
-        ]
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,15 +50,16 @@ class LocationsCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return locationIcons.count
+        return locations.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationsIconCollectionViewCell
     
         // Configure the cell
-        let image = UIImage(named: locationIcons[indexPath.row])
-        cell.imageView.image = image
+        let icon = UIImage(named: locations[indexPath.row].icon)
+        cell.imageView.image = icon
+        
         return cell
     }
 

@@ -44,7 +44,7 @@
             </objects>
             <point key="canvasLocation" x="-938" y="992"/>
         </scene>
-        <!--Locations Collection View Controller-->
+        <!--Your Locations-->
         <scene sceneID="04D-F9-oec">
             <objects>
                 <collectionViewController id="NFg-xh-QNb" customClass="LocationsCollectionViewController" customModule="FamJamClock" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,7 +85,7 @@
                             <outlet property="delegate" destination="NFg-xh-QNb" id="Qah-XG-gaK"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="9Jb-sh-Gac"/>
+                    <navigationItem key="navigationItem" title="Your Locations" id="9Jb-sh-Gac"/>
                     <connections>
                         <outlet property="collectionView" destination="2w7-PA-mfP" id="p2Z-8Y-C5Z"/>
                     </connections>
