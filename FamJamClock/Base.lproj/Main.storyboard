@@ -122,7 +122,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-zT-qGJ">
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <segue destination="BL9-2H-n4b" kind="show" id="gFt-ll-d7d"/>
+                                    <segue destination="BL9-2H-n4b" kind="show" identifier="showLocationSearch" id="gFt-ll-d7d"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-RY-BL9">

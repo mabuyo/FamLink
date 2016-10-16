@@ -73,22 +73,25 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-     
+        // Get the new view controller using segue.destinationViewCo
+        if segue.identifier == "showLocationSearch" {
+            let searchVC: LocationSearchViewController = segue.destination.childViewControllers[0] as! LocationSearchViewController
+                searchVC.locationEditing = selectedLocation
+        }
      
     }
-    */
+    
     
     // MARK: Exit methods
     @IBAction func doneButtonClicked(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: {});
     }
+    
     
     
     // MARK: MapView functions
