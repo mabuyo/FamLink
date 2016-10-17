@@ -13,8 +13,8 @@ import MapKit
 class Location {
     var name: String
     var icon: UIImage
-    var coordinates: CLLocation?
     var number: Int
+    var placemark: MKPlacemark?
     
     init(name: String, icon: UIImage, number: Int) {
         self.name = name

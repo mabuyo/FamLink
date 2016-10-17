@@ -18,7 +18,7 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var locationMapView: MKMapView!
-    @IBOutlet weak var locationEditButton: UIButton!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     // Navigation items
     @IBOutlet weak var navBar: UINavigationBar!
@@ -42,26 +42,24 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
         locationMapView.showsUserLocation = true
         locationMapView.userTrackingMode = .follow
 
-
         // update UI
         locationNameLabel.text = selectedLocation.name
         iconView.image = selectedLocation.icon
-        navBarTitle.title = "Edit your " + selectedLocation.name + " location"
-        
+        navBarTitle.title = ""
 
         // display location on map (if coordinates provided)
-        if let coords = selectedLocation.coordinates {
-            
-            centerMapOnLocation(location: coords)
+        if let placemark = selectedLocation.placemark {
+            let lat = placemark.coordinate.latitude
+            let long = placemark.coordinate.longitude
+            centerMapOnLocation(location: CLLocation(latitude: lat, longitude: long))
+
             
             // place pin
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coords.coordinate
-            annotation.title = "\(selectedLocation.name)"
+            let annotation = getAnnotation(placemark: placemark)
             locationMapView.addAnnotation(annotation)
             
             // draw circle for region
-            let circle = MKCircle(center: coords.coordinate, radius: regionRadius)
+            let circle = MKCircle(center: placemark.coordinate, radius: regionRadius)
             locationMapView.add(circle)
         }
         
@@ -102,7 +100,7 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
         locationMapView.setRegion(coordinateRegion, animated: true)
     }
     
-    // 6. draw circle
+    // draw circle
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKCircle {
             let circle = MKCircleRenderer(overlay: overlay)
@@ -113,6 +111,29 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
         } else {
             return MKPolylineRenderer()
         }
+    }
+    
+    // TODO: [REFACTOR] this code is in 2 places: LocationDetailViewController and LocationSearchViewController.
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+        if annotation is MKUserLocation {
+            //return nil so map view draws "blue dot" for standard user location
+            return nil
+        }
+        
+        let reuseId = "detailPin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        pinView?.pinTintColor = UIColor.blue
+        pinView?.canShowCallout = true
+        
+        // draw icon
+        let image = selectedLocation.icon
+        let icon = UIButton(type: .custom)
+        icon.frame = CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: 30, height: 30))
+        icon.setImage(image, for: .normal)
+        pinView?.leftCalloutAccessoryView = icon
+        
+        return pinView
     }
     
 

@@ -51,14 +51,19 @@ class LocationsCollectionViewController: UICollectionViewController {
          }
     }
  
-    
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) {
-//            performSegue(withIdentifier: "showLocationDetail", sender: cell)
-//        } else {
-//            // Error indexPath is not on screen: this should never happen.
-//        }
-//    }
+    // Segue from Location Search back to Collection View
+    @IBAction func saveToLocationsCollectionView(segue: UIStoryboardSegue) {
+        if let locationSearchVC = segue.source as? LocationSearchViewController {
+            
+            //add the new player to the players array
+            if let locationPlacemark = locationSearchVC.chosenPlacemark {
+                // find the location in the Locations array and update its coordinates
+                if let location = locations.filter({$0.name == locationSearchVC.locationEditing.name}).first {
+                    location.placemark = locationPlacemark
+                }
+            }
+        }
+    }
 
     // MARK: UICollectionViewDataSource
 

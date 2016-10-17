@@ -20,6 +20,7 @@
 		FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */; };
 		FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5541DB33A76000D6041 /* LocationSearchResultsTableViewController.swift */; };
 		FFA1B5571DB33B35000D6041 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5561DB33B35000D6041 /* LocationSearchViewController.swift */; };
+		FFA1B5591DB43770000D6041 /* MapHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5581DB43770000D6041 /* MapHelperFunctions.swift */; };
 		FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */; };
 		FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		FFA1B5541DB33A76000D6041 /* LocationSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		FFA1B5561DB33B35000D6041 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		FFA1B5581DB43770000D6041 /* MapHelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHelperFunctions.swift; sourceTree = "<group>"; };
 		FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsCollectionViewController.swift; sourceTree = "<group>"; };
 		FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsIconCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */,
 				FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */,
 				FFA1B5561DB33B35000D6041 /* LocationSearchViewController.swift */,
+				FFA1B5581DB43770000D6041 /* MapHelperFunctions.swift */,
 				FFA1B5541DB33A76000D6041 /* LocationSearchResultsTableViewController.swift */,
 				FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */,
 				FFA1B54E1DB31224000D6041 /* Location.swift */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */,
+				FFA1B5591DB43770000D6041 /* MapHelperFunctions.swift in Sources */,
 				FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */,
 				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
 				FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */,
