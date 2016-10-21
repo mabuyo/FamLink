@@ -51,7 +51,7 @@ class Location: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: PropertyKey.nameKey) as! String
         let icon = aDecoder.decodeObject(forKey: PropertyKey.iconKey) as! UIImage
-        let number = aDecoder.decodeInteger(forKey: PropertyKey.numberKey) as! Int
+        let number = aDecoder.decodeInteger(forKey: PropertyKey.numberKey) 
         let placemark = aDecoder.decodeObject(forKey: PropertyKey.placemarkKey) as? MKPlacemark
         
         self.init(name: name, icon: icon, number: number, placemark: placemark)
