@@ -51,15 +51,21 @@ class LocationsCollectionViewController: UICollectionViewController {
          }
     }
  
-    // Segue from Location Search back to Collection View
+    // MARK: Segue from Location Search back to Collection View
     @IBAction func saveToLocationsCollectionView(segue: UIStoryboardSegue) {
         if let locationSearchVC = segue.source as? LocationSearchViewController {
-            
-            //add the new player to the players array
+            //update the new placemark in the locations array
             if let locationPlacemark = locationSearchVC.chosenPlacemark {
                 // find the location in the Locations array and update its coordinates
                 if let location = locations.filter({$0.name == locationSearchVC.locationEditing.name}).first {
                     location.placemark = locationPlacemark
+                    
+                    // save in persistent storage
+                    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(locations, toFile: Location.archiveURL.path)
+                    
+                    if !isSuccessfulSave {
+                        print("Failed to save locations.")
+                    }
                 }
             }
         }

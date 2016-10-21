@@ -20,24 +20,25 @@ class LocationsDataSource {
     
     // MARK: populateData from plist
     func populateData() {
-        // TODO: Load this data from persistent storage on phone, eventually going to be data grabbed from the Photon (for future expandable icon feature)
-        // For now, just have static icons
-        let home = Location(name: "home", icon: UIImage(named: "home")!, number: 12)
-        let concert = Location(name: "concert", icon: UIImage(named: "music")!, number: 1)
-        let work = Location(name: "work", icon: UIImage(named: "briefcase")!, number: 2)
-        let coffee = Location(name: "coffee", icon: UIImage(named: "coffee-cup")!, number: 3)
-        let school = Location(name: "school", icon: UIImage(named: "book")!, number: 4)
-        let bar = Location(name: "bar", icon: UIImage(named: "cocktail-glass")!, number: 5)
-        let restaurant = Location(name: "restaurant", icon: UIImage(named: "fork-and-knife")!, number: 6)
-        let hospital = Location(name: "hospital", icon: UIImage(named: "hospital")!, number: 7)
-        let airport = Location(name: "airport", icon: UIImage(named: "plane")!, number: 8)
-        let transit = Location(name: "transit", icon: UIImage(named: "truck")!, number: 9)
-        let lab = Location(name: "lab", icon: UIImage(named: "beaker")!, number: 10)
-        let bug = Location(name: "bug", icon: UIImage(named: "bug")!, number: 11)
-        
-        home.placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 53.485179, longitude: -113.504746))
-
-        locations = [home, concert, work, coffee, school, bar, restaurant, hospital, airport, transit, lab, bug]
+        if let locationsLoading = (NSKeyedUnarchiver.unarchiveObject(withFile: Location.archiveURL.path) as? [Location]) {
+            locations = locationsLoading
+        } else {
+            // TODO: Grab locations from Photon
+            let home = Location(name: "home", icon: UIImage(named: "home")!, number: 12, placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 53.485179, longitude: -113.504746)))
+            let concert = Location(name: "concert", icon: UIImage(named: "music")!, number: 1, placemark: nil)
+            let work = Location(name: "work", icon: UIImage(named: "briefcase")!, number: 2, placemark: nil)
+            let coffee = Location(name: "coffee", icon: UIImage(named: "coffee-cup")!, number: 3, placemark: nil)
+            let school = Location(name: "school", icon: UIImage(named: "book")!, number: 4, placemark: nil)
+            let bar = Location(name: "bar", icon: UIImage(named: "cocktail-glass")!, number: 5, placemark: nil)
+            let restaurant = Location(name: "restaurant", icon: UIImage(named: "fork-and-knife")!, number: 6, placemark: nil)
+            let hospital = Location(name: "hospital", icon: UIImage(named: "hospital")!, number: 7, placemark: nil)
+            let airport = Location(name: "airport", icon: UIImage(named: "plane")!, number: 8, placemark: nil)
+            let transit = Location(name: "transit", icon: UIImage(named: "truck")!, number: 9, placemark: nil)
+            let lab = Location(name: "lab", icon: UIImage(named: "beaker")!, number: 10, placemark: nil)
+            let bug = Location(name: "bug", icon: UIImage(named: "bug")!, number: 11, placemark: nil)
+            
+            locations = [home, concert, work, coffee, school, bar, restaurant, hospital, airport, transit, lab, bug]
+        }
     }
     
 }
