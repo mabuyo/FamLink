@@ -17,13 +17,10 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
     // UI
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var locationAddressLabel: UILabel!
     @IBOutlet weak var locationMapView: MKMapView!
-    @IBOutlet weak var editButton: UIBarButtonItem!
-    
-    // Navigation items
-    @IBOutlet weak var navBar: UINavigationBar!
-    @IBOutlet weak var navBarTitle: UINavigationItem!
-    @IBOutlet weak var navBarDoneButton: UIBarButtonItem!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     
     // Map
     let locationManager = CLLocationManager()
@@ -45,7 +42,7 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
         // update UI
         locationNameLabel.text = selectedLocation.name
         iconView.image = selectedLocation.icon
-        navBarTitle.title = ""
+        locationAddressLabel.text = "No address has been set."
 
         // display location on map (if coordinates provided)
         if let placemark = selectedLocation.placemark {
@@ -61,6 +58,8 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
             // draw circle for region
             let circle = MKCircle(center: placemark.coordinate, radius: regionRadius)
             locationMapView.add(circle)
+            
+            locationAddressLabel.text = parseAddress(selectedItem: placemark)
         }
         
     }
@@ -86,7 +85,7 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     
     // MARK: Exit methods
-    @IBAction func doneButtonClicked(_ sender: UIBarButtonItem) {
+    @IBAction func doneButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: {});
     }
     
