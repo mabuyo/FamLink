@@ -21,6 +21,7 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
     @IBOutlet weak var locationMapView: MKMapView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     // Map
     let locationManager = CLLocationManager()
@@ -43,6 +44,11 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
         locationNameLabel.text = selectedLocation.name
         iconView.image = selectedLocation.icon
         locationAddressLabel.text = "No address has been set."
+        if (selectedLocation.placemark) != nil {
+            deleteButton.isEnabled = true
+        } else {
+            deleteButton.isEnabled = false
+        }
 
         // display location on map (if coordinates provided)
         if let placemark = selectedLocation.placemark {
@@ -86,9 +92,13 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     // MARK: Exit methods
     @IBAction func doneButtonClicked(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: {});
+        self.dismiss(animated: true, completion: {})
     }
     
+    @IBAction func deleteButtonClicked(_ sender: UIButton) {
+        selectedLocation.placemark = nil
+        self.dismiss(animated: true, completion: {})
+    }
     
     
     // MARK: MapView functions

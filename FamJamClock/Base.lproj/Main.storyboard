@@ -112,6 +112,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoy-OX-F1S">
                                         <state key="normal" title="Button" image="delete-trash"/>
+                                        <connections>
+                                            <action selector="deleteButtonClicked:" destination="HFR-Vr-zQh" eventType="touchUpInside" id="iGE-tJ-6GO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aR3-6c-sAz">
                                         <constraints>
@@ -195,6 +198,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteButton" destination="eoy-OX-F1S" id="NL4-dL-COl"/>
                         <outlet property="doneButton" destination="ReT-lR-qYi" id="Zgg-dd-euB"/>
                         <outlet property="editButton" destination="aR3-6c-sAz" id="Bvf-yT-5jv"/>
                         <outlet property="iconView" destination="zWz-ZB-9Gu" id="l14-u1-kBU"/>
