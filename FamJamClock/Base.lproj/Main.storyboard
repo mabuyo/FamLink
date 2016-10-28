@@ -104,11 +104,11 @@
                         <viewControllerLayoutGuide type="top" id="0rQ-B7-Vo2"/>
                         <viewControllerLayoutGuide type="bottom" id="Wlr-w0-YC7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oYK-5i-rBz">
+                    <view key="view" contentMode="scaleToFill" id="oYK-5i-rBz" userLabel="MainView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-IR-39f">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-IR-39f" userLabel="InfoView">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfv-qL-8CY">
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -138,6 +138,11 @@
                                     <constraint firstItem="hfv-qL-8CY" firstAttribute="leading" secondItem="zWz-ZB-9Gu" secondAttribute="trailing" constant="8" id="w8t-0L-89C"/>
                                 </constraints>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VFw-n1-9MY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="265" id="oQI-9H-7Xp"/>
+                                </constraints>
+                            </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="evx-s6-jfN">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoy-OX-F1S">
@@ -170,11 +175,6 @@
                                     <constraint firstItem="aR3-6c-sAz" firstAttribute="width" secondItem="eoy-OX-F1S" secondAttribute="width" id="uge-LC-Xqv"/>
                                 </constraints>
                             </stackView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VFw-n1-9MY">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="265" id="P1g-fy-Lbk"/>
-                                </constraints>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -184,7 +184,6 @@
                             <constraint firstItem="VFw-n1-9MY" firstAttribute="leading" secondItem="oYK-5i-rBz" secondAttribute="leadingMargin" id="9gJ-Lr-7S5"/>
                             <constraint firstAttribute="leadingMargin" secondItem="VWa-IR-39f" secondAttribute="leading" id="JG3-Z3-S1p"/>
                             <constraint firstItem="evx-s6-jfN" firstAttribute="leading" secondItem="oYK-5i-rBz" secondAttribute="leadingMargin" id="SXf-tu-v5r"/>
-                            <constraint firstItem="VFw-n1-9MY" firstAttribute="leading" secondItem="oYK-5i-rBz" secondAttribute="leadingMargin" id="i9d-Sm-ClN"/>
                             <constraint firstItem="VFw-n1-9MY" firstAttribute="top" secondItem="0rQ-B7-Vo2" secondAttribute="bottom" constant="32" id="qDR-tC-acF"/>
                             <constraint firstItem="VFw-n1-9MY" firstAttribute="trailing" secondItem="oYK-5i-rBz" secondAttribute="trailingMargin" id="xA9-gr-dfC"/>
                             <constraint firstItem="Wlr-w0-YC7" firstAttribute="top" secondItem="evx-s6-jfN" secondAttribute="bottom" constant="10" id="xum-jq-VGi"/>
@@ -262,18 +261,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="esv-J1-eDH" id="bqM-6E-lkU">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2E3-g1-0pb">
-                                            <frame key="frameInset" minX="15" minY="5" width="33.5" height="20.5"/>
+                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RwO-JV-pGH">
-                                            <frame key="frameInset" minX="15" minY="25.5" width="44" height="14.5"/>
+                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
