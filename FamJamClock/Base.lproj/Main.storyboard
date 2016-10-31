@@ -14,7 +14,7 @@
         <!--Clock-->
         <scene sceneID="678-Vu-xbV">
             <objects>
-                <viewController id="t3t-VH-mGm" sceneMemberID="viewController">
+                <viewController id="t3t-VH-mGm" customClass="ClockViewController" customModule="FamJamClock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tvt-aH-Jiz"/>
                         <viewControllerLayoutGuide type="bottom" id="HMz-iE-Ol9"/>
@@ -128,23 +128,211 @@
                                             <constraint firstItem="qDZ-Oi-Fg4" firstAttribute="width" secondItem="4fx-gu-bdB" secondAttribute="width" id="uRT-p0-AOM"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bkb-ai-qG5" userLabel="hand1">
+                                        <rect key="frame" x="206" y="64" width="10" height="85"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5K-fG-c1c" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="03d-LN-JtT"/>
+                                                    <constraint firstAttribute="height" constant="10" id="MMj-zt-3KH"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahe-Bs-vt5" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="15" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQj-Dv-kIU" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oK1-ER-92G" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="45" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yxb-o3-lgj" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="60" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T72-gf-y5K" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="75" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="eQj-Dv-kIU" firstAttribute="height" secondItem="T5K-fG-c1c" secondAttribute="height" id="3LH-80-7Ph"/>
+                                            <constraint firstItem="Ahe-Bs-vt5" firstAttribute="width" secondItem="T5K-fG-c1c" secondAttribute="width" id="ITn-xx-e16"/>
+                                            <constraint firstItem="Ahe-Bs-vt5" firstAttribute="height" secondItem="T5K-fG-c1c" secondAttribute="height" id="PUo-Om-Q7r"/>
+                                            <constraint firstItem="T72-gf-y5K" firstAttribute="width" secondItem="T5K-fG-c1c" secondAttribute="width" id="Rhv-fh-Q43"/>
+                                            <constraint firstItem="Yxb-o3-lgj" firstAttribute="height" secondItem="T5K-fG-c1c" secondAttribute="height" id="VgP-je-QeW"/>
+                                            <constraint firstItem="oK1-ER-92G" firstAttribute="height" secondItem="T5K-fG-c1c" secondAttribute="height" id="WFH-12-nZN"/>
+                                            <constraint firstItem="eQj-Dv-kIU" firstAttribute="width" secondItem="T5K-fG-c1c" secondAttribute="width" id="gYU-bI-PdC"/>
+                                            <constraint firstItem="T72-gf-y5K" firstAttribute="height" secondItem="T5K-fG-c1c" secondAttribute="height" id="gnX-58-6k1"/>
+                                            <constraint firstItem="Yxb-o3-lgj" firstAttribute="width" secondItem="T5K-fG-c1c" secondAttribute="width" id="i0A-2r-BSL"/>
+                                            <constraint firstItem="oK1-ER-92G" firstAttribute="width" secondItem="T5K-fG-c1c" secondAttribute="width" id="nSM-tZ-qar"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kz2-b5-o5Y" userLabel="hand3">
+                                        <rect key="frame" x="194" y="166" width="85" height="10"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQs-CL-RYV" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Fc-hk-3Ca" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVj-Ee-QPe" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6N-h5-agD" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="45" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-dV-i9Z" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="60" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3Y-8U-hUO" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="75" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="7Lo-CK-o9n"/>
+                                                    <constraint firstAttribute="height" constant="10" id="Szb-pp-Uen"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="1cZ-dV-i9Z" firstAttribute="width" secondItem="k3Y-8U-hUO" secondAttribute="width" id="3fq-nv-5xd"/>
+                                            <constraint firstItem="aQs-CL-RYV" firstAttribute="width" secondItem="k3Y-8U-hUO" secondAttribute="width" id="BKT-09-qPr"/>
+                                            <constraint firstItem="OVj-Ee-QPe" firstAttribute="height" secondItem="k3Y-8U-hUO" secondAttribute="height" id="QQ0-v4-n5c"/>
+                                            <constraint firstItem="4Fc-hk-3Ca" firstAttribute="height" secondItem="k3Y-8U-hUO" secondAttribute="height" id="TkM-aL-ECQ"/>
+                                            <constraint firstItem="l6N-h5-agD" firstAttribute="width" secondItem="k3Y-8U-hUO" secondAttribute="width" id="Wai-RH-87M"/>
+                                            <constraint firstItem="aQs-CL-RYV" firstAttribute="height" secondItem="k3Y-8U-hUO" secondAttribute="height" id="dAu-0g-dVz"/>
+                                            <constraint firstItem="1cZ-dV-i9Z" firstAttribute="height" secondItem="k3Y-8U-hUO" secondAttribute="height" id="fug-c4-njl"/>
+                                            <constraint firstItem="OVj-Ee-QPe" firstAttribute="width" secondItem="k3Y-8U-hUO" secondAttribute="width" id="if4-QX-BWS"/>
+                                            <constraint firstItem="4Fc-hk-3Ca" firstAttribute="width" secondItem="k3Y-8U-hUO" secondAttribute="width" id="jOs-cg-7kO"/>
+                                            <constraint firstItem="l6N-h5-agD" firstAttribute="height" secondItem="k3Y-8U-hUO" secondAttribute="height" id="t2O-Qo-T0h"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0o5-df-wIH" userLabel="hand12">
+                                        <rect key="frame" x="166" y="64" width="10" height="85"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO6-Pc-eWF" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="YGb-jd-CWX"/>
+                                                    <constraint firstAttribute="height" constant="10" id="fdy-G1-WTF"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V42-gx-Mmz" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="15" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eg7-gv-QZz" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkX-6R-EGu" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="45" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYr-Jy-EjP" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="60" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQV-O9-deq" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="75" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="zQV-O9-deq" firstAttribute="height" secondItem="PO6-Pc-eWF" secondAttribute="height" id="4Tr-XR-PEL"/>
+                                            <constraint firstItem="aYr-Jy-EjP" firstAttribute="height" secondItem="PO6-Pc-eWF" secondAttribute="height" id="82Y-wW-0YR"/>
+                                            <constraint firstItem="jkX-6R-EGu" firstAttribute="width" secondItem="PO6-Pc-eWF" secondAttribute="width" id="BYE-RO-Idd"/>
+                                            <constraint firstItem="V42-gx-Mmz" firstAttribute="height" secondItem="PO6-Pc-eWF" secondAttribute="height" id="Dhy-11-yBK"/>
+                                            <constraint firstItem="V42-gx-Mmz" firstAttribute="width" secondItem="PO6-Pc-eWF" secondAttribute="width" id="FEz-qs-iS4"/>
+                                            <constraint firstItem="eg7-gv-QZz" firstAttribute="width" secondItem="PO6-Pc-eWF" secondAttribute="width" id="O36-6P-qJt"/>
+                                            <constraint firstItem="aYr-Jy-EjP" firstAttribute="width" secondItem="PO6-Pc-eWF" secondAttribute="width" id="RSg-9R-2qI"/>
+                                            <constraint firstItem="eg7-gv-QZz" firstAttribute="height" secondItem="PO6-Pc-eWF" secondAttribute="height" id="cWN-HG-dt2"/>
+                                            <constraint firstItem="zQV-O9-deq" firstAttribute="width" secondItem="PO6-Pc-eWF" secondAttribute="width" id="fk3-dY-1Q1"/>
+                                            <constraint firstItem="jkX-6R-EGu" firstAttribute="height" secondItem="PO6-Pc-eWF" secondAttribute="height" id="yly-Cn-Nmf"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zMA-0q-5U7" userLabel="hand2">
+                                        <rect key="frame" x="194" y="126" width="85" height="10"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ad6-mL-I7b" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12c-1B-HH5" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xht-Pn-Saa" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UB9-xo-P2j" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="45" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-U4-2zh" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="60" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0E-4U-43h" customClass="ClockHandUserView" customModule="FamJamClock" customModuleProvider="target">
+                                                <rect key="frame" x="75" y="0.0" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="HLo-oA-yBI"/>
+                                                    <constraint firstAttribute="height" constant="10" id="kfl-Kt-Gf5"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="12c-1B-HH5" firstAttribute="height" secondItem="E0E-4U-43h" secondAttribute="height" id="56G-g7-7yk"/>
+                                            <constraint firstItem="UB9-xo-P2j" firstAttribute="width" secondItem="E0E-4U-43h" secondAttribute="width" id="7FV-Oz-abl"/>
+                                            <constraint firstItem="xht-Pn-Saa" firstAttribute="width" secondItem="E0E-4U-43h" secondAttribute="width" id="7HL-fH-fJT"/>
+                                            <constraint firstItem="ad6-mL-I7b" firstAttribute="width" secondItem="E0E-4U-43h" secondAttribute="width" id="DJT-kt-M5Q"/>
+                                            <constraint firstItem="ad6-mL-I7b" firstAttribute="height" secondItem="E0E-4U-43h" secondAttribute="height" id="JzF-Pk-Jm8"/>
+                                            <constraint firstItem="dUe-U4-2zh" firstAttribute="height" secondItem="E0E-4U-43h" secondAttribute="height" id="NCJ-zu-ArA"/>
+                                            <constraint firstItem="12c-1B-HH5" firstAttribute="width" secondItem="E0E-4U-43h" secondAttribute="width" id="eg7-5t-2P7"/>
+                                            <constraint firstItem="dUe-U4-2zh" firstAttribute="width" secondItem="E0E-4U-43h" secondAttribute="width" id="iPb-Av-xDm"/>
+                                            <constraint firstItem="xht-Pn-Saa" firstAttribute="height" secondItem="E0E-4U-43h" secondAttribute="height" id="ixy-wT-M9B"/>
+                                            <constraint firstItem="UB9-xo-P2j" firstAttribute="height" secondItem="E0E-4U-43h" secondAttribute="height" id="sZa-Zn-LBN"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="4fx-gu-bdB" firstAttribute="width" secondItem="DCr-4X-QQ8" secondAttribute="width" id="6eu-Rh-hpw"/>
+                                    <constraint firstItem="bkb-ai-qG5" firstAttribute="leading" secondItem="0o5-df-wIH" secondAttribute="trailing" constant="30" id="8kB-1O-D9u"/>
                                     <constraint firstItem="gYh-7n-xKq" firstAttribute="leading" secondItem="Lat-BM-v0M" secondAttribute="leading" constant="8" id="Ae5-rg-oAk"/>
                                     <constraint firstItem="BkY-br-Qd6" firstAttribute="height" secondItem="DCr-4X-QQ8" secondAttribute="height" id="Ajw-NL-6cN"/>
+                                    <constraint firstItem="zMA-0q-5U7" firstAttribute="bottom" secondItem="kz2-b5-o5Y" secondAttribute="top" constant="-30" id="ApX-dG-kSK"/>
                                     <constraint firstItem="fCt-os-IMw" firstAttribute="width" secondItem="DCr-4X-QQ8" secondAttribute="width" id="C92-6V-upB"/>
                                     <constraint firstItem="0A6-Pe-bXg" firstAttribute="top" secondItem="Lat-BM-v0M" secondAttribute="top" constant="8" id="FP1-sw-49D"/>
                                     <constraint firstAttribute="trailing" secondItem="cLD-lu-bq6" secondAttribute="trailing" constant="8" id="FPo-Gy-AoQ"/>
                                     <constraint firstAttribute="width" secondItem="Lat-BM-v0M" secondAttribute="height" multiplier="1:1" id="I4J-m5-RWg"/>
+                                    <constraint firstItem="0o5-df-wIH" firstAttribute="centerX" secondItem="Lat-BM-v0M" secondAttribute="centerX" id="N33-P4-vMR"/>
                                     <constraint firstItem="0A6-Pe-bXg" firstAttribute="centerX" secondItem="Lat-BM-v0M" secondAttribute="centerX" id="QfQ-7o-0Be"/>
                                     <constraint firstItem="cLD-lu-bq6" firstAttribute="centerY" secondItem="Lat-BM-v0M" secondAttribute="centerY" id="TLy-WT-QSx"/>
+                                    <constraint firstItem="kz2-b5-o5Y" firstAttribute="centerY" secondItem="Lat-BM-v0M" secondAttribute="centerY" id="aAH-oa-0TF"/>
+                                    <constraint firstItem="0o5-df-wIH" firstAttribute="top" secondItem="gYh-7n-xKq" secondAttribute="top" id="avL-RR-lFl"/>
                                     <constraint firstItem="4fx-gu-bdB" firstAttribute="height" secondItem="DCr-4X-QQ8" secondAttribute="height" id="bJ4-wS-tub"/>
+                                    <constraint firstItem="kz2-b5-o5Y" firstAttribute="trailing" secondItem="0A6-Pe-bXg" secondAttribute="trailing" id="cSt-Pk-5X6"/>
                                     <constraint firstAttribute="bottom" secondItem="3fl-K6-fEw" secondAttribute="bottom" constant="8" id="gCq-dQ-ShP"/>
                                     <constraint firstItem="gYh-7n-xKq" firstAttribute="centerY" secondItem="Lat-BM-v0M" secondAttribute="centerY" id="hTm-R4-OEM"/>
                                     <constraint firstItem="3fl-K6-fEw" firstAttribute="centerX" secondItem="Lat-BM-v0M" secondAttribute="centerX" id="k5S-7G-ELQ"/>
+                                    <constraint firstItem="zMA-0q-5U7" firstAttribute="trailing" secondItem="0A6-Pe-bXg" secondAttribute="trailing" id="qY9-lq-QUQ"/>
                                     <constraint firstItem="BkY-br-Qd6" firstAttribute="width" secondItem="DCr-4X-QQ8" secondAttribute="width" id="tbx-5W-f9L"/>
+                                    <constraint firstItem="bkb-ai-qG5" firstAttribute="top" secondItem="cLD-lu-bq6" secondAttribute="top" id="u1I-GU-fP4"/>
                                     <constraint firstItem="fCt-os-IMw" firstAttribute="height" secondItem="DCr-4X-QQ8" secondAttribute="height" id="zKd-qG-1dE"/>
                                 </constraints>
                             </view>
@@ -157,6 +345,36 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Clock" image="clock-icon" id="ktX-8i-c0g"/>
+                    <connections>
+                        <outlet property="hand1" destination="bkb-ai-qG5" id="E7A-PT-s1u"/>
+                        <outlet property="hand12" destination="0o5-df-wIH" id="UyC-zJ-huR"/>
+                        <outlet property="hand12_1" destination="PO6-Pc-eWF" id="nLh-F6-OFg"/>
+                        <outlet property="hand12_2" destination="V42-gx-Mmz" id="j1n-5s-GEr"/>
+                        <outlet property="hand12_3" destination="eg7-gv-QZz" id="f5w-Mh-Xw2"/>
+                        <outlet property="hand12_4" destination="jkX-6R-EGu" id="liP-LU-GNh"/>
+                        <outlet property="hand12_5" destination="aYr-Jy-EjP" id="DUa-XH-dmv"/>
+                        <outlet property="hand12_6" destination="zQV-O9-deq" id="gkH-k6-uUK"/>
+                        <outlet property="hand1_1" destination="T5K-fG-c1c" id="5zb-GF-XNt"/>
+                        <outlet property="hand1_2" destination="Ahe-Bs-vt5" id="r68-J3-Y9I"/>
+                        <outlet property="hand1_3" destination="eQj-Dv-kIU" id="OQ3-ST-hGe"/>
+                        <outlet property="hand1_4" destination="oK1-ER-92G" id="j4c-VU-oHd"/>
+                        <outlet property="hand1_5" destination="Yxb-o3-lgj" id="5p9-1L-ToM"/>
+                        <outlet property="hand1_6" destination="T72-gf-y5K" id="2UO-g1-Xpr"/>
+                        <outlet property="hand2" destination="zMA-0q-5U7" id="h70-w5-88i"/>
+                        <outlet property="hand2_1" destination="E0E-4U-43h" id="dpo-hi-Je4"/>
+                        <outlet property="hand2_2" destination="dUe-U4-2zh" id="WZi-iB-E1P"/>
+                        <outlet property="hand2_3" destination="UB9-xo-P2j" id="7ho-Gx-OMZ"/>
+                        <outlet property="hand2_4" destination="xht-Pn-Saa" id="yT7-tU-8QA"/>
+                        <outlet property="hand2_5" destination="12c-1B-HH5" id="vGM-Vv-iB4"/>
+                        <outlet property="hand2_6" destination="ad6-mL-I7b" id="hrG-wz-z7l"/>
+                        <outlet property="hand3" destination="kz2-b5-o5Y" id="gvV-zo-F9u"/>
+                        <outlet property="hand3_1" destination="k3Y-8U-hUO" id="LUE-hx-5ZS"/>
+                        <outlet property="hand3_2" destination="1cZ-dV-i9Z" id="MDt-Ah-QaF"/>
+                        <outlet property="hand3_3" destination="l6N-h5-agD" id="uu8-YE-KZT"/>
+                        <outlet property="hand3_4" destination="OVj-Ee-QPe" id="xf3-DT-BiH"/>
+                        <outlet property="hand3_5" destination="4Fc-hk-3Ca" id="fOs-Zm-s0J"/>
+                        <outlet property="hand3_6" destination="aQs-CL-RYV" id="WIw-E3-u69"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlG-DH-z4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
