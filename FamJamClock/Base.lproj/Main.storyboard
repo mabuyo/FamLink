@@ -722,6 +722,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Clock" image="clock-icon" id="ktX-8i-c0g"/>
                     <connections>
+                        <outlet property="clock1" destination="Zwd-jU-Hv7" id="0YZ-rw-sMF"/>
+                        <outlet property="clock10" destination="BkY-br-Qd6" id="koE-yK-1cq"/>
+                        <outlet property="clock11" destination="DCr-4X-QQ8" id="7kp-JH-5sC"/>
+                        <outlet property="clock12" destination="XOM-cM-1qC" id="61d-Mn-0kE"/>
+                        <outlet property="clock2" destination="4fx-gu-bdB" id="3ZS-4u-QtS"/>
+                        <outlet property="clock3" destination="qDZ-Oi-Fg4" id="VwL-vK-r8L"/>
+                        <outlet property="clock4" destination="kuu-0x-4DY" id="vcB-cY-Vos"/>
+                        <outlet property="clock5" destination="K6h-4J-2qW" id="eXT-Na-o4o"/>
+                        <outlet property="clock6" destination="f1m-61-C3Q" id="RTF-Y7-Ok2"/>
+                        <outlet property="clock7" destination="fCt-os-IMw" id="7l4-LX-Sd5"/>
+                        <outlet property="clock8" destination="z7y-I7-mnd" id="HdA-rh-qpJ"/>
+                        <outlet property="clock9" destination="bMh-44-vtd" id="Ngk-oq-D4d"/>
                         <outlet property="hand1" destination="bkb-ai-qG5" id="E7A-PT-s1u"/>
                         <outlet property="hand10" destination="zoa-4W-kme" id="hw9-mf-VPh"/>
                         <outlet property="hand10_1" destination="emt-bv-1wc" id="8hu-2a-xab"/>

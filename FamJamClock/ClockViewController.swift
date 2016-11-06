@@ -9,6 +9,20 @@
 import UIKit
 
 class ClockViewController: UIViewController {
+    // clock icons
+    @IBOutlet weak var clock11: UIImageView!
+    @IBOutlet weak var clock12: UIImageView!
+    @IBOutlet weak var clock1: UIImageView!
+    @IBOutlet weak var clock2: UIImageView!
+    @IBOutlet weak var clock3: UIImageView!
+    @IBOutlet weak var clock4: UIImageView!
+    @IBOutlet weak var clock5: UIImageView!
+    @IBOutlet weak var clock6: UIImageView!
+    @IBOutlet weak var clock7: UIImageView!
+    @IBOutlet weak var clock8: UIImageView!
+    @IBOutlet weak var clock9: UIImageView!
+    @IBOutlet weak var clock10: UIImageView!
+    
     // 11 o'clock hand
     @IBOutlet weak var hand11_1: ClockHandUserView!
     @IBOutlet weak var hand11_2: ClockHandUserView!
@@ -149,6 +163,7 @@ class ClockViewController: UIViewController {
             UIColor.green
         ]
         
+        // clock colors
         for i in 0...hands.count-1 {
             for hand in hands[i] {
                 hand?.userColor = colors[i]
@@ -156,7 +171,7 @@ class ClockViewController: UIViewController {
             hands[i][0]?.userColor = UIColor.darkGray
         }
         
-        // angles
+        // clock hand, set angles
         hand11.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 6)
         hand1.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6)
         hand2.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 6)
@@ -165,6 +180,27 @@ class ClockViewController: UIViewController {
         hand7.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6)
         hand8.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 6)
         hand10.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6)
+        
+        // get locations from data source
+        var clock_icons = [Int: UIImageView]()
+        clock_icons[1] = clock1
+        clock_icons[2] = clock2
+        clock_icons[3] = clock3
+        clock_icons[4] = clock4
+        clock_icons[5] = clock5
+        clock_icons[6] = clock6
+        clock_icons[7] = clock7
+        clock_icons[8] = clock8
+        clock_icons[9] = clock9
+        clock_icons[10] = clock10
+        clock_icons[11] = clock11
+        clock_icons[12] = clock12
+        
+        let locations = LocationsDataSource().locations
+        for location in locations {
+            let clock_icon = clock_icons[location.number]
+            clock_icon?.image = location.icon
+        }
     }
 
     override func didReceiveMemoryWarning() {
