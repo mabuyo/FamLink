@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF42B6B31DAAE8AC00D8A3FF"
-               BuildableName = "FamJamClock.app"
-               BlueprintName = "FamJamClock"
-               ReferencedContainer = "container:FamJamClock.xcodeproj">
+               BuildableName = "FamLink.app"
+               BlueprintName = "FamLink"
+               ReferencedContainer = "container:FamLink.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF42B6CA1DAAE8AC00D8A3FF"
-               BuildableName = "FamJamClockTests.xctest"
-               BlueprintName = "FamJamClockTests"
-               ReferencedContainer = "container:FamJamClock.xcodeproj">
+               BuildableName = "FamLinkTests.xctest"
+               BlueprintName = "FamLinkTests"
+               ReferencedContainer = "container:FamLink.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF42B6D51DAAE8AC00D8A3FF"
-               BuildableName = "FamJamClockUITests.xctest"
-               BlueprintName = "FamJamClockUITests"
-               ReferencedContainer = "container:FamJamClock.xcodeproj">
+               BuildableName = "FamLinkUITests.xctest"
+               BlueprintName = "FamLinkUITests"
+               ReferencedContainer = "container:FamLink.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF42B6B31DAAE8AC00D8A3FF"
-            BuildableName = "FamJamClock.app"
-            BlueprintName = "FamJamClock"
-            ReferencedContainer = "container:FamJamClock.xcodeproj">
+            BuildableName = "FamLink.app"
+            BlueprintName = "FamLink"
+            ReferencedContainer = "container:FamLink.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF42B6B31DAAE8AC00D8A3FF"
-            BuildableName = "FamJamClock.app"
-            BlueprintName = "FamJamClock"
-            ReferencedContainer = "container:FamJamClock.xcodeproj">
+            BuildableName = "FamLink.app"
+            BlueprintName = "FamLink"
+            ReferencedContainer = "container:FamLink.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF42B6B31DAAE8AC00D8A3FF"
-            BuildableName = "FamJamClock.app"
-            BlueprintName = "FamJamClock"
-            ReferencedContainer = "container:FamJamClock.xcodeproj">
+            BuildableName = "FamLink.app"
+            BlueprintName = "FamLink"
+            ReferencedContainer = "container:FamLink.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

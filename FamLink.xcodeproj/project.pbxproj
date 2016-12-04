@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FF42B6B41DAAE8AC00D8A3FF /* FamJamClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamJamClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF42B6B41DAAE8AC00D8A3FF /* FamLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF42B6BC1DAAE8AC00D8A3FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,10 +53,10 @@
 		FF42B6C11DAAE8AC00D8A3FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF42B6C41DAAE8AC00D8A3FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF42B6C61DAAE8AC00D8A3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF42B6CB1DAAE8AC00D8A3FF /* FamJamClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamJamClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF42B6CB1DAAE8AC00D8A3FF /* FamLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF42B6CF1DAAE8AC00D8A3FF /* FamJamClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamJamClockTests.swift; sourceTree = "<group>"; };
 		FF42B6D11DAAE8AC00D8A3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF42B6D61DAAE8AC00D8A3FF /* FamJamClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamJamClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF42B6D61DAAE8AC00D8A3FF /* FamLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF42B6DA1DAAE8AC00D8A3FF /* FamJamClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamJamClockUITests.swift; sourceTree = "<group>"; };
 		FF42B6DC1DAAE8AC00D8A3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF65BF101DC6BA1900A226A3 /* ClockHandUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHandUserView.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		FF42B6AB1DAAE8AC00D8A3FF = {
 			isa = PBXGroup;
 			children = (
-				FF42B6B61DAAE8AC00D8A3FF /* FamJamClock */,
+				FF42B6B61DAAE8AC00D8A3FF /* FamLink */,
 				FF42B6CE1DAAE8AC00D8A3FF /* FamJamClockTests */,
 				FF42B6D91DAAE8AC00D8A3FF /* FamJamClockUITests */,
 				FF42B6B51DAAE8AC00D8A3FF /* Products */,
@@ -109,14 +109,14 @@
 		FF42B6B51DAAE8AC00D8A3FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF42B6B41DAAE8AC00D8A3FF /* FamJamClock.app */,
-				FF42B6CB1DAAE8AC00D8A3FF /* FamJamClockTests.xctest */,
-				FF42B6D61DAAE8AC00D8A3FF /* FamJamClockUITests.xctest */,
+				FF42B6B41DAAE8AC00D8A3FF /* FamLink.app */,
+				FF42B6CB1DAAE8AC00D8A3FF /* FamLinkTests.xctest */,
+				FF42B6D61DAAE8AC00D8A3FF /* FamLinkUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FF42B6B61DAAE8AC00D8A3FF /* FamJamClock */ = {
+		FF42B6B61DAAE8AC00D8A3FF /* FamLink */ = {
 			isa = PBXGroup;
 			children = (
 				FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */,
@@ -137,7 +137,7 @@
 				FF42B6C61DAAE8AC00D8A3FF /* Info.plist */,
 				FF42B6BE1DAAE8AC00D8A3FF /* FamJamClock.xcdatamodeld */,
 			);
-			path = FamJamClock;
+			path = FamLink;
 			sourceTree = "<group>";
 		};
 		FF42B6CE1DAAE8AC00D8A3FF /* FamJamClockTests */ = {
@@ -161,9 +161,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FF42B6B31DAAE8AC00D8A3FF /* FamJamClock */ = {
+		FF42B6B31DAAE8AC00D8A3FF /* FamLink */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF42B6DF1DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamJamClock" */;
+			buildConfigurationList = FF42B6DF1DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamLink" */;
 			buildPhases = (
 				FF42B6B01DAAE8AC00D8A3FF /* Sources */,
 				FF42B6B11DAAE8AC00D8A3FF /* Frameworks */,
@@ -173,14 +173,14 @@
 			);
 			dependencies = (
 			);
-			name = FamJamClock;
+			name = FamLink;
 			productName = FamJamClock;
-			productReference = FF42B6B41DAAE8AC00D8A3FF /* FamJamClock.app */;
+			productReference = FF42B6B41DAAE8AC00D8A3FF /* FamLink.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FF42B6CA1DAAE8AC00D8A3FF /* FamJamClockTests */ = {
+		FF42B6CA1DAAE8AC00D8A3FF /* FamLinkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF42B6E21DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamJamClockTests" */;
+			buildConfigurationList = FF42B6E21DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamLinkTests" */;
 			buildPhases = (
 				FF42B6C71DAAE8AC00D8A3FF /* Sources */,
 				FF42B6C81DAAE8AC00D8A3FF /* Frameworks */,
@@ -191,14 +191,14 @@
 			dependencies = (
 				FF42B6CD1DAAE8AC00D8A3FF /* PBXTargetDependency */,
 			);
-			name = FamJamClockTests;
+			name = FamLinkTests;
 			productName = FamJamClockTests;
-			productReference = FF42B6CB1DAAE8AC00D8A3FF /* FamJamClockTests.xctest */;
+			productReference = FF42B6CB1DAAE8AC00D8A3FF /* FamLinkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FF42B6D51DAAE8AC00D8A3FF /* FamJamClockUITests */ = {
+		FF42B6D51DAAE8AC00D8A3FF /* FamLinkUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF42B6E51DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamJamClockUITests" */;
+			buildConfigurationList = FF42B6E51DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamLinkUITests" */;
 			buildPhases = (
 				FF42B6D21DAAE8AC00D8A3FF /* Sources */,
 				FF42B6D31DAAE8AC00D8A3FF /* Frameworks */,
@@ -209,9 +209,9 @@
 			dependencies = (
 				FF42B6D81DAAE8AC00D8A3FF /* PBXTargetDependency */,
 			);
-			name = FamJamClockUITests;
+			name = FamLinkUITests;
 			productName = FamJamClockUITests;
-			productReference = FF42B6D61DAAE8AC00D8A3FF /* FamJamClockUITests.xctest */;
+			productReference = FF42B6D61DAAE8AC00D8A3FF /* FamLinkUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -243,7 +243,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FF42B6AF1DAAE8AC00D8A3FF /* Build configuration list for PBXProject "FamJamClock" */;
+			buildConfigurationList = FF42B6AF1DAAE8AC00D8A3FF /* Build configuration list for PBXProject "FamLink" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -256,9 +256,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FF42B6B31DAAE8AC00D8A3FF /* FamJamClock */,
-				FF42B6CA1DAAE8AC00D8A3FF /* FamJamClockTests */,
-				FF42B6D51DAAE8AC00D8A3FF /* FamJamClockUITests */,
+				FF42B6B31DAAE8AC00D8A3FF /* FamLink */,
+				FF42B6CA1DAAE8AC00D8A3FF /* FamLinkTests */,
+				FF42B6D51DAAE8AC00D8A3FF /* FamLinkUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -332,12 +332,12 @@
 /* Begin PBXTargetDependency section */
 		FF42B6CD1DAAE8AC00D8A3FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FF42B6B31DAAE8AC00D8A3FF /* FamJamClock */;
+			target = FF42B6B31DAAE8AC00D8A3FF /* FamLink */;
 			targetProxy = FF42B6CC1DAAE8AC00D8A3FF /* PBXContainerItemProxy */;
 		};
 		FF42B6D81DAAE8AC00D8A3FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FF42B6B31DAAE8AC00D8A3FF /* FamJamClock */;
+			target = FF42B6B31DAAE8AC00D8A3FF /* FamLink */;
 			targetProxy = FF42B6D71DAAE8AC00D8A3FF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -462,9 +462,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 33V38WJ343;
-				INFOPLIST_FILE = FamJamClock/Info.plist;
+				INFOPLIST_FILE = FamLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.famjam-startup.FamJamClock";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.famjam-startup.FamLink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -475,9 +475,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 33V38WJ343;
-				INFOPLIST_FILE = FamJamClock/Info.plist;
+				INFOPLIST_FILE = FamLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.famjam-startup.FamJamClock";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.famjam-startup.FamLink";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -494,7 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.famjam-startup.FamJamClockTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamJamClock.app/FamJamClock";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamLink.app/FamLink";
 			};
 			name = Debug;
 		};
@@ -509,7 +509,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.famjam-startup.FamJamClockTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamJamClock.app/FamJamClock";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamLink.app/FamLink";
 			};
 			name = Release;
 		};
@@ -544,7 +544,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF42B6AF1DAAE8AC00D8A3FF /* Build configuration list for PBXProject "FamJamClock" */ = {
+		FF42B6AF1DAAE8AC00D8A3FF /* Build configuration list for PBXProject "FamLink" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF42B6DD1DAAE8AC00D8A3FF /* Debug */,
@@ -553,7 +553,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF42B6DF1DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamJamClock" */ = {
+		FF42B6DF1DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamLink" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF42B6E01DAAE8AC00D8A3FF /* Debug */,
@@ -562,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF42B6E21DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamJamClockTests" */ = {
+		FF42B6E21DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamLinkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF42B6E31DAAE8AC00D8A3FF /* Debug */,
@@ -571,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF42B6E51DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamJamClockUITests" */ = {
+		FF42B6E51DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamLinkUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF42B6E61DAAE8AC00D8A3FF /* Debug */,
