@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7274D8F90B01B87EE7A56403 /* libPods-FamLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 045A2CD0680D5F6A884A442D /* libPods-FamLink.a */; };
 		FF42B6B81DAAE8AC00D8A3FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */; };
 		FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */; };
 		FF42B6BD1DAAE8AC00D8A3FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */; };
@@ -45,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045A2CD0680D5F6A884A442D /* libPods-FamLink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FamLink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		487DC3AD4BA1257911E7D60F /* Pods-FamLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-FamLink/Pods-FamLink.release.xcconfig"; sourceTree = "<group>"; };
+		C685AAB2840D7B987F3871FA /* Pods-FamLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FamLink/Pods-FamLink.debug.xcconfig"; sourceTree = "<group>"; };
 		FF42B6B41DAAE8AC00D8A3FF /* FamLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 		FF42B6DC1DAAE8AC00D8A3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF65BF101DC6BA1900A226A3 /* ClockHandUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHandUserView.swift; sourceTree = "<group>"; };
 		FF65BF121DC6BEC400A226A3 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
+		FF71BBC51DFA5F9F005D0479 /* FamLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FamLink.entitlements; sourceTree = "<group>"; };
 		FFA1B54E1DB31224000D6041 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataSource.swift; sourceTree = "<group>"; };
 		FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7274D8F90B01B87EE7A56403 /* libPods-FamLink.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D7C4DB260881C446C8B5AC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				045A2CD0680D5F6A884A442D /* libPods-FamLink.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA1D392E0C752F78678A768A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C685AAB2840D7B987F3871FA /* Pods-FamLink.debug.xcconfig */,
+				487DC3AD4BA1257911E7D60F /* Pods-FamLink.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FF42B6AB1DAAE8AC00D8A3FF = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +126,8 @@
 				FF42B6CE1DAAE8AC00D8A3FF /* FamJamClockTests */,
 				FF42B6D91DAAE8AC00D8A3FF /* FamJamClockUITests */,
 				FF42B6B51DAAE8AC00D8A3FF /* Products */,
+				DA1D392E0C752F78678A768A /* Pods */,
+				6D7C4DB260881C446C8B5AC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +144,7 @@
 		FF42B6B61DAAE8AC00D8A3FF /* FamLink */ = {
 			isa = PBXGroup;
 			children = (
+				FF71BBC51DFA5F9F005D0479 /* FamLink.entitlements */,
 				FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */,
 				FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */,
 				FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */,
@@ -165,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF42B6DF1DAAE8AC00D8A3FF /* Build configuration list for PBXNativeTarget "FamLink" */;
 			buildPhases = (
+				D1F8F6E4A929E3A73A4E5CD3 /* [CP] Check Pods Manifest.lock */,
 				FF42B6B01DAAE8AC00D8A3FF /* Sources */,
 				FF42B6B11DAAE8AC00D8A3FF /* Frameworks */,
 				FF42B6B21DAAE8AC00D8A3FF /* Resources */,
+				DE665568360FE9BF637F55CA /* [CP] Embed Pods Frameworks */,
+				301E97200E977D7EA4D8051B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,6 +257,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 33V38WJ343;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					FF42B6CA1DAAE8AC00D8A3FF = {
 						CreatedOnToolsVersion = 8.0;
@@ -289,6 +323,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		301E97200E977D7EA4D8051B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FamLink/Pods-FamLink-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1F8F6E4A929E3A73A4E5CD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE665568360FE9BF637F55CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FamLink/Pods-FamLink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF42B6B01DAAE8AC00D8A3FF /* Sources */ = {
@@ -459,27 +541,35 @@
 		};
 		FF42B6E01DAAE8AC00D8A3FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C685AAB2840D7B987F3871FA /* Pods-FamLink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FamLink/FamLink.entitlements;
 				DEVELOPMENT_TEAM = 33V38WJ343;
 				INFOPLIST_FILE = FamLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.famlink.FamLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FamLink/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
 		};
 		FF42B6E11DAAE8AC00D8A3FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 487DC3AD4BA1257911E7D60F /* Pods-FamLink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FamLink/FamLink.entitlements;
 				DEVELOPMENT_TEAM = 33V38WJ343;
 				INFOPLIST_FILE = FamLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.famlink.FamLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FamLink/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;
 		};

@@ -133,6 +133,39 @@ class ClockViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let authenticated = SparkCloud.sharedInstance().isAuthenticated
+        print("authenticated? \(authenticated)")
+        
+        SparkCloud.sharedInstance().getDevice("1b0032000647343432313031", completion: {(device: SparkDevice?, error: Error?) -> Void in
+            if let e = error {
+                print("Something went wrong with \(e)")
+            } else {
+                print("Got the device with specified deviceID!")
+                device?.callFunction("led", withArguments: ["off"], completion: {
+                    (number: NSNumber?, error:Error?) -> Void in
+                    if let e = error {
+                        print("\(e)")
+                        
+                    } else {
+                        print("Called function LED")
+                        print("\(number)")
+                    }
+                })
+                device?.getVariable("test", completion: {
+                    (result: Any?, error: Error?) -> Void in
+                    if let e = error {
+                        print("\(e)")
+                    
+                    } else {
+                        
+                        print("Result is: \(result)" )
+                    }
+                })
+            }
+        })
+        
+        
         let hands = [
             [hand11_1, hand11_2, hand11_3, hand11_4, hand11_5, hand11_6],
             [hand12_1, hand12_2, hand12_3, hand12_4, hand12_5, hand12_6],
