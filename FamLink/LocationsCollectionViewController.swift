@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
 
 private let reuseIdentifier = "locationIconIdentifier"
 
-class LocationsCollectionViewController: UICollectionViewController {
+class LocationsCollectionViewController: UICollectionViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
     
     var locations = LocationsDataSource().locations
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -54,11 +59,25 @@ class LocationsCollectionViewController: UICollectionViewController {
     // MARK: Segue from Location Search back to Collection View
     @IBAction func saveToLocationsCollectionView(segue: UIStoryboardSegue) {
         if let locationSearchVC = segue.source as? LocationSearchViewController {
-            //update the new placemark in the locations array
             if let locationPlacemark = locationSearchVC.chosenPlacemark {
-                // find the location in the Locations array and update its coordinates
+                
+                // find the location in the Locations array
                 if let location = locations.filter({$0.name == locationSearchVC.locationEditing.name}).first {
+                    
+                    // Stop monitoring the old region
+                    if location.placemark != nil {
+                        let oldRegion = getRegion(fromLocation: location)
+                        locationManager.stopMonitoring(for: oldRegion)
+                    }
+                    
+                    // update the location in the Locations array
                     location.placemark = locationPlacemark
+                    location.identifier = NSUUID().uuidString
+                    
+                    // Start monitoring the new region
+                    let region = getRegion(fromLocation: location)
+                    locationManager.startMonitoring(for: region)
+                    
                     
                     // save in persistent storage
                     let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(locations, toFile: Location.archiveURL.path)
@@ -67,6 +86,7 @@ class LocationsCollectionViewController: UICollectionViewController {
                         print("Failed to save locations.")
                     }
                 }
+                
             }
         }
     }
@@ -152,4 +172,24 @@ extension LocationsCollectionViewController: UICollectionViewDelegateFlowLayout 
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+}
+
+// MARK: LocationManager
+extension LocationsCollectionViewController {
+    
+    // Returns a CLCircularRegion from the placemark coordinates of a Location
+    func getRegion(fromLocation: Location) -> CLCircularRegion {
+        let fromPlacemark = fromLocation.placemark!
+        let region = CLCircularRegion(center: fromPlacemark.coordinate, radius: 1000, identifier: fromLocation.identifier!)
+        return region
+    }
+    
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print("Monitoring failed for region with identifier: \(region!.identifier)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location Manager failed with the following error: \(error)")
+    }
+    
 }

@@ -17,6 +17,7 @@ class Location: NSObject, NSCoding {
     var icon: UIImage
     var number: Int
     var placemark: MKPlacemark?
+    var identifier: String? // related to placemark CLRegion
     
     // MARK: types
     struct PropertyKey {
@@ -24,15 +25,16 @@ class Location: NSObject, NSCoding {
         static let iconKey = "icon"
         static let numberKey = "number"
         static let placemarkKey = "placemark"
+        static let identifierKey = "identifier"
     }
     
     // MARK: init
-    init(name: String, icon: UIImage, number: Int, placemark: MKPlacemark?) {
+    init(name: String, icon: UIImage, number: Int, placemark: MKPlacemark?, identifier: String?) {
         self.name = name
         self.icon = icon
         self.number = number
         self.placemark = placemark
-        
+        self.identifier = identifier
     }
     
     // MARK: archiving paths
@@ -46,14 +48,16 @@ class Location: NSObject, NSCoding {
         aCoder.encode(icon, forKey: PropertyKey.iconKey)
         aCoder.encode(number, forKey: PropertyKey.numberKey)
         aCoder.encode(placemark, forKey: PropertyKey.placemarkKey)
+        aCoder.encode(identifier, forKey: PropertyKey.identifierKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: PropertyKey.nameKey) as! String
         let icon = aDecoder.decodeObject(forKey: PropertyKey.iconKey) as! UIImage
-        let number = aDecoder.decodeInteger(forKey: PropertyKey.numberKey) 
+        let number = aDecoder.decodeInteger(forKey: PropertyKey.numberKey)
         let placemark = aDecoder.decodeObject(forKey: PropertyKey.placemarkKey) as? MKPlacemark
+        let identifier = aDecoder.decodeObject(forKey: PropertyKey.identifierKey) as? String
         
-        self.init(name: name, icon: icon, number: number, placemark: placemark)
+        self.init(name: name, icon: icon, number: number, placemark: placemark, identifier: identifier)
     }
 }

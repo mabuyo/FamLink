@@ -87,9 +87,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                        }
                     }
                     if !deviceFound {
+                        /*
                         let alert = UIAlertController(title: "Could not find device", message: "Please try again with a different device name.", preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
+                         */
+                        
+                        // TODO: remove this, this is just to demo location monitoring without having a user account. uncomment the above alert.
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
+                        self.present(controller, animated: true, completion: nil)
+
                     }
                 }
             }

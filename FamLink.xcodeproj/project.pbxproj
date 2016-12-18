@@ -50,6 +50,7 @@
 		045A2CD0680D5F6A884A442D /* libPods-FamLink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FamLink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		487DC3AD4BA1257911E7D60F /* Pods-FamLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-FamLink/Pods-FamLink.release.xcconfig"; sourceTree = "<group>"; };
 		C685AAB2840D7B987F3871FA /* Pods-FamLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FamLink/Pods-FamLink.debug.xcconfig"; sourceTree = "<group>"; };
+		FF3D36241E0601A80045C133 /* LocationTestAppleGoogle.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LocationTestAppleGoogle.gpx; sourceTree = "<group>"; };
 		FF42B6B41DAAE8AC00D8A3FF /* FamLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 				FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */,
 				FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */,
 				FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */,
+				FF3D36241E0601A80045C133 /* LocationTestAppleGoogle.gpx */,
 				FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */,
 				FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */,
 				FF748CC21DFD015A00174AC3 /* LoginViewController.swift */,

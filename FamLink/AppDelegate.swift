@@ -8,15 +8,24 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let locationManager = CLLocationManager()
+//    var mainUser = User(name: "Michelle", color: "green", current_location: nil)
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // MARK: location manager setup
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        
+    
         return true
     }
 
@@ -89,5 +98,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: CLLocationManagerDelegate {
+    func handleEvent(forRegion region: CLRegion!, forEvent event: String!) {
+        // If application is active
+        if UIApplication.shared.applicationState == .active {
+            print("Did \(event) region with identifier \(region.identifier) and named \(findLocation(forIdentifier: region.identifier).name)")
+            
+            // color the correct circle on the clock!
+            // find the clock number of the location
+            let location = findLocation(forIdentifier: region.identifier)
+//            mainUser.current_location = location
+            
+            if event == "ENTER" {
+                
+            }
+            
+        } else {
+            // Otherwise present a local notification
+            
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        if region is CLCircularRegion {
+            handleEvent(forRegion: region, forEvent: "ENTER")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        if region is CLCircularRegion {
+            handleEvent(forRegion: region, forEvent: "EXIT")
+        }
+    }
+    
+    /*
+     * findLocation with identifier returns the location with that associated identifier
+     */
+    func findLocation(forIdentifier identifier: String) -> Location {
+        for location in LocationsDataSource().locations {
+            if location.identifier == identifier {
+                return location
+            }
+        }
+        
+        // TODO: learn about errors and how to raise errors
+        return Location(name: "error", icon: UIImage(named: "bug")!, number: 13, placemark: nil, identifier: nil)
+    }
 }
 
