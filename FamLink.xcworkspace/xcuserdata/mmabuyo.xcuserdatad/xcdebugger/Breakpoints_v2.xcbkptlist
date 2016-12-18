@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FamLink/LocationsCollectionViewController.swift"
-            timestampString = "503710332.015119"
+            timestampString = "503777427.55537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "getRegion(fromLocation:)"
             landmarkType = "7">
          </BreakpointContent>
