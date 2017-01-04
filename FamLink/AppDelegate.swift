@@ -106,6 +106,21 @@ extension AppDelegate: CLLocationManagerDelegate {
         if UIApplication.shared.applicationState == .active {
             print("Did \(event) region with identifier \(region.identifier) and named \(findLocation(forIdentifier: region.identifier).name)")
             
+            let location_name = findLocation(forIdentifier: region.identifier).name
+            let username = "michelle"
+            
+            let dataToSend = username + "," + location_name
+            
+            // send to Photon
+            SparkCloud.sharedInstance().publishEvent(withName: "flink/user-loc-change", data: dataToSend, isPrivate: false, ttl: 60, completion: {(error: Error?) -> Void in
+                if let e = error {
+                    print("Error publishing event" + e.localizedDescription)
+                } else {
+                    print("Successfully published event")
+                }
+            })
+            
+            
             // color the correct circle on the clock!
             // find the clock number of the location
             let location = findLocation(forIdentifier: region.identifier)

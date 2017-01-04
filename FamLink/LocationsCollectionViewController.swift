@@ -91,6 +91,35 @@ class LocationsCollectionViewController: UICollectionViewController, CLLocationM
             }
         }
     }
+    
+    // MARK: Segue from Delete button clicked
+    @IBAction func deleteLocationFromLocations(segue: UIStoryboardSegue) {
+        if let locationDetailVC = segue.source as? LocationDetailViewController {
+            if let location = locationDetailVC.selectedLocation {
+            
+                // find the location in the Locations array
+                if let location = locations.filter({$0.name == location.name}).first {
+                    
+                    // Stop monitoring the old region
+                        let oldRegion = getRegion(fromLocation: location)
+                        locationManager.stopMonitoring(for: oldRegion)
+                    
+                    // update the location in the Locations array
+                    location.placemark = nil
+                    location.identifier = nil
+                    
+                    
+                    // save in persistent storage
+                    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(locations, toFile: Location.archiveURL.path)
+                    
+                    if !isSuccessfulSave {
+                        print("Failed to save locations.")
+                    }
+                }
+                
+            }
+        }
+    }
 
     // MARK: UICollectionViewDataSource
 

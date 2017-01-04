@@ -74,6 +74,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             
                             // set up wifi if needed
                             if self.famlinkDevice.connected {
+                                // set up stuff before going to main views
+                                var eventID = self.famlinkDevice.subscribeToEvents(withPrefix: "flink/update-users", handler: {
+                                    (event: SparkEvent?, error: Error?) -> Void in
+                                    if let e = error {
+                                        print("error: \(e)")
+                                        
+                                    } else {
+                                        print("Got event: \(event!.event)")
+                                        print("Event details: \(event!.data)")
+                                    }
+                                })
+                                
+                                
                                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                 let controller = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
                                 self.present(controller, animated: true, completion: nil)
@@ -87,16 +100,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                        }
                     }
                     if !deviceFound {
-                        /*
+                        
                         let alert = UIAlertController(title: "Could not find device", message: "Please try again with a different device name.", preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
-                         */
+                        
                         
                         // TODO: remove this, this is just to demo location monitoring without having a user account. uncomment the above alert.
+                        /*
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let controller = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
                         self.present(controller, animated: true, completion: nil)
+                         */
 
                     }
                 }
