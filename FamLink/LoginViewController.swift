@@ -13,7 +13,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var deviceNameTextField: UITextField!
     @IBOutlet weak var enterNameButton: UIButton!
-    var famlinkDevice: SparkDevice!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,22 +68,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     var deviceFound = false
                     for device in devices {
                         if device.name == deviceName {
-                            self.famlinkDevice = device
+                            FamLinkClock.sharedInstance.device = device
+                            let famlinkDevice = FamLinkClock.sharedInstance.device!
                             deviceFound = true
                             
                             // set up wifi if needed
-                            if self.famlinkDevice.connected {
-                                // set up stuff before going to main views
-                                var eventID = self.famlinkDevice.subscribeToEvents(withPrefix: "flink/update-users", handler: {
-                                    (event: SparkEvent?, error: Error?) -> Void in
-                                    if let e = error {
-                                        print("error: \(e)")
-                                        
-                                    } else {
-                                        print("Got event: \(event!.event)")
-                                        print("Event details: \(event!.data)")
-                                    }
-                                })
+                            if famlinkDevice.connected {
+                                FamLinkClock.sharedInstance.initLocations()
+                                FamLinkClock.sharedInstance.subscribeToEvents()
                                 
                                 
                                 let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7274D8F90B01B87EE7A56403 /* libPods-FamLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 045A2CD0680D5F6A884A442D /* libPods-FamLink.a */; };
+		FF298C451E1DC95200E88931 /* FamLinkClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF298C441E1DC95200E88931 /* FamLinkClock.swift */; };
 		FF42B6B81DAAE8AC00D8A3FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */; };
 		FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */; };
 		FF42B6BD1DAAE8AC00D8A3FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		045A2CD0680D5F6A884A442D /* libPods-FamLink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FamLink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		487DC3AD4BA1257911E7D60F /* Pods-FamLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-FamLink/Pods-FamLink.release.xcconfig"; sourceTree = "<group>"; };
 		C685AAB2840D7B987F3871FA /* Pods-FamLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FamLink/Pods-FamLink.debug.xcconfig"; sourceTree = "<group>"; };
+		FF298C441E1DC95200E88931 /* FamLinkClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamLinkClock.swift; sourceTree = "<group>"; };
 		FF3D36241E0601A80045C133 /* LocationTestAppleGoogle.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LocationTestAppleGoogle.gpx; sourceTree = "<group>"; };
 		FF42B6B41DAAE8AC00D8A3FF /* FamLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */,
 				FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */,
 				FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */,
+				FF298C441E1DC95200E88931 /* FamLinkClock.swift */,
 				FFA1B5541DB33A76000D6041 /* LocationSearchResultsTableViewController.swift */,
 				FFA1B5561DB33B35000D6041 /* LocationSearchViewController.swift */,
 				FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */,
@@ -387,6 +390,7 @@
 				FFA1B5591DB43770000D6041 /* MapHelperFunctions.swift in Sources */,
 				FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */,
 				FF65BF111DC6BA1900A226A3 /* ClockHandUserView.swift in Sources */,
+				FF298C451E1DC95200E88931 /* FamLinkClock.swift in Sources */,
 				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
 				FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */,
 				FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */,

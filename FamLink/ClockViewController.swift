@@ -131,12 +131,13 @@ class ClockViewController: UIViewController {
     @IBOutlet weak var hand10_6: ClockHandUserView!
     @IBOutlet weak var hand10: UIStackView!
     
+    var hands: [[ClockHandUserView?]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let hands = [
-            [hand11_1, hand11_2, hand11_3, hand11_4, hand11_5, hand11_6],
-            [hand12_1, hand12_2, hand12_3, hand12_4, hand12_5, hand12_6],
+        self.hands = [
+            [], // just so it's not zero-indexed
             [hand1_1, hand1_2, hand1_3, hand1_4, hand1_5, hand1_6],
             [hand2_1, hand2_2, hand2_3, hand2_4, hand2_5, hand2_6],
             [hand3_1, hand3_2, hand3_3, hand3_4, hand3_5, hand3_6],
@@ -146,7 +147,9 @@ class ClockViewController: UIViewController {
             [hand7_1, hand7_2, hand7_3, hand7_4, hand7_5, hand7_6],
             [hand8_1, hand8_2, hand8_3, hand8_4, hand8_5, hand8_6],
             [hand9_1, hand9_2, hand9_3, hand9_4, hand9_5, hand9_6],
-            [hand10_1, hand10_2, hand10_3, hand10_4, hand10_5, hand10_6]
+            [hand10_1, hand10_2, hand10_3, hand10_4, hand10_5, hand10_6],
+            [hand11_1, hand11_2, hand11_3, hand11_4, hand11_5, hand11_6],
+            [hand12_1, hand12_2, hand12_3, hand12_4, hand12_5, hand12_6]
         ]
         
         var colors = [
@@ -167,9 +170,11 @@ class ClockViewController: UIViewController {
         // clock colors
         for i in 0...hands.count-1 {
             for hand in hands[i] {
-                hand?.userColor = colors[i]
+                //hand?.userColor = colors[i]
+                hand?.userColor = UIColor.darkGray
             }
-            hands[i][0]?.userColor = UIColor.darkGray
+            
+//            self.hands[i][0]?.userColor = UIColor.darkGray
         }
         
         // clock hand, set angles
@@ -202,6 +207,28 @@ class ClockViewController: UIViewController {
             let clock_icon = clock_icons[location.number]
             clock_icon?.image = location.icon
         }
+        
+        setUserLocations()
+    }
+    
+    func setUserLocations() {
+        let user_locations = FamLinkClock.sharedInstance.users
+        
+        print("\(user_locations)")
+        
+        for (user, location) in user_locations {
+            let clock_pos = getClockPosition(fromLocationName: location)
+            
+            print("clock position: \(clock_pos)")
+            
+            // get the correct clock position using hands array
+            hands[clock_pos][0]?.userColor = UIColor.green
+            
+            // get the user color
+            
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -220,4 +247,17 @@ class ClockViewController: UIViewController {
     }
     */
 
+}
+
+extension ClockViewController {
+    
+    func getClockPosition(fromLocationName: String) -> Int{
+        for location in LocationsDataSource().locations {
+            if location.name == fromLocationName {
+                return location.number
+            }
+        }
+        
+        return -1
+    }
 }
