@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import CoreLocation
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: location manager setup
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+        
+        FIRApp.configure()
         
     
         return true
