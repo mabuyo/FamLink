@@ -11,6 +11,7 @@ import Foundation
 class FamLinkClock {
     var device: SparkDevice!
     var users: [String:String]
+    var user_colors: [String:String]
 
     static let sharedInstance: FamLinkClock = {
         let instance = FamLinkClock()
@@ -22,6 +23,7 @@ class FamLinkClock {
     private init() {
         self.device = nil
         self.users = [:]
+        self.user_colors = [:]
     }
     
     func initLocations() {
@@ -34,12 +36,29 @@ class FamLinkClock {
             (event: SparkEvent?, error: Error?) -> Void in
             if let e = error {
                 print("error: \(e)")
-                
             } else {
                 print("Got event: \(event!.event)")
                 print("Event details: \(event!.data)")
             }
         })
+        
+        // get-users
+        self.device.subscribeToEvents(withPrefix: "flink/get-user-colors") { (event: SparkEvent?, error: Error?) in
+            if let e = error {
+                print("error: \(e)")
+            } else {
+                var data = event!.data!
+                
+                // michelle=green,brad=blue
+                let userArr = data.characters.split(separator: ",").map(String.init)
+                for user in userArr {
+                    let tempArr = user.characters.split(separator: "=").map(String.init)
+                    self.user_colors[tempArr[0]] = tempArr[1]
+                }
+                print("user_colors: \(self.user_colors)")
+            }
+        }
+        
 
         
         // initial-locs

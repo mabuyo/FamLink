@@ -221,12 +221,15 @@ class ClockViewController: UIViewController {
             
             print("clock position: \(clock_pos)")
             
-            // get the correct clock position using hands array
-            hands[clock_pos][0]?.userColor = UIColor.green
-            
-            // get the user color
-            
-            
+            if clock_pos != -1 {
+                for pos in hands[clock_pos] {
+                    if !(pos?.isFilled)! {
+                        let color = FamLinkClock.sharedInstance.user_colors[user]
+                        pos?.isFilled = true
+                        break;
+                    }
+                }
+            }
         }
         
     }
