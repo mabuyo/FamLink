@@ -7,11 +7,17 @@
 //
 
 import Foundation
+import Firebase
 
 class FamLinkClock {
     var device: SparkDevice!
     var users: [String:String]
     var user_colors: [String:String]
+    var famlink_code: String!
+    var user_list: [String]
+    var user: String
+    
+    var firebaseDB: FIRDatabaseReference!
 
     static let sharedInstance: FamLinkClock = {
         let instance = FamLinkClock()
@@ -24,6 +30,17 @@ class FamLinkClock {
         self.device = nil
         self.users = [:]
         self.user_colors = [:]
+        self.famlink_code = ""
+        self.user_list = []
+        self.user = ""
+        
+        self.firebaseDB = FIRDatabase.database().reference()
+
+    }
+    
+    func createUser(username: String) {
+        self.user_list.append(username)
+        self.firebaseDB.child(self.famlink_code).child("users").setValue(self.user_list)
     }
     
     func initLocations() {

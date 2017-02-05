@@ -890,6 +890,78 @@
             </objects>
             <point key="canvasLocation" x="-104.8" y="-1116.7916041979011"/>
         </scene>
+        <!--User Setup View Controller-->
+        <scene sceneID="2yJ-Dn-tXh">
+            <objects>
+                <viewController storyboardIdentifier="usernameSetup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HGK-ZD-DW5" customClass="UserSetupViewController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vsf-Xp-zxP"/>
+                        <viewControllerLayoutGuide type="bottom" id="6y3-UQ-Q5S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oxN-L1-PKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Existing Users:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRI-Zg-Pjf">
+                                <rect key="frame" x="36" y="63" width="303.5" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="249" text="Looks like you don't have anyone in your FamLink yet!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MWB-A1-FYm">
+                                <rect key="frame" x="67" y="195.5" width="240" height="249"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h6H-Gk-Gzv">
+                                <rect key="frame" x="16" y="507" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFF-dv-Kly">
+                                <rect key="frame" x="172" y="567" width="30" height="30"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="setupNewUser:" destination="HGK-ZD-DW5" eventType="touchUpInside" id="ijc-Fy-DWr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnS-dV-s4H">
+                                <rect key="frame" x="114" y="466" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h6H-Gk-Gzv" firstAttribute="bottom" secondItem="iFF-dv-Kly" secondAttribute="top" constant="-30" id="2XA-3k-YIn"/>
+                            <constraint firstItem="MWB-A1-FYm" firstAttribute="leading" secondItem="oxN-L1-PKZ" secondAttribute="leadingMargin" constant="51" id="BFe-rq-Uob"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h6H-Gk-Gzv" secondAttribute="trailing" id="NlT-ra-n6j"/>
+                            <constraint firstItem="rRI-Zg-Pjf" firstAttribute="top" secondItem="vsf-Xp-zxP" secondAttribute="bottom" constant="43" id="OSS-jT-rmh"/>
+                            <constraint firstItem="MWB-A1-FYm" firstAttribute="centerX" secondItem="oxN-L1-PKZ" secondAttribute="centerX" id="PAf-VB-CVQ"/>
+                            <constraint firstItem="6y3-UQ-Q5S" firstAttribute="top" secondItem="iFF-dv-Kly" secondAttribute="bottom" constant="70" id="Sy5-KN-I5l"/>
+                            <constraint firstItem="h6H-Gk-Gzv" firstAttribute="centerX" secondItem="iFF-dv-Kly" secondAttribute="centerX" id="WjJ-Ib-I71"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MWB-A1-FYm" secondAttribute="trailing" constant="52" id="YpY-qv-gXf"/>
+                            <constraint firstItem="lnS-dV-s4H" firstAttribute="centerX" secondItem="h6H-Gk-Gzv" secondAttribute="centerX" id="cdp-H8-nB1"/>
+                            <constraint firstItem="MWB-A1-FYm" firstAttribute="top" secondItem="rRI-Zg-Pjf" secondAttribute="bottom" constant="100" id="frH-tx-2CF"/>
+                            <constraint firstItem="h6H-Gk-Gzv" firstAttribute="leading" secondItem="oxN-L1-PKZ" secondAttribute="leadingMargin" id="keq-82-L8Y"/>
+                            <constraint firstItem="rRI-Zg-Pjf" firstAttribute="centerX" secondItem="oxN-L1-PKZ" secondAttribute="centerX" id="oFS-b6-nsn"/>
+                            <constraint firstItem="lnS-dV-s4H" firstAttribute="bottom" secondItem="h6H-Gk-Gzv" secondAttribute="top" constant="-20" id="sxp-nQ-E3e"/>
+                            <constraint firstItem="iFF-dv-Kly" firstAttribute="centerX" secondItem="oxN-L1-PKZ" secondAttribute="centerX" id="xgQ-Vz-yfZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userListTextArea" destination="MWB-A1-FYm" id="vaC-vU-c2V"/>
+                        <outlet property="userNameTextInput" destination="h6H-Gk-Gzv" id="4GG-Ea-gQn"/>
+                        <outlet property="userSetupButton" destination="iFF-dv-Kly" id="LQi-7u-wkT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fiw-yR-jXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978.39999999999998" y="-1112.2938530734634"/>
+        </scene>
         <!--Chat-->
         <scene sceneID="N4h-TW-ySP">
             <objects>
@@ -907,7 +979,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wac-W8-nDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="-577.06146926536735"/>
+            <point key="canvasLocation" x="921" y="-348"/>
         </scene>
         <!--Your Locations-->
         <scene sceneID="04D-F9-oec">

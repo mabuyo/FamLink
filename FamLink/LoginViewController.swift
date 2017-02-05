@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    
+    var ref: FIRDatabaseReference!
     
     @IBOutlet weak var deviceNameTextField: UITextField!
     @IBOutlet weak var enterNameButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.ref = FIRDatabase.database().reference()
         
         deviceNameTextField.delegate = self
         
@@ -46,15 +49,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
    
+    // Handler for when user clicks "Let's Famlink it up!"
     @IBAction func famLinkSetup(_ sender: UIButton) {
-        // login with company credentials
-        SparkCloud.sharedInstance().login(withUser: "michelle.mabuyo@gmail.com", password: "FAM!l!nk2017", completion: {(error: Error?) -> Void in
-            if let e = error {
-                print("Something went wrong! \(e)")
+        let famlinkName = self.deviceNameTextField.text!
+        ref.child("famlink_codes").observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
+            let value = snapshot.value as? NSDictionary
+            print("FAMLINK_CODES VALUES \(value)")
+            
+            if let _ = value?[famlinkName] {
+                FamLinkClock.sharedInstance.famlink_code = famlinkName
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "usernameSetup")
+                self.present(controller, animated: true, completion: nil)
             } else {
-                self.getDevice()
+                print("Not found")
             }
-        })
+        }
+        
+        
     }
     
     func getDevice() {
