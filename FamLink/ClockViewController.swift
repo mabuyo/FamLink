@@ -171,7 +171,7 @@ class ClockViewController: UIViewController {
         for i in 0...hands.count-1 {
             for hand in hands[i] {
                 //hand?.userColor = colors[i]
-                hand?.userColor = UIColor.darkGray
+                //hand?.userColor = UIColor.darkGray
             }
             
 //            self.hands[i][0]?.userColor = UIColor.darkGray
@@ -208,13 +208,17 @@ class ClockViewController: UIViewController {
             clock_icon?.image = location.icon
         }
         
-        setUserLocations()
+        //setUserLocations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         setUserLocations()
     }
     
     func setUserLocations() {
         let user_locations = FamLinkClock.sharedInstance.users
         
-        print("\(user_locations)")
+        print("ClockViewController, setUserLocations: \(user_locations)")
         
         for (user, location) in user_locations {
             let clock_pos = getClockPosition(fromLocationName: location)
@@ -224,8 +228,11 @@ class ClockViewController: UIViewController {
             if clock_pos != -1 {
                 for pos in hands[clock_pos] {
                     if !(pos?.isFilled)! {
+                        print("in the isfilled if")
                         let color = FamLinkClock.sharedInstance.user_colors[user]
                         pos?.isFilled = true
+                        pos?.userColor = UIColor.green
+                        pos?.setNeedsDisplay()
                         break;
                     }
                 }

@@ -11,7 +11,7 @@ import Firebase
 
 class FamLinkClock {
     var device: SparkDevice!
-    var users: [String:String]
+    var users: [String:String] // Username:Location
     var user_colors: [String:String]
     var famlink_code: String!
     var user_list: [String]
@@ -38,20 +38,37 @@ class FamLinkClock {
 
     }
     
+    func setUser(_ username: String) {
+        self.user = username
+    }
+    
     func createUser(username: String) {
         self.user_list.append(username)
-        var userCreated = false
         self.firebaseDB.child(self.famlink_code).child("users").setValue(self.user_list, withCompletionBlock: {(error: Error?, dbref: FIRDatabaseReference) -> Void in
             if let e = error {
                 print("error \(e)")
             } else {
                 print("Successfully added user")
-                userCreated = true
             }
         })
         //self.firebaseDB.child(self.famlink_code).child("users").setValue(self.user_list)
     }
     
+    func loadLocations() {
+        self.firebaseDB.child(self.famlink_code).child("user-locations").observe(.value, with: {(snapshot) -> Void in
+            let results = snapshot.value as? [String : AnyObject] ?? [:]
+            self.users = results as! [String : String]
+        })
+        
+        self.firebaseDB.child(self.famlink_code).child("user-colors").observe(.value, with: {(snapshot) -> Void in
+            let results = snapshot.value as? [String : AnyObject] ?? [:]
+            self.user_colors = results as! [String : String]
+        })
+        
+    }
+    
+    
+    // leftover Photon functions below
     func initLocations() {
         self.device.callFunction("init_locs", withArguments: [""], completion: nil)
     }

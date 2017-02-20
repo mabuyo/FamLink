@@ -58,6 +58,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             if let _ = value?[famlinkName] {
                 FamLinkClock.sharedInstance.famlink_code = famlinkName
+                FamLinkClock.sharedInstance.loadLocations()
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "usernameSetup")
                 self.present(controller, animated: true, completion: nil)

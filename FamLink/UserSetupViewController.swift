@@ -79,7 +79,7 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
         if (!famlinkClock.user_list.contains(userName)) {
             famlinkClock.createUser(username: userName)
         } else {
-            famlinkClock.user = userName
+            famlinkClock.setUser(userName)
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
