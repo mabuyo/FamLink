@@ -40,7 +40,6 @@ class FamLinkClock {
         self.famlink_code = ""
         self.user_list = []
         self.user = ""
-        
         self.firebaseDB = FIRDatabase.database().reference()
 
     }
@@ -58,7 +57,6 @@ class FamLinkClock {
                 print("Successfully added user")
             }
         })
-        //self.firebaseDB.child(self.famlink_code).child("users").setValue(self.user_list)
     }
     
     func loadLocations() {
@@ -73,6 +71,13 @@ class FamLinkClock {
         })
         
     }
+    
+    func updateLocation(_ newLocation: String) {
+        print("Updating Location!!")
+        users[user] = newLocation
+        self.firebaseDB.child(self.famlink_code).child("user-locations/" + user).setValue(newLocation)
+    }
+
     
     
     // leftover Photon functions below
@@ -108,6 +113,7 @@ class FamLinkClock {
                 print("user_colors: \(self.user_colors)")
             }
         }
+        
         
 
         

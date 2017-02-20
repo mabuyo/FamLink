@@ -223,7 +223,18 @@ class ClockViewController: UIViewController {
         
         print("ClockViewController, setUserLocations: \(user_locations)")
         
-        for (user, location) in user_locations {
+        for (user, loc) in user_locations {
+            var isLastLocation = false
+            var location: String
+            if (loc.hasPrefix("last-")) {
+                isLastLocation = true
+                let index = loc.index(loc.startIndex, offsetBy: 5)
+                location = loc.substring(from: index)
+                print("location: \(location)")
+            } else {
+                location = loc
+            }
+            
             let clock_pos = getClockPosition(fromLocationName: location)
             
             print("clock position: \(clock_pos)")
@@ -233,13 +244,17 @@ class ClockViewController: UIViewController {
                     if !(pos?.isFilled)! {
                         print("in the isfilled if")
                         let color = ColorHandler().hexStringToUIColor(hex: FamLinkClock.sharedInstance.user_colors[user]!)
-                        print("color: \(color)")
                         pos?.isFilled = true
                         pos?.userColor = color
+                        if (isLastLocation) {
+                            pos?.fadeOut()
+                        }
                         pos?.setNeedsDisplay()
                         break;
                     }
                 }
+            } else {  // it is "none" so let's fade out on last visited
+            
             }
         }
         
@@ -249,6 +264,7 @@ class ClockViewController: UIViewController {
         for i in 0...hands.count-1 {
             for hand in hands[i] {
                 hand?.userColor = UIColor.white
+                hand?.alpha = 1.0
                 hand?.setNeedsDisplay()
                 hand?.isFilled = false
             }
