@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FamLink/FamLinkClock.swift"
-            timestampString = "509326800.799283"
+            timestampString = "509326955.637665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "subscribeToEvents()"
             landmarkType = "7">
          </BreakpointContent>

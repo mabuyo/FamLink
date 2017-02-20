@@ -118,7 +118,7 @@ extension AppDelegate: CLLocationManagerDelegate {
             if (event == "ENTER"){
                 FamLinkClock.sharedInstance.updateLocation(location_name)
             } else {
-                FamLinkClock.sharedInstance.updateLocation("none")
+                FamLinkClock.sharedInstance.updateLocation("last-" + location_name)
             }
             
         } else {
