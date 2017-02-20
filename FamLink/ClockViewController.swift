@@ -229,9 +229,10 @@ class ClockViewController: UIViewController {
                 for pos in hands[clock_pos] {
                     if !(pos?.isFilled)! {
                         print("in the isfilled if")
-                        let color = FamLinkClock.sharedInstance.user_colors[user]
+                        let color = ColorHandler().hexStringToUIColor(hex: FamLinkClock.sharedInstance.user_colors[user]!)
+                        print("color: \(color)")
                         pos?.isFilled = true
-                        pos?.userColor = UIColor.green
+                        pos?.userColor = color
                         pos?.setNeedsDisplay()
                         break;
                     }

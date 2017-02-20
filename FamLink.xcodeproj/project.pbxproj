@@ -17,6 +17,7 @@
 		FF42B6C51DAAE8AC00D8A3FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF42B6C31DAAE8AC00D8A3FF /* LaunchScreen.storyboard */; };
 		FF42B6D01DAAE8AC00D8A3FF /* FamJamClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6CF1DAAE8AC00D8A3FF /* FamJamClockTests.swift */; };
 		FF42B6DB1DAAE8AC00D8A3FF /* FamJamClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6DA1DAAE8AC00D8A3FF /* FamJamClockUITests.swift */; };
+		FF5763021E5B8FF3008CB49A /* ColorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5763011E5B8FF3008CB49A /* ColorHandler.swift */; };
 		FF65BF111DC6BA1900A226A3 /* ClockHandUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65BF101DC6BA1900A226A3 /* ClockHandUserView.swift */; };
 		FF65BF131DC6BEC400A226A3 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65BF121DC6BEC400A226A3 /* ClockViewController.swift */; };
 		FF748CC31DFD015A00174AC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF748CC21DFD015A00174AC3 /* LoginViewController.swift */; };
@@ -70,6 +71,7 @@
 		FF42B6D61DAAE8AC00D8A3FF /* FamLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF42B6DA1DAAE8AC00D8A3FF /* FamJamClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamJamClockUITests.swift; sourceTree = "<group>"; };
 		FF42B6DC1DAAE8AC00D8A3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF5763011E5B8FF3008CB49A /* ColorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHandler.swift; sourceTree = "<group>"; };
 		FF65BF101DC6BA1900A226A3 /* ClockHandUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHandUserView.swift; sourceTree = "<group>"; };
 		FF65BF121DC6BEC400A226A3 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		FF71BBC51DFA5F9F005D0479 /* FamLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FamLink.entitlements; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */,
 				FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */,
 				FFD36E9C1E5B68E7007E8DEA /* UserSetupViewController.swift */,
+				FF5763011E5B8FF3008CB49A /* ColorHandler.swift */,
 			);
 			path = FamLink;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
 				FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */,
 				FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */,
+				FF5763021E5B8FF3008CB49A /* ColorHandler.swift in Sources */,
 				FF42B6C01DAAE8AC00D8A3FF /* FamJamClock.xcdatamodeld in Sources */,
 				FF65BF131DC6BEC400A226A3 /* ClockViewController.swift in Sources */,
 				FFA1B54F1DB31224000D6041 /* Location.swift in Sources */,
