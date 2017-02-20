@@ -76,13 +76,15 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
         
         let famlinkClock = FamLinkClock.sharedInstance
         // if userName already exists, then log in as that userName
-        if (famlinkClock.user_list.contains(userName)) {
-            famlinkClock.user = userName
-        } else {
+        if (!famlinkClock.user_list.contains(userName)) {
             famlinkClock.createUser(username: userName)
+        } else {
+            famlinkClock.user = userName
         }
         
-        // else, create a new user in the database
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
+        self.present(controller, animated: true, completion: nil)
     }
 
     /*

@@ -40,7 +40,16 @@ class FamLinkClock {
     
     func createUser(username: String) {
         self.user_list.append(username)
-        self.firebaseDB.child(self.famlink_code).child("users").setValue(self.user_list)
+        var userCreated = false
+        self.firebaseDB.child(self.famlink_code).child("users").setValue(self.user_list, withCompletionBlock: {(error: Error?, dbref: FIRDatabaseReference) -> Void in
+            if let e = error {
+                print("error \(e)")
+            } else {
+                print("Successfully added user")
+                userCreated = true
+            }
+        })
+        //self.firebaseDB.child(self.famlink_code).child("users").setValue(self.user_list)
     }
     
     func initLocations() {
