@@ -29,7 +29,8 @@
 		FFB5DC5E1E3579B000B8B0EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFB5DC5D1E3579B000B8B0EC /* GoogleService-Info.plist */; };
 		FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */; };
 		FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */; };
-		FFF8F2551E4694A90071317A /* UserSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8F2541E4694A90071317A /* UserSetupViewController.swift */; };
+		FFD36E9B1E5B6878007E8DEA /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */; };
+		FFD36E9D1E5B68E7007E8DEA /* UserSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD36E9C1E5B68E7007E8DEA /* UserSetupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +83,8 @@
 		FFB5DC5D1E3579B000B8B0EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFCC132E1DB0725F005252CB /* LocationsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsCollectionViewController.swift; sourceTree = "<group>"; };
 		FFCC13301DB0727E005252CB /* LocationsIconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsIconCollectionViewCell.swift; sourceTree = "<group>"; };
-		FFF8F2541E4694A90071317A /* UserSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupViewController.swift; sourceTree = "<group>"; };
+		FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		FFD36E9C1E5B68E7007E8DEA /* UserSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +176,9 @@
 				FF748CC21DFD015A00174AC3 /* LoginViewController.swift */,
 				FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */,
 				FFA1B5581DB43770000D6041 /* MapHelperFunctions.swift */,
-				FFF8F2541E4694A90071317A /* UserSetupViewController.swift */,
 				FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */,
+				FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */,
+				FFD36E9C1E5B68E7007E8DEA /* UserSetupViewController.swift */,
 			);
 			path = FamLink;
 			sourceTree = "<group>";
@@ -396,16 +399,17 @@
 				FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */,
 				FFA1B5591DB43770000D6041 /* MapHelperFunctions.swift in Sources */,
 				FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */,
+				FFD36E9D1E5B68E7007E8DEA /* UserSetupViewController.swift in Sources */,
 				FF65BF111DC6BA1900A226A3 /* ClockHandUserView.swift in Sources */,
 				FF298C451E1DC95200E88931 /* FamLinkClock.swift in Sources */,
 				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
-				FFF8F2551E4694A90071317A /* UserSetupViewController.swift in Sources */,
 				FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */,
 				FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */,
 				FF42B6C01DAAE8AC00D8A3FF /* FamJamClock.xcdatamodeld in Sources */,
 				FF65BF131DC6BEC400A226A3 /* ClockViewController.swift in Sources */,
 				FFA1B54F1DB31224000D6041 /* Location.swift in Sources */,
 				FFA1B5571DB33B35000D6041 /* LocationSearchViewController.swift in Sources */,
+				FFD36E9B1E5B6878007E8DEA /* BaseTabBarController.swift in Sources */,
 				FFA1B5511DB31447000D6041 /* LocationsDataSource.swift in Sources */,
 				FF42B6B81DAAE8AC00D8A3FF /* AppDelegate.swift in Sources */,
 			);

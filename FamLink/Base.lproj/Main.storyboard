@@ -1242,15 +1242,20 @@
             </objects>
             <point key="canvasLocation" x="-607" y="2863"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Base Tab Bar Controller-->
         <scene sceneID="IWa-rP-BAz">
             <objects>
-                <tabBarController storyboardIdentifier="mainTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSb-UA-CHK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSb-UA-CHK" customClass="BaseTabBarController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="D8S-74-dBe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="defaultIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="i6G-wl-Kst" kind="relationship" relationship="viewControllers" id="4Na-h0-l2W"/>
                         <segue destination="t3t-VH-mGm" kind="relationship" relationship="viewControllers" id="7KK-BO-sHC"/>

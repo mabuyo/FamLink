@@ -1,6 +1,6 @@
 //
 //  UserSetupViewController.swift
-//  
+//
 //
 //  Created by Michelle Mabuyo on 2017-02-04.
 //
@@ -11,7 +11,7 @@ import Firebase
 
 class UserSetupViewController: UIViewController, UITextFieldDelegate {
     var ref: FIRDatabaseReference!
-
+    
     @IBOutlet weak var userListTextArea: UITextView!
     @IBOutlet weak var userNameTextInput: UITextField!
     @IBOutlet weak var userSetupButton: UIButton!
@@ -23,7 +23,7 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
         let famlinkClock = FamLinkClock.sharedInstance
         
         self.ref = FIRDatabase.database().reference()
-
+        
         // list any users already in that family
         let famlinkCode = FamLinkClock.sharedInstance.famlink_code!
         ref.child(famlinkCode).observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
@@ -41,10 +41,10 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
             print("\(self.userListTextArea.text)")
         }
         
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -86,15 +86,15 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
         let controller = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
         self.present(controller, animated: true, completion: nil)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
