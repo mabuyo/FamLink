@@ -9,15 +9,22 @@
 import Foundation
 import Firebase
 
+let userLocationsDidUpdateNotification = "userLocationsDidUpdate"
+
 class FamLinkClock {
     var device: SparkDevice!
-    var users: [String:String] // Username:Location
+    var users: [String:String] {
+        didSet {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: userLocationsDidUpdateNotification), object: nil)
+        }
+    } // Username:Location
     var user_colors: [String:String]
     var famlink_code: String!
     var user_list: [String]
     var user: String
     
     var firebaseDB: FIRDatabaseReference!
+    
 
     static let sharedInstance: FamLinkClock = {
         let instance = FamLinkClock()

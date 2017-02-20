@@ -168,14 +168,14 @@ class ClockViewController: UIViewController {
         ]
         
         // clock colors
-        for i in 0...hands.count-1 {
-            for hand in hands[i] {
-                //hand?.userColor = colors[i]
-                //hand?.userColor = UIColor.darkGray
-            }
-            
-//            self.hands[i][0]?.userColor = UIColor.darkGray
-        }
+//        for i in 0...hands.count-1 {
+//            for hand in hands[i] {
+//                //hand?.userColor = colors[i]
+//                //hand?.userColor = UIColor.darkGray
+//            }
+//            
+////            self.hands[i][0]?.userColor = UIColor.darkGray
+//        }
         
         // clock hand, set angles
         hand11.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 6)
@@ -208,14 +208,17 @@ class ClockViewController: UIViewController {
             clock_icon?.image = location.icon
         }
         
-        //setUserLocations()
+        setUserLocations()
+        NotificationCenter.default.addObserver(self, selector: #selector(setUserLocations), name: NSNotification.Name(rawValue: userLocationsDidUpdateNotification), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-         setUserLocations()
+//         setUserLocations()
     }
     
     func setUserLocations() {
+        print("setting user locations!")
+        reset()
         let user_locations = FamLinkClock.sharedInstance.users
         
         print("ClockViewController, setUserLocations: \(user_locations)")
@@ -240,6 +243,16 @@ class ClockViewController: UIViewController {
             }
         }
         
+    }
+    
+    func reset() {
+        for i in 0...hands.count-1 {
+            for hand in hands[i] {
+                hand?.userColor = UIColor.white
+                hand?.setNeedsDisplay()
+                hand?.isFilled = false
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
