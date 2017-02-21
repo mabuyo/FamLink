@@ -1172,11 +1172,15 @@
                                 <items>
                                     <barButtonItem enabled="NO" title="Radius" id="Ey9-ej-OdM"/>
                                     <barButtonItem style="plain" id="ZM8-Tb-nJ4">
-                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="vpS-e3-372">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="10" maxValue="500" id="vpS-e3-372">
                                             <rect key="frame" x="78" y="7" width="118" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="radiusSliderChanged:" destination="vC2-gM-jZl" eventType="valueChanged" id="f9u-LF-kg0"/>
+                                            </connections>
                                         </slider>
                                     </barButtonItem>
+                                    <barButtonItem enabled="NO" title="100" id="dcq-Vl-W4v"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -1204,6 +1208,8 @@
                     <connections>
                         <outlet property="mapView" destination="cPB-ae-Tig" id="jff-hy-VlW"/>
                         <outlet property="radiusButton" destination="Ey9-ej-OdM" id="uRI-th-mQC"/>
+                        <outlet property="radiusSlider" destination="vpS-e3-372" id="LcR-bq-VTz"/>
+                        <outlet property="radiusValueButton" destination="dcq-Vl-W4v" id="FTh-3Z-iIb"/>
                         <outlet property="saveButton" destination="R62-z6-8gK" id="IAB-3k-9IX"/>
                     </connections>
                 </viewController>

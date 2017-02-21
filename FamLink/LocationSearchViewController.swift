@@ -14,9 +14,19 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var radiusButton: UIBarButtonItem!
     private var radiusLabel = UILabel(frame: CGRect.zero)
     
+    
+    @IBOutlet weak var radiusValueButton: UIBarButtonItem!
+    private var radiusValueLabel = UILabel(frame: CGRect.zero)
+    
+    var radiusValue: Double!
+    
+    @IBOutlet weak var radiusSlider: UISlider!
+    
+    
     @IBOutlet weak var mapView: MKMapView!
     var locationEditing: Location!
     var chosenPlacemark: MKPlacemark!
+    var locationChosen: CLLocationCoordinate2D!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -30,14 +40,14 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
         
         //gestureRecognizer.delegate = self
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(LocationSearchViewController.handleTap(recognizer:)))
-//        gestureRecognizer.delegate = self
         mapView.addGestureRecognizer(gestureRecognizer)
 
         
         // UI
         saveButton.isEnabled = false
+        radiusValue = Double(radiusSlider.value)
         
-        // Dummy button
+        // Dummy buttons
         radiusLabel.text = "Radius"
         radiusLabel.sizeToFit()
         radiusLabel.backgroundColor = UIColor.clear
@@ -45,6 +55,15 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
         radiusLabel.textColor = UIColor.black
         radiusButton.tintColor = UIColor.black
         radiusButton.customView = radiusLabel
+
+        radiusValueLabel.text = String(radiusValue) + " m"
+        radiusValueLabel.sizeToFit()
+        radiusValueLabel.backgroundColor = UIColor.clear
+        radiusValueLabel.textAlignment = .center
+        radiusValueLabel.textColor = UIColor.black
+        radiusValueButton.tintColor = UIColor.black
+        radiusValueButton.customView = radiusValueLabel
+
         
         // set up location search results table
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchResultsTable") as! LocationSearchResultsTableViewController
@@ -64,14 +83,28 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
         // search results clicked
         locationSearchTable.handleMapSearchDelegate = self
         
+        // map
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
         mapView.delegate = self
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func radiusSliderChanged(_ sender: UISlider) {
+        radiusValueLabel.text = String(radiusValue) + " m"
+        radiusValueLabel.sizeToFit()
+        let step: Float = 5
+        
+        let roundedValue = round(sender.value / step) * step
+        radiusValue = Double(roundedValue)
+        sender.value = roundedValue
+        redrawCircle(center: locationChosen)
     }
     
     func handleTap(recognizer: UILongPressGestureRecognizer) {
@@ -80,6 +113,7 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
             
             let location = recognizer.location(in: mapView)
             let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
+            locationChosen = coordinate
             
             // clear existing pins
             mapView.removeAnnotations(mapView.annotations)
@@ -90,16 +124,13 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
             mapView.addAnnotation(annotation)
             
             // draw circle for region
-            mapView.removeOverlays(mapView.overlays)
-            let circle = MKCircle(center: coordinate, radius: 100.0)
-            mapView.add(circle)
+            redrawCircle(center: coordinate)
             
-            let span = MKCoordinateSpanMake(0.05, 0.05)
-            let region = MKCoordinateRegionMake(coordinate, span)
-            mapView.setRegion(region, animated: true)
+            centerMapOnLocation(location: CLLocation(latitude:coordinate.latitude, longitude: coordinate.longitude), mapView: mapView)
             
-            
-
+//            let span = MKCoordinateSpanMake(0.02, 0.02)
+//            let region = MKCoordinateRegionMake(coordinate, span)
+//            mapView.setRegion(region, animated: true)
         }
     }
 
@@ -189,11 +220,21 @@ extension LocationSearchViewController : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
         
         if newState == MKAnnotationViewDragState.ending {
-            let _ = view.annotation?.coordinate
-            // draw circle for region
-            mapView.removeOverlays(mapView.overlays)
-            let circle = MKCircle(center: (view.annotation?.coordinate)!, radius: 100.0)
-            mapView.add(circle)
+            let newCenter = view.annotation?.coordinate
+            redrawCircle(center: newCenter)
         }
+    }
+}
+
+
+// MARK: Helper functions
+extension LocationSearchViewController {
+    func redrawCircle(center: CLLocationCoordinate2D!) {
+        locationChosen = center
+
+        // draw circle for region
+        mapView.removeOverlays(mapView.overlays)
+        let circle = MKCircle(center: center, radius: radiusValue)
+        mapView.add(circle)
     }
 }

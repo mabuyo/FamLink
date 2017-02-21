@@ -54,8 +54,9 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
         if let placemark = selectedLocation.placemark {
             let lat = placemark.coordinate.latitude
             let long = placemark.coordinate.longitude
-            centerMapOnLocation(location: CLLocation(latitude: lat, longitude: long))
-
+            
+            centerMapOnLocation(location: CLLocation(latitude: lat, longitude: long), mapView: locationMapView)
+            
             
             // place pin
             let annotation = getAnnotation(placemark: placemark)
@@ -102,12 +103,11 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     
     // MARK: MapView functions
-    func centerMapOnLocation(location: CLLocation) {
-        let centerRegion = 1000.0
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  centerRegion * 2.0, centerRegion * 2.0)
-        locationMapView.setRegion(coordinateRegion, animated: true)
-    }
+//    func centerMapOnLocation(location: CLLocation) {
+//        let centerRegion = 1000.0
+//        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, centerRegion * 2.0, centerRegion * 2.0)
+//        locationMapView.setRegion(coordinateRegion, animated: true)
+//    }
     
     // draw circle
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {

@@ -44,3 +44,9 @@ func parseAddress(selectedItem:MKPlacemark) -> String {
     )
     return addressLine
 }
+
+func centerMapOnLocation(location: CLLocation, mapView: MKMapView) {
+    let centerRegion = 200.0
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, centerRegion * 2.0, centerRegion * 2.0)
+    mapView.setRegion(coordinateRegion, animated: true)
+}
