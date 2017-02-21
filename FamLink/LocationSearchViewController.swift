@@ -9,8 +9,11 @@
 import UIKit
 import MapKit
 
-class LocationSearchViewController: UIViewController {
+class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var radiusButton: UIBarButtonItem!
+    private var radiusLabel = UILabel(frame: CGRect.zero)
+    
     @IBOutlet weak var mapView: MKMapView!
     var locationEditing: Location!
     var chosenPlacemark: MKPlacemark!
@@ -20,11 +23,28 @@ class LocationSearchViewController: UIViewController {
     // Search
     var resultSearchController:UISearchController? = nil
     
+        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //gestureRecognizer.delegate = self
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(LocationSearchViewController.handleTap(recognizer:)))
+//        gestureRecognizer.delegate = self
+        mapView.addGestureRecognizer(gestureRecognizer)
+
+        
         // UI
         saveButton.isEnabled = false
+        
+        // Dummy button
+        radiusLabel.text = "Radius"
+        radiusLabel.sizeToFit()
+        radiusLabel.backgroundColor = UIColor.clear
+        radiusLabel.textAlignment = .center
+        radiusLabel.textColor = UIColor.black
+        radiusButton.tintColor = UIColor.black
+        radiusButton.customView = radiusLabel
         
         // set up location search results table
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchResultsTable") as! LocationSearchResultsTableViewController
@@ -54,6 +74,35 @@ class LocationSearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func handleTap(recognizer: UILongPressGestureRecognizer) {
+        if (recognizer.state == UIGestureRecognizerState.ended) {
+            print("map tapped!!!!")
+            
+            let location = recognizer.location(in: mapView)
+            let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
+            
+            // clear existing pins
+            mapView.removeAnnotations(mapView.annotations)
+
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = locationEditing.name
+            mapView.addAnnotation(annotation)
+            
+            // draw circle for region
+            mapView.removeOverlays(mapView.overlays)
+
+            let circle = MKCircle(center: coordinate, radius: 100.0)
+            mapView.add(circle)
+            
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegionMake(coordinate, span)
+            mapView.setRegion(region, animated: true)
+            
+            
+
+        }
+    }
 
     
     // MARK: - Navigation
@@ -121,5 +170,19 @@ extension LocationSearchViewController : MKMapViewDelegate {
         pinView?.leftCalloutAccessoryView = icon
         
         return pinView
+    }
+    
+    // draw circle
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+
+        if overlay is MKCircle {
+            let circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = UIColor.blue
+            circle.fillColor = UIColor(red: 0, green: 0, blue: 255, alpha: 0.1)
+            circle.lineWidth = 1
+            return circle
+        } else {
+            return MKPolylineRenderer()
+        }
     }
 }
