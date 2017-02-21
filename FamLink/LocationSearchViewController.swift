@@ -91,7 +91,6 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
             
             // draw circle for region
             mapView.removeOverlays(mapView.overlays)
-
             let circle = MKCircle(center: coordinate, radius: 100.0)
             mapView.add(circle)
             
@@ -161,6 +160,7 @@ extension LocationSearchViewController : MKMapViewDelegate {
         pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         pinView?.pinTintColor = UIColor.blue
         pinView?.canShowCallout = true
+        pinView?.isDraggable = true
         
         // draw icon
         let image = locationEditing.icon
@@ -183,6 +183,17 @@ extension LocationSearchViewController : MKMapViewDelegate {
             return circle
         } else {
             return MKPolylineRenderer()
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+        
+        if newState == MKAnnotationViewDragState.ending {
+            let _ = view.annotation?.coordinate
+            // draw circle for region
+            mapView.removeOverlays(mapView.overlays)
+            let circle = MKCircle(center: (view.annotation?.coordinate)!, radius: 100.0)
+            mapView.add(circle)
         }
     }
 }
