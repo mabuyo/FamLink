@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FamLink/ClockViewController.swift"
-            timestampString = "509326800.799283"
+            timestampString = "509328062.947006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "setUserLocations()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FamLink/ClockViewController.swift"
-            timestampString = "509319546.176912"
+            timestampString = "509328062.947006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "setUserLocations()"
             landmarkType = "7">
          </BreakpointContent>

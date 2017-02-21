@@ -152,31 +152,6 @@ class ClockViewController: UIViewController {
             [hand12_1, hand12_2, hand12_3, hand12_4, hand12_5, hand12_6]
         ]
         
-        var colors = [
-            UIColor.blue,
-            UIColor.red,
-            UIColor.green,
-            UIColor.black,
-            UIColor.orange,
-            UIColor.brown,
-            UIColor.cyan,
-            UIColor.magenta,
-            UIColor.purple,
-            UIColor.yellow,
-            UIColor.cyan,
-            UIColor.green
-        ]
-        
-        // clock colors
-//        for i in 0...hands.count-1 {
-//            for hand in hands[i] {
-//                //hand?.userColor = colors[i]
-//                //hand?.userColor = UIColor.darkGray
-//            }
-//            
-////            self.hands[i][0]?.userColor = UIColor.darkGray
-//        }
-        
         // clock hand, set angles
         hand11.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 6)
         hand1.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 6)
@@ -217,11 +192,8 @@ class ClockViewController: UIViewController {
     }
     
     func setUserLocations() {
-        print("setting user locations!")
         reset()
         let user_locations = FamLinkClock.sharedInstance.users
-        
-        print("ClockViewController, setUserLocations: \(user_locations)")
         
         for (user, loc) in user_locations {
             var isLastLocation = false
@@ -230,19 +202,15 @@ class ClockViewController: UIViewController {
                 isLastLocation = true
                 let index = loc.index(loc.startIndex, offsetBy: 5)
                 location = loc.substring(from: index)
-                print("location: \(location)")
             } else {
                 location = loc
             }
             
             let clock_pos = getClockPosition(fromLocationName: location)
             
-            print("clock position: \(clock_pos)")
-            
             if clock_pos != -1 {
                 for pos in hands[clock_pos] {
                     if !(pos?.isFilled)! {
-                        print("in the isfilled if")
                         let color = ColorHandler().hexStringToUIColor(hex: FamLinkClock.sharedInstance.user_colors[user]!)
                         pos?.isFilled = true
                         pos?.userColor = color
