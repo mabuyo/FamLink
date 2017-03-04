@@ -1011,15 +1011,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3J-T1-yRk">
-                                            <rect key="frame" x="20" y="20" width="20" height="20"/>
+                                            <rect key="frame" x="15" y="15" width="30" height="30"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="z3J-T1-yRk" secondAttribute="bottom" constant="20" id="5Rt-n0-bc0"/>
-                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="leading" secondItem="6CM-Ab-2CD" secondAttribute="leading" constant="20" id="9Sb-2l-sHP"/>
-                                    <constraint firstAttribute="trailing" secondItem="z3J-T1-yRk" secondAttribute="trailing" constant="20" id="pCK-Vl-f1p"/>
-                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="top" secondItem="6CM-Ab-2CD" secondAttribute="top" constant="20" id="rFX-Mb-aCG"/>
+                                    <constraint firstAttribute="bottom" secondItem="z3J-T1-yRk" secondAttribute="bottom" constant="15" id="5Rt-n0-bc0"/>
+                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="leading" secondItem="6CM-Ab-2CD" secondAttribute="leading" constant="15" id="9Sb-2l-sHP"/>
+                                    <constraint firstAttribute="trailing" secondItem="z3J-T1-yRk" secondAttribute="trailing" constant="15" id="pCK-Vl-f1p"/>
+                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="top" secondItem="6CM-Ab-2CD" secondAttribute="top" constant="15" id="rFX-Mb-aCG"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="z3J-T1-yRk" id="NLL-eP-XuC"/>
@@ -1297,10 +1297,10 @@
         <!--Locations-->
         <scene sceneID="2cq-qq-Ouo">
             <objects>
-                <navigationController id="i6G-wl-Kst" sceneMemberID="viewController">
+                <navigationController id="i6G-wl-Kst" customClass="LocationNavigationViewController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Locations" image="locations-icon" id="awP-WZ-YW4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i7c-jl-AJW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="i7c-jl-AJW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -33,7 +33,7 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
     // Search
     var resultSearchController:UISearchController? = nil
     
-        
+    var locationRadius = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +111,8 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
         if (recognizer.state == UIGestureRecognizerState.ended) {
             print("map tapped!!!!")
             
+            
+            
             let location = recognizer.location(in: mapView)
             let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
             locationChosen = coordinate
@@ -131,6 +133,9 @@ class LocationSearchViewController: UIViewController, UIGestureRecognizerDelegat
 //            let span = MKCoordinateSpanMake(0.02, 0.02)
 //            let region = MKCoordinateRegionMake(coordinate, span)
 //            mapView.setRegion(region, animated: true)
+            
+            saveButton.isEnabled = true
+
         }
     }
 
@@ -171,6 +176,9 @@ extension LocationSearchViewController: HandleMapSearch {
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
+        
+        let newCenter = annotation.coordinate
+        redrawCircle(center: newCenter)
         
         saveButton.isEnabled = true
         
