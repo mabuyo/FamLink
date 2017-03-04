@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "clock-with-outline.png",
+      "filename" : "Hockey_000000_50.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Hockey_000000_75.png",
       "scale" : "2x"
     },
     {
