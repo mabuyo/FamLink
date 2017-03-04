@@ -10,6 +10,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Clock-->
         <scene sceneID="678-Vu-xbV">
@@ -836,46 +841,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="famlink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUh-kg-LDp">
+                                <rect key="frame" x="114" y="45" width="146" height="59"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="43"/>
+                                <color key="textColor" red="0.95294117647058818" green="0.75294117647058822" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your FamLink Clock name?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBK-iI-ab1">
-                                <rect key="frame" x="36" y="166.5" width="303" height="67"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="36" y="154" width="303" height="76.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
+                                <color key="textColor" red="0.92941176470588238" green="0.94509803921568625" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This should be listed on the back of the product." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOp-W8-khi">
-                                <rect key="frame" x="46" y="253" width="283" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="famlink_neat" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XRz-LF-xKH">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yo_fam" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XRz-LF-xKH">
+                                <rect key="frame" x="16" y="280.5" width="343" height="30"/>
+                                <color key="textColor" red="0.082352941176470587" green="0.10196078431372549" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERR-a2-UFK">
-                                <rect key="frame" x="121" y="368" width="133" height="30"/>
-                                <state key="normal" title="Let's FamLink it up!"/>
+                                <rect key="frame" x="98" y="360.5" width="179" height="40"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                <state key="normal" title="Let's FamLink it up!">
+                                    <color key="titleColor" red="0.97647058823529409" green="0.93333333333333335" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="famLinkSetup:" destination="p6g-zU-0Wt" eventType="touchUpInside" id="TaL-f6-pPm"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.85093078759999996" green="1" blue="0.81851727669999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.44705882352941179" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XRz-LF-xKH" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="2wS-Yy-KFk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XRz-LF-xKH" secondAttribute="trailing" id="3Jq-r6-U2Y"/>
-                            <constraint firstItem="rBK-iI-ab1" firstAttribute="bottom" secondItem="EOp-W8-khi" secondAttribute="top" constant="-20" id="3Zr-oa-OjT"/>
-                            <constraint firstItem="XRz-LF-xKH" firstAttribute="centerY" secondItem="baO-u0-eNa" secondAttribute="centerY" id="4qS-Xf-W2e"/>
-                            <constraint firstItem="EOp-W8-khi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="baO-u0-eNa" secondAttribute="leadingMargin" constant="30" id="CxH-Jv-JVt"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="EOp-W8-khi" secondAttribute="trailing" constant="30" id="GfX-fd-B5v"/>
-                            <constraint firstItem="ERR-a2-UFK" firstAttribute="top" secondItem="XRz-LF-xKH" secondAttribute="bottom" constant="20" id="MUL-VJ-zFc"/>
+                            <constraint firstItem="rBK-iI-ab1" firstAttribute="top" secondItem="KUh-kg-LDp" secondAttribute="bottom" constant="50" id="55T-A6-qFB"/>
+                            <constraint firstItem="KUh-kg-LDp" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="IeC-bZ-iCy"/>
+                            <constraint firstItem="XRz-LF-xKH" firstAttribute="top" secondItem="rBK-iI-ab1" secondAttribute="bottom" constant="50" id="LC5-VO-riY"/>
+                            <constraint firstItem="ERR-a2-UFK" firstAttribute="top" secondItem="XRz-LF-xKH" secondAttribute="bottom" constant="50" id="MUL-VJ-zFc"/>
                             <constraint firstItem="ERR-a2-UFK" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="Rw1-Qt-D4Q"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="rBK-iI-ab1" secondAttribute="trailing" constant="20" id="VCF-xf-dhQ"/>
                             <constraint firstItem="rBK-iI-ab1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="baO-u0-eNa" secondAttribute="leadingMargin" constant="20" id="cKC-Ns-26a"/>
-                            <constraint firstItem="EOp-W8-khi" firstAttribute="bottom" secondItem="XRz-LF-xKH" secondAttribute="top" constant="-50" id="gpZ-Kl-qFw"/>
-                            <constraint firstItem="EOp-W8-khi" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="p8p-Pc-4iv"/>
+                            <constraint firstItem="KUh-kg-LDp" firstAttribute="top" secondItem="MAW-FB-8Ju" secondAttribute="bottom" constant="25" id="lU0-ST-QqB"/>
                             <constraint firstItem="rBK-iI-ab1" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="w74-rb-3XW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="XRz-LF-xKH" secondAttribute="leading" id="zyz-4d-bke"/>
                         </constraints>
@@ -903,49 +909,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Existing Users:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRI-Zg-Pjf">
-                                <rect key="frame" x="36" y="63" width="303.5" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="25.5" y="63" width="325.5" height="38.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="28"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.93333333330000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="249" text="Looks like you don't have anyone in your FamLink yet!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MWB-A1-FYm">
-                                <rect key="frame" x="67" y="195.5" width="240" height="249"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="67" y="121.5" width="240" height="249"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.27058823529411763" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.93333333330000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h6H-Gk-Gzv">
-                                <rect key="frame" x="16" y="507" width="343" height="30"/>
+                                <rect key="frame" x="16" y="477" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFF-dv-Kly">
-                                <rect key="frame" x="172" y="567" width="30" height="30"/>
-                                <state key="normal" title="OK"/>
+                                <rect key="frame" x="172" y="537" width="30" height="30"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.93333333330000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="setupNewUser:" destination="HGK-ZD-DW5" eventType="touchUpInside" id="ijc-Fy-DWr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnS-dV-s4H">
-                                <rect key="frame" x="114" y="466" width="147" height="21"/>
+                                <rect key="frame" x="114" y="436" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.93333333330000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.090196078431372548" green="0.27058823529411763" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="h6H-Gk-Gzv" firstAttribute="bottom" secondItem="iFF-dv-Kly" secondAttribute="top" constant="-30" id="2XA-3k-YIn"/>
                             <constraint firstItem="MWB-A1-FYm" firstAttribute="leading" secondItem="oxN-L1-PKZ" secondAttribute="leadingMargin" constant="51" id="BFe-rq-Uob"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h6H-Gk-Gzv" secondAttribute="trailing" id="NlT-ra-n6j"/>
                             <constraint firstItem="rRI-Zg-Pjf" firstAttribute="top" secondItem="vsf-Xp-zxP" secondAttribute="bottom" constant="43" id="OSS-jT-rmh"/>
                             <constraint firstItem="MWB-A1-FYm" firstAttribute="centerX" secondItem="oxN-L1-PKZ" secondAttribute="centerX" id="PAf-VB-CVQ"/>
-                            <constraint firstItem="6y3-UQ-Q5S" firstAttribute="top" secondItem="iFF-dv-Kly" secondAttribute="bottom" constant="70" id="Sy5-KN-I5l"/>
+                            <constraint firstItem="6y3-UQ-Q5S" firstAttribute="top" secondItem="iFF-dv-Kly" secondAttribute="bottom" constant="100" id="Sy5-KN-I5l"/>
                             <constraint firstItem="h6H-Gk-Gzv" firstAttribute="centerX" secondItem="iFF-dv-Kly" secondAttribute="centerX" id="WjJ-Ib-I71"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MWB-A1-FYm" secondAttribute="trailing" constant="52" id="YpY-qv-gXf"/>
                             <constraint firstItem="lnS-dV-s4H" firstAttribute="centerX" secondItem="h6H-Gk-Gzv" secondAttribute="centerX" id="cdp-H8-nB1"/>
-                            <constraint firstItem="MWB-A1-FYm" firstAttribute="top" secondItem="rRI-Zg-Pjf" secondAttribute="bottom" constant="100" id="frH-tx-2CF"/>
+                            <constraint firstItem="MWB-A1-FYm" firstAttribute="top" secondItem="rRI-Zg-Pjf" secondAttribute="bottom" constant="20" id="frH-tx-2CF"/>
                             <constraint firstItem="h6H-Gk-Gzv" firstAttribute="leading" secondItem="oxN-L1-PKZ" secondAttribute="leadingMargin" id="keq-82-L8Y"/>
                             <constraint firstItem="rRI-Zg-Pjf" firstAttribute="centerX" secondItem="oxN-L1-PKZ" secondAttribute="centerX" id="oFS-b6-nsn"/>
                             <constraint firstItem="lnS-dV-s4H" firstAttribute="bottom" secondItem="h6H-Gk-Gzv" secondAttribute="top" constant="-20" id="sxp-nQ-E3e"/>
@@ -953,7 +962,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="userListTextArea" destination="MWB-A1-FYm" id="vaC-vU-c2V"/>
+                        <outlet property="userListTextArea" destination="MWB-A1-FYm" id="pT6-Z5-BpC"/>
                         <outlet property="userNameTextInput" destination="h6H-Gk-Gzv" id="4GG-Ea-gQn"/>
                         <outlet property="userSetupButton" destination="iFF-dv-Kly" id="LQi-7u-wkT"/>
                     </connections>
@@ -985,7 +994,7 @@
         <scene sceneID="04D-F9-oec">
             <objects>
                 <collectionViewController id="NFg-xh-QNb" customClass="LocationsCollectionViewController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2w7-PA-mfP">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="2w7-PA-mfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1292,7 +1301,7 @@
                 <navigationController id="i6G-wl-Kst" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Locations" image="locations-icon" id="awP-WZ-YW4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i7c-jl-AJW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="i7c-jl-AJW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1310,7 +1319,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BL9-2H-n4b" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oCd-Ii-wj6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oCd-Ii-wj6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1328,7 +1337,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="BHH-sV-k5H" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gca-Rq-aqh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gca-Rq-aqh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

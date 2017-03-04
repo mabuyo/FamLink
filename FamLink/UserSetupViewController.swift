@@ -35,12 +35,12 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
                 famlinkClock.user_list.append(user)
             }
             
-            let usersString = users.componentsJoined(by: "\n")
+            let usersString = users.componentsJoined(by: ", ")
             print("\(usersString)")
             self.userListTextArea.text = usersString
             print("\(self.userListTextArea.text)")
         }
-        
+        self.userListTextArea.text = "testing"
         
         // Do any additional setup after loading the view.
     }
