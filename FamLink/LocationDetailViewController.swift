@@ -8,11 +8,15 @@
 
 import UIKit
 import MapKit
+import QuartzCore
 
 class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var selectedLocation: Location!
     let regionRadius = 100.0
+    
+    @IBOutlet weak var detailCard: UIView!
+    @IBOutlet weak var iconContainer: UIView!
     
     // UI
     @IBOutlet weak var iconView: UIImageView!
@@ -29,6 +33,12 @@ class LocationDetailViewController: UIViewController, MKMapViewDelegate, CLLocat
     // MARK - View
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.detailCard.layer.cornerRadius = 25
+        self.detailCard.layer.masksToBounds = true
+        
+        self.iconContainer.layer.cornerRadius = self.iconContainer.frame.size.width/2
+        self.iconContainer.layer.masksToBounds = true
         
         // setup locationManager
         locationManager.delegate = self;
