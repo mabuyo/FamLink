@@ -16,6 +16,7 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTextInput: UITextField!
     @IBOutlet weak var userSetupButton: UIButton!
     
+    @IBOutlet weak var userListTextLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,12 +36,12 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
                 famlinkClock.user_list.append(user)
             }
             
-            let usersString = users.componentsJoined(by: ", ")
+            let usersString = users.componentsJoined(by: "\n")
             print("\(usersString)")
-            self.userListTextArea.text = usersString
-            print("\(self.userListTextArea.text)")
+            self.userListTextLabel.text = usersString
+            print("\(self.userListTextLabel.text)")
         }
-        self.userListTextArea.text = "testing"
+        self.userListTextLabel.text = "testing"
         
         // Do any additional setup after loading the view.
     }
