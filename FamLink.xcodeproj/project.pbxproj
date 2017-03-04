@@ -33,6 +33,7 @@
 		FFD36E9B1E5B6878007E8DEA /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */; };
 		FFD36E9D1E5B68E7007E8DEA /* UserSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD36E9C1E5B68E7007E8DEA /* UserSetupViewController.swift */; };
 		FFF6A0D21E6A7A0F00F4F828 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFF6A0D11E6A7A0F00F4F828 /* Nunito-Bold.ttf */; };
+		FFF6A0D41E6B69CD00F4F828 /* LocationNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF6A0D31E6B69CD00F4F828 /* LocationNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		FFD36E9C1E5B68E7007E8DEA /* UserSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupViewController.swift; sourceTree = "<group>"; };
 		FFF6A0D11E6A7A0F00F4F828 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		FFF6A0D31E6B69CD00F4F828 /* LocationNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				FF3D36241E0601A80045C133 /* LocationTestAppleGoogle.gpx */,
 				FF748CC21DFD015A00174AC3 /* LoginViewController.swift */,
 				FF42B6BB1DAAE8AC00D8A3FF /* Main.storyboard */,
+				FFF6A0D31E6B69CD00F4F828 /* LocationNavigationViewController.swift */,
 				FFA1B5581DB43770000D6041 /* MapHelperFunctions.swift */,
 				FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */,
 				FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */,
@@ -409,6 +412,7 @@
 				FFD36E9D1E5B68E7007E8DEA /* UserSetupViewController.swift in Sources */,
 				FF65BF111DC6BA1900A226A3 /* ClockHandUserView.swift in Sources */,
 				FF298C451E1DC95200E88931 /* FamLinkClock.swift in Sources */,
+				FFF6A0D41E6B69CD00F4F828 /* LocationNavigationViewController.swift in Sources */,
 				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
 				FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */,
 				FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */,

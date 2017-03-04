@@ -31,22 +31,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lat-BM-v0M" userLabel="ClockView">
                                 <rect key="frame" x="16" y="162" width="343" height="343"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0A6-Pe-bXg" userLabel="topStack">
-                                        <rect key="frame" x="84" y="8" width="175" height="45"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0A6-Pe-bXg" userLabel="topStack">
+                                        <rect key="frame" x="89" y="8" width="165" height="35"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plane" translatesAutoresizingMaskIntoConstraints="NO" id="DCr-4X-QQ8">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="9JU-fF-4qB"/>
+                                                    <constraint firstAttribute="height" constant="35" id="9JU-fF-4qB"/>
                                                     <constraint firstAttribute="width" secondItem="DCr-4X-QQ8" secondAttribute="height" multiplier="1:1" id="F8K-hK-mpc"/>
-                                                    <constraint firstAttribute="width" constant="45" id="Ikm-8n-e3e"/>
+                                                    <constraint firstAttribute="width" constant="35" id="Ikm-8n-e3e"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="XOM-cM-1qC">
-                                                <rect key="frame" x="65" y="0.0" width="45" height="45"/>
+                                                <rect key="frame" x="65" y="0.0" width="35" height="35"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee-cup" translatesAutoresizingMaskIntoConstraints="NO" id="Zwd-jU-Hv7">
-                                                <rect key="frame" x="130" y="0.0" width="45" height="45"/>
+                                                <rect key="frame" x="130" y="0.0" width="35" height="35"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -58,20 +58,20 @@
                                             <constraint firstItem="Zwd-jU-Hv7" firstAttribute="width" secondItem="DCr-4X-QQ8" secondAttribute="height" multiplier="1:1" id="v6c-YC-6HJ"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3fl-K6-fEw" userLabel="bottomStack">
-                                        <rect key="frame" x="84" y="290" width="175" height="45"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3fl-K6-fEw" userLabel="bottomStack">
+                                        <rect key="frame" x="89" y="300" width="165" height="35"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="truck" translatesAutoresizingMaskIntoConstraints="NO" id="fCt-os-IMw">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fCt-os-IMw" secondAttribute="height" multiplier="1:1" id="40x-Ss-w07"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="briefcase" translatesAutoresizingMaskIntoConstraints="NO" id="f1m-61-C3Q">
-                                                <rect key="frame" x="65" y="0.0" width="45" height="45"/>
+                                                <rect key="frame" x="65" y="0.0" width="35" height="35"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fork-and-knife" translatesAutoresizingMaskIntoConstraints="NO" id="K6h-4J-2qW">
-                                                <rect key="frame" x="130" y="0.0" width="45" height="45"/>
+                                                <rect key="frame" x="130" y="0.0" width="35" height="35"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -83,20 +83,20 @@
                                             <constraint firstItem="K6h-4J-2qW" firstAttribute="height" secondItem="fCt-os-IMw" secondAttribute="height" id="VYh-ky-YJ1"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-7n-xKq" userLabel="leftStack">
-                                        <rect key="frame" x="8" y="84" width="45" height="175"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-7n-xKq" userLabel="leftStack">
+                                        <rect key="frame" x="8" y="89" width="35" height="165"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="truck" translatesAutoresizingMaskIntoConstraints="NO" id="BkY-br-Qd6">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BkY-br-Qd6" secondAttribute="height" multiplier="1:1" id="Cd4-wN-aJg"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beaker" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-44-vtd">
-                                                <rect key="frame" x="0.0" y="65" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="65" width="35" height="35"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fork-and-knife" translatesAutoresizingMaskIntoConstraints="NO" id="z7y-I7-mnd">
-                                                <rect key="frame" x="0.0" y="130" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="130" width="35" height="35"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -108,20 +108,20 @@
                                             <constraint firstItem="z7y-I7-mnd" firstAttribute="width" secondItem="BkY-br-Qd6" secondAttribute="width" id="lnp-af-J7Q"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-lu-bq6" userLabel="rightStack">
-                                        <rect key="frame" x="290" y="84" width="45" height="175"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-lu-bq6" userLabel="rightStack">
+                                        <rect key="frame" x="300" y="89" width="35" height="165"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hospital" translatesAutoresizingMaskIntoConstraints="NO" id="4fx-gu-bdB">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="4fx-gu-bdB" secondAttribute="height" multiplier="1:1" id="mXr-Rk-mjN"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocktail-glass" translatesAutoresizingMaskIntoConstraints="NO" id="qDZ-Oi-Fg4">
-                                                <rect key="frame" x="0.0" y="65" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="65" width="35" height="35"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="kuu-0x-4DY">
-                                                <rect key="frame" x="0.0" y="130" width="45" height="45"/>
+                                                <rect key="frame" x="0.0" y="130" width="35" height="35"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -134,7 +134,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XlO-mD-4C2" userLabel="hand11">
-                                        <rect key="frame" x="136" y="63" width="10" height="70"/>
+                                        <rect key="frame" x="136" y="53" width="10" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hyl-Xg-0Jf" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -179,7 +179,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0o5-df-wIH" userLabel="hand12">
-                                        <rect key="frame" x="166" y="63" width="10" height="70"/>
+                                        <rect key="frame" x="166" y="53" width="10" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO6-Pc-eWF" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -224,7 +224,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bkb-ai-qG5" userLabel="hand1">
-                                        <rect key="frame" x="196" y="63" width="10" height="70"/>
+                                        <rect key="frame" x="196" y="53" width="10" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5K-fG-c1c" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -269,7 +269,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zMA-0q-5U7" userLabel="hand2">
-                                        <rect key="frame" x="215" y="136" width="70" height="10"/>
+                                        <rect key="frame" x="225" y="136" width="70" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ad6-mL-I7b" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -314,7 +314,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kz2-b5-o5Y" userLabel="hand3">
-                                        <rect key="frame" x="215" y="166" width="70" height="10"/>
+                                        <rect key="frame" x="225" y="166" width="70" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQs-CL-RYV" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -359,7 +359,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="2e0-QF-8cr" userLabel="hand4">
-                                        <rect key="frame" x="215" y="196" width="70" height="10"/>
+                                        <rect key="frame" x="225" y="196" width="70" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvX-N9-M4U" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -404,7 +404,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-Zy-PKX" userLabel="hand5">
-                                        <rect key="frame" x="196" y="210" width="10" height="70"/>
+                                        <rect key="frame" x="196" y="220" width="10" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1G-5Q-3Tq" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -449,7 +449,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="T2w-LF-NKD" userLabel="hand6">
-                                        <rect key="frame" x="166" y="210" width="10" height="70"/>
+                                        <rect key="frame" x="166" y="220" width="10" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qu2-DJ-bds" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -494,7 +494,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="L1d-un-5LS" userLabel="hand7">
-                                        <rect key="frame" x="136" y="210" width="10" height="70"/>
+                                        <rect key="frame" x="136" y="220" width="10" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jzt-1B-RLY" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -539,7 +539,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="cD5-PK-gWY" userLabel="hand8">
-                                        <rect key="frame" x="58" y="196" width="70" height="10"/>
+                                        <rect key="frame" x="48" y="196" width="70" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgw-4n-H6L" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -584,7 +584,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xJ1-tG-plS" userLabel="hand9">
-                                        <rect key="frame" x="58" y="166" width="70" height="10"/>
+                                        <rect key="frame" x="48" y="166" width="70" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mT2-xU-3iy" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -629,7 +629,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zoa-4W-kme" userLabel="hand10">
-                                        <rect key="frame" x="58" y="136" width="70" height="10"/>
+                                        <rect key="frame" x="48" y="136" width="70" height="10"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emt-bv-1wc" customClass="ClockHandUserView" customModule="FamLink" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -674,7 +674,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.93333333333333335" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="xJ1-tG-plS" firstAttribute="centerY" secondItem="Lat-BM-v0M" secondAttribute="centerY" id="0FE-nu-fpP"/>
                                     <constraint firstItem="dwd-Zy-PKX" firstAttribute="leading" secondItem="T2w-LF-NKD" secondAttribute="trailing" constant="20" id="23P-Vr-q9c"/>
@@ -718,7 +718,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.26666666666666666" green="0.2627450980392157" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Lat-BM-v0M" firstAttribute="centerY" secondItem="IMl-BZ-yGT" secondAttribute="centerY" id="2eB-f8-4oo"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Lat-BM-v0M" secondAttribute="leading" id="3cg-sz-67x"/>
@@ -739,6 +739,7 @@
                         <outlet property="clock7" destination="fCt-os-IMw" id="7l4-LX-Sd5"/>
                         <outlet property="clock8" destination="z7y-I7-mnd" id="HdA-rh-qpJ"/>
                         <outlet property="clock9" destination="bMh-44-vtd" id="Ngk-oq-D4d"/>
+                        <outlet property="clockView" destination="Lat-BM-v0M" id="ab1-1x-WcM"/>
                         <outlet property="hand1" destination="bkb-ai-qG5" id="E7A-PT-s1u"/>
                         <outlet property="hand10" destination="zoa-4W-kme" id="hw9-mf-VPh"/>
                         <outlet property="hand10_1" destination="emt-bv-1wc" id="8hu-2a-xab"/>
@@ -991,10 +992,10 @@
         <scene sceneID="04D-F9-oec">
             <objects>
                 <collectionViewController id="NFg-xh-QNb" customClass="LocationsCollectionViewController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="2w7-PA-mfP">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" dataMode="prototypes" id="2w7-PA-mfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.93333333333333335" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9t5-vh-Zb5">
                             <size key="itemSize" width="60" height="60"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1010,15 +1011,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3J-T1-yRk">
-                                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                            <rect key="frame" x="20" y="20" width="20" height="20"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="z3J-T1-yRk" secondAttribute="bottom" constant="10" id="5Rt-n0-bc0"/>
-                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="leading" secondItem="6CM-Ab-2CD" secondAttribute="leading" constant="10" id="9Sb-2l-sHP"/>
-                                    <constraint firstAttribute="trailing" secondItem="z3J-T1-yRk" secondAttribute="trailing" constant="10" id="pCK-Vl-f1p"/>
-                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="top" secondItem="6CM-Ab-2CD" secondAttribute="top" constant="10" id="rFX-Mb-aCG"/>
+                                    <constraint firstAttribute="bottom" secondItem="z3J-T1-yRk" secondAttribute="bottom" constant="20" id="5Rt-n0-bc0"/>
+                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="leading" secondItem="6CM-Ab-2CD" secondAttribute="leading" constant="20" id="9Sb-2l-sHP"/>
+                                    <constraint firstAttribute="trailing" secondItem="z3J-T1-yRk" secondAttribute="trailing" constant="20" id="pCK-Vl-f1p"/>
+                                    <constraint firstItem="z3J-T1-yRk" firstAttribute="top" secondItem="6CM-Ab-2CD" secondAttribute="top" constant="20" id="rFX-Mb-aCG"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="z3J-T1-yRk" id="NLL-eP-XuC"/>
@@ -1276,6 +1277,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.91764705882352937" green="0.51764705882352946" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="defaultIndex">
@@ -1298,7 +1300,7 @@
                 <navigationController id="i6G-wl-Kst" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Locations" image="locations-icon" id="awP-WZ-YW4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="i7c-jl-AJW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i7c-jl-AJW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1351,8 +1353,8 @@
     <resources>
         <image name="beaker" width="512" height="512"/>
         <image name="briefcase" width="512" height="512"/>
-        <image name="chat-icon" width="32" height="32"/>
-        <image name="clock-icon" width="32" height="32"/>
+        <image name="chat-icon" width="25" height="25"/>
+        <image name="clock-icon" width="25" height="25"/>
         <image name="cocktail-glass" width="512" height="512"/>
         <image name="coffee-cup" width="512" height="512"/>
         <image name="delete-trash" width="50" height="50"/>
@@ -1360,7 +1362,7 @@
         <image name="fork-and-knife" width="512" height="512"/>
         <image name="home" width="512" height="512"/>
         <image name="hospital" width="512" height="512"/>
-        <image name="locations-icon" width="32" height="32"/>
+        <image name="locations-icon" width="25" height="25"/>
         <image name="music" width="512" height="512"/>
         <image name="okay-check" width="50" height="50"/>
         <image name="plane" width="512" height="512"/>

@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import QuartzCore
+
 
 class ClockViewController: UIViewController {
+    // clock view
+    @IBOutlet weak var clockView: UIView!
+    
+    
     // clock icons
     @IBOutlet weak var clock11: UIImageView!
     @IBOutlet weak var clock12: UIImageView!
@@ -133,8 +139,13 @@ class ClockViewController: UIViewController {
     
     var hands: [[ClockHandUserView?]] = []
     
+    let bgColor = UIColor(red: 250, green: 240, blue: 202, alpha: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.clockView.layer.cornerRadius = 25
+        self.clockView.layer.masksToBounds = true
         
         self.hands = [
             [], // just so it's not zero-indexed
@@ -151,6 +162,12 @@ class ClockViewController: UIViewController {
             [hand11_1, hand11_2, hand11_3, hand11_4, hand11_5, hand11_6],
             [hand12_1, hand12_2, hand12_3, hand12_4, hand12_5, hand12_6]
         ]
+        
+        for hand in hands {
+            for h in hand {
+                h?.backgroundColor = bgColor
+            }
+        }
         
         // clock hand, set angles
         hand11.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 6)
@@ -228,10 +245,11 @@ class ClockViewController: UIViewController {
         
     }
     
+    
     func reset() {
         for i in 0...hands.count-1 {
             for hand in hands[i] {
-                hand?.userColor = UIColor.white
+                hand?.userColor = self.bgColor
                 hand?.alpha = 1.0
                 hand?.setNeedsDisplay()
                 hand?.isFilled = false
