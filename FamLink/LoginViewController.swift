@@ -51,6 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
    
     // Handler for when user clicks "Let's Famlink it up!"
     @IBAction func famLinkSetup(_ sender: UIButton) {
+        print("Famlink it up")
         let famlinkName = self.deviceNameTextField.text!
         ref.child("famlink_codes").observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             let value = snapshot.value as? NSDictionary

@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FamLink/LoginViewController.swift"
-            timestampString = "507942770.085426"
+            timestampString = "510373081.564613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "famLinkSetup(_:)"
             landmarkType = "7">
          </BreakpointContent>

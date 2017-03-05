@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RoundTrip.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:HomeToSchool.gpx">
+   </FileRef>
+   <FileRef
       location = "group:FamLink/Bridging-Header.h">
    </FileRef>
    <FileRef
