@@ -22,6 +22,8 @@ class LocationsCollectionViewController: UICollectionViewController, CLLocationM
         
         locationManager.delegate = self
         
+        addGradientBackground()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,9 +35,22 @@ class LocationsCollectionViewController: UICollectionViewController, CLLocationM
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func addGradientBackground() {
+        let topColor = UIColor(red: (249/255.0), green: (207/255.0), blue: (81/255.0), alpha: 1)
+        
+        let bottomColor = UIColor(red: (250/255.0), green: (240/255.0), blue: (202/255.0), alpha: 1)
+        
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
+        let gradientLocations: [Float] = [0.0, 1.0]
+        
+        
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.locations = gradientLocations as [NSNumber]?
+        gradientLayer.frame = self.view.bounds
+        
+        self.collectionView?.backgroundView = UIView()
+        self.collectionView?.backgroundView?.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     

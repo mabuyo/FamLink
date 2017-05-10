@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lat-BM-v0M" userLabel="ClockView">
-                                <rect key="frame" x="16" y="137.5" width="343" height="343"/>
+                                <rect key="frame" x="16" y="138" width="343" height="343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0A6-Pe-bXg" userLabel="topStack">
                                         <rect key="frame" x="89" y="8" width="165" height="35"/>
@@ -717,12 +717,33 @@
                                     <constraint firstItem="fCt-os-IMw" firstAttribute="height" secondItem="DCr-4X-QQ8" secondAttribute="height" id="zKd-qG-1dE"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXF-0c-OZQ" userLabel="Legend View">
+                                <rect key="frame" x="16" y="501" width="343" height="97"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-eg-viW">
+                                        <rect key="frame" x="144.5" y="0.0" width="55" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ade-eg-viW" firstAttribute="centerX" secondItem="sXF-0c-OZQ" secondAttribute="centerX" id="ef8-nz-Hnb"/>
+                                    <constraint firstItem="Ade-eg-viW" firstAttribute="width" relation="lessThanOrEqual" secondItem="sXF-0c-OZQ" secondAttribute="width" constant="20" id="oCT-gU-7xv"/>
+                                    <constraint firstItem="Ade-eg-viW" firstAttribute="top" secondItem="sXF-0c-OZQ" secondAttribute="top" id="pvw-ZH-Hrj"/>
+                                    <constraint firstItem="Ade-eg-viW" firstAttribute="height" relation="lessThanOrEqual" secondItem="sXF-0c-OZQ" secondAttribute="height" id="sJM-fU-8T7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.26666666666666666" green="0.2627450980392157" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Lat-BM-v0M" firstAttribute="centerY" secondItem="IMl-BZ-yGT" secondAttribute="centerY" id="2eB-f8-4oo"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Lat-BM-v0M" secondAttribute="leading" id="3cg-sz-67x"/>
+                            <constraint firstItem="sXF-0c-OZQ" firstAttribute="top" secondItem="Lat-BM-v0M" secondAttribute="bottom" constant="20" id="85H-er-zzO"/>
+                            <constraint firstItem="sXF-0c-OZQ" firstAttribute="leading" secondItem="Lat-BM-v0M" secondAttribute="leading" id="eTP-gj-2Zv"/>
+                            <constraint firstItem="sXF-0c-OZQ" firstAttribute="trailing" secondItem="Lat-BM-v0M" secondAttribute="trailing" id="fd8-Rn-Plp"/>
                             <constraint firstItem="Lat-BM-v0M" firstAttribute="centerX" secondItem="IMl-BZ-yGT" secondAttribute="centerX" id="qnX-DD-5GV"/>
+                            <constraint firstAttribute="bottom" secondItem="sXF-0c-OZQ" secondAttribute="bottom" constant="20" symbolic="YES" id="vsJ-uk-tyO"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -833,6 +854,8 @@
                         <outlet property="hand9_4" destination="TWN-r7-yEt" id="kJe-TC-Zqc"/>
                         <outlet property="hand9_5" destination="rIR-ix-kps" id="Kvd-Yj-T05"/>
                         <outlet property="hand9_6" destination="HyT-6u-sbn" id="9VJ-PB-YXS"/>
+                        <outlet property="legendLabel" destination="Ade-eg-viW" id="RLp-ye-hwR"/>
+                        <outlet property="legendView" destination="sXF-0c-OZQ" id="1Gj-2X-BPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlG-DH-z4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1016,7 +1039,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" dataMode="prototypes" id="2w7-PA-mfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.97647058823529409" green="0.93333333333333335" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.7921568751335144" blue="0.44313725829124451" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9t5-vh-Zb5">
                             <size key="itemSize" width="60" height="60"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>

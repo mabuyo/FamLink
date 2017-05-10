@@ -10,14 +10,6 @@ import UIKit
 
 @IBDesignable
 class GradientView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     @IBInspectable var startColor:   UIColor = .black { didSet { updateColors() }}
     @IBInspectable var endColor:     UIColor = .white { didSet { updateColors() }}

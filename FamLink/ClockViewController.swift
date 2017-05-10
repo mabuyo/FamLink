@@ -141,6 +141,11 @@ class ClockViewController: UIViewController {
     
     let bgColor = UIColor(red: 250, green: 240, blue: 202, alpha: 0)
     
+    // legend
+    @IBOutlet weak var legendView: UIView!
+    @IBOutlet weak var legendLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -202,6 +207,8 @@ class ClockViewController: UIViewController {
         
         setUserLocations()
         NotificationCenter.default.addObserver(self, selector: #selector(setUserLocations), name: NSNotification.Name(rawValue: userLocationsDidUpdateNotification), object: nil)
+        
+        updateLegend()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -287,3 +294,34 @@ extension ClockViewController {
         return -1
     }
 }
+
+extension ClockViewController {
+    func updateLegend() {
+        let users = FamLinkClock.sharedInstance.user_colors
+        print(users)
+        let sortedNames = users.keys.sorted()
+        var names = ""
+        var nameLengths = [Int]()
+        let ch = ColorHandler()
+
+        for name in sortedNames {
+            names += name + " "
+            nameLengths.append(name.characters.count as Int)
+        }
+        let legendText = NSMutableAttributedString(string: names)
+
+        legendText.addAttribute(NSForegroundColorAttributeName, value: ch.hexStringToUIColor(hex: users[sortedNames[0]]!), range: NSRange(location: 0, length: nameLengths[0]))
+        
+        print(sortedNames)
+        print(nameLengths)
+        var currentPoint = 0
+        
+        for index in 1..<nameLengths.count {
+            currentPoint += nameLengths[index-1] + 1
+            let color = ch.hexStringToUIColor(hex: users[sortedNames[index]]!)
+            legendText.addAttribute(NSForegroundColorAttributeName, value: color, range: NSRange(location: currentPoint, length: nameLengths[index]))
+        }
+
+        self.legendLabel.attributedText = legendText
+    }
+   }
