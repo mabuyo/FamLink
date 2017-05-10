@@ -15,6 +15,9 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
   - Firebase/Core (3.10.0):
     - FirebaseAnalytics (= 3.6.0)
     - FirebaseCore (= 3.4.5)
@@ -56,12 +59,16 @@ PODS:
     - SparkSetup/Comm
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - Firebase/Database
   - SparkSetup
 
 SPEC CHECKSUMS:
   1PasswordExtension: e775a29310c65851e5a6cec1afc349ab4e334e47
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Firebase: 387f37c7dca894a02708da9ff35ba147040eae9e
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
   FirebaseCore: 1e383fdfe37b6b5d6ff88e84204bdee30276af0f
@@ -73,6 +80,6 @@ SPEC CHECKSUMS:
   Spark-SDK: 361c1d3aabc88f7c1eada27427cc8997f5a79ac1
   SparkSetup: 0e63d1cce0c16278b798f383f1ece034032df6a7
 
-PODFILE CHECKSUM: 188bcc532edc0991220120fe8e884912659a3304
+PODFILE CHECKSUM: 00ba791d73a39dc6dce7bd4c3bf3bd5dcdc801c8
 
 COCOAPODS: 1.0.1

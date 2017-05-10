@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate {
     var ref: FIRDatabaseReference!
     
     @IBOutlet weak var deviceNameTextField: UITextField!

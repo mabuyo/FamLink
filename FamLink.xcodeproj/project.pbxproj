@@ -223,6 +223,7 @@
 				FF42B6B21DAAE8AC00D8A3FF /* Resources */,
 				DE665568360FE9BF637F55CA /* [CP] Embed Pods Frameworks */,
 				301E97200E977D7EA4D8051B /* [CP] Copy Pods Resources */,
+				FF92A3911EC38E8D00B3DAEF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -397,6 +398,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FamLink/Pods-FamLink-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FF92A3911EC38E8D00B3DAEF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" d05eb42929d11c0ce5721de7b665c4361e1fe23e fb3baddbd1236fdd8f29b6121ca8a7411d3808d713ee85b5b1e537c8788e7ede";
 		};
 /* End PBXShellScriptBuildPhase section */
 

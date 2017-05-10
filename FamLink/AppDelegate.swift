@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 import CoreLocation
 import Firebase
+import UserNotifications
+import Fabric
+import Crashlytics
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,10 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Fabric.with([Crashlytics.self])
         
         // MARK: location manager setup
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if granted {
+                print("Yay!")
+            } else {
+                print("D'oh")
+            }
+        }
         
         FIRApp.configure()
         
@@ -55,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+
 
     // MARK: - Core Data stack
 
@@ -117,6 +132,22 @@ extension AppDelegate: CLLocationManagerDelegate {
             
             if (event == "ENTER"){
                 FamLinkClock.sharedInstance.updateLocation(location_name)
+                let content = UNMutableNotificationContent()
+                content.title = "Meeting Reminder"
+                content.subtitle = "test"
+                content.body = "Don't forget to bring coffee."
+                content.badge = 1
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,
+                                                                repeats: false)
+                
+                let requestIdentifier = UUID().uuidString
+                let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
+                
+                UNUserNotificationCenter.current().add(request, 
+                                                       withCompletionHandler: { (error) in
+                                                        // Handle error
+                })
             } else {
                 FamLinkClock.sharedInstance.updateLocation("last-" + location_name)
             }
