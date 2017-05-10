@@ -18,8 +18,8 @@ class BaseTabBarController: UITabBarController {
         
         selectedIndex = defaultIndex
         
-        self.tabBar.barTintColor = self.bgColor
-        self.tabBar.tintColor = self.sColor
+        //self.tabBar.barTintColor = self.bgColor
+        //self.tabBar.tintColor = self.sColor
 
         // Do any additional setup after loading the view.
     }

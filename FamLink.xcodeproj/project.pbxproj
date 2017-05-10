@@ -21,6 +21,7 @@
 		FF65BF111DC6BA1900A226A3 /* ClockHandUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65BF101DC6BA1900A226A3 /* ClockHandUserView.swift */; };
 		FF65BF131DC6BEC400A226A3 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF65BF121DC6BEC400A226A3 /* ClockViewController.swift */; };
 		FF748CC31DFD015A00174AC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF748CC21DFD015A00174AC3 /* LoginViewController.swift */; };
+		FF92A3951EC3A98E00B3DAEF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92A3941EC3A98E00B3DAEF /* GradientView.swift */; };
 		FFA1B54F1DB31224000D6041 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B54E1DB31224000D6041 /* Location.swift */; };
 		FFA1B5511DB31447000D6041 /* LocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */; };
 		FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */; };
@@ -78,6 +79,7 @@
 		FF65BF121DC6BEC400A226A3 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		FF71BBC51DFA5F9F005D0479 /* FamLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FamLink.entitlements; sourceTree = "<group>"; };
 		FF748CC21DFD015A00174AC3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FF92A3941EC3A98E00B3DAEF /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		FFA1B54E1DB31224000D6041 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FFA1B5501DB31447000D6041 /* LocationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataSource.swift; sourceTree = "<group>"; };
 		FFA1B5521DB31AC2000D6041 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */,
 				FFD36E9C1E5B68E7007E8DEA /* UserSetupViewController.swift */,
 				FF5763011E5B8FF3008CB49A /* ColorHandler.swift */,
+				FF92A3941EC3A98E00B3DAEF /* GradientView.swift */,
 			);
 			path = FamLink;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			files = (
 				FF748CC31DFD015A00174AC3 /* LoginViewController.swift in Sources */,
 				FFA1B5531DB31AC2000D6041 /* LocationDetailViewController.swift in Sources */,
+				FF92A3951EC3A98E00B3DAEF /* GradientView.swift in Sources */,
 				FFA1B5591DB43770000D6041 /* MapHelperFunctions.swift in Sources */,
 				FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */,
 				FFD36E9D1E5B68E7007E8DEA /* UserSetupViewController.swift in Sources */,

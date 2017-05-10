@@ -10,12 +10,12 @@ import UIKit
 
 class LocationNavigationViewController: UINavigationController {
     let bgColor = UIColor(red: 86/255.0, green: 85/255.0, blue: 84/255.0, alpha: 1)
-    let textColor = UIColor(red: 250/255.0, green: 240/255.0, blue: 202/255.0, alpha: 1)
+    let textColor = UIColor(red: 249/255.0, green: 207/255.0, blue: 81/255.0, alpha: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationBar.barTintColor = self.bgColor
+//        self.navigationBar.barTintColor = self.bgColor
         let font = UIFont(name: "Nunito", size: 22)
         self.navigationBar.titleTextAttributes = [
                 NSForegroundColorAttributeName: self.textColor,
