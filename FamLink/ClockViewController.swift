@@ -283,7 +283,7 @@ class ClockViewController: UIViewController {
 }
 
 extension ClockViewController {
-    
+
     func getClockPosition(fromLocationName: String) -> Int{
         for location in LocationsDataSource().locations {
             if location.name == fromLocationName {
@@ -295,33 +295,31 @@ extension ClockViewController {
     }
 }
 
+// MARK: - Legend
 extension ClockViewController {
     func updateLegend() {
         let users = FamLinkClock.sharedInstance.user_colors
-        print(users)
         let sortedNames = users.keys.sorted()
         var names = ""
         var nameLengths = [Int]()
         let ch = ColorHandler()
 
         for name in sortedNames {
-            names += name + " "
+            names += name + "    "
             nameLengths.append(name.characters.count as Int)
         }
+        
         let legendText = NSMutableAttributedString(string: names)
-
         legendText.addAttribute(NSForegroundColorAttributeName, value: ch.hexStringToUIColor(hex: users[sortedNames[0]]!), range: NSRange(location: 0, length: nameLengths[0]))
         
-        print(sortedNames)
-        print(nameLengths)
         var currentPoint = 0
         
         for index in 1..<nameLengths.count {
-            currentPoint += nameLengths[index-1] + 1
+            currentPoint += nameLengths[index-1] + 4
             let color = ch.hexStringToUIColor(hex: users[sortedNames[index]]!)
             legendText.addAttribute(NSForegroundColorAttributeName, value: color, range: NSRange(location: currentPoint, length: nameLengths[index]))
         }
 
         self.legendLabel.attributedText = legendText
     }
-   }
+}
