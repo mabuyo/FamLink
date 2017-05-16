@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
 @property (weak, nonatomic) IBOutlet SparkSetupUISpinner *spinner;
+@property (weak, nonatomic) IBOutlet SparkSetupUIButton *resetPasswordButton;
 
 @end
 
@@ -69,6 +70,7 @@
     void (^passwordResetCallback)(NSError *) = ^void(NSError *error) {
         
         [self.spinner stopAnimating];
+        self.resetPasswordButton.userInteractionEnabled = YES;
         
         if (!error)
         {
@@ -90,9 +92,10 @@
     
     if ([self isValidEmail:self.emailTextField.text])
     {
-        if ([SparkSetupCustomization sharedInstance].organization) // TODO: fix that so it'll work for non-org too
+        self.resetPasswordButton.userInteractionEnabled = NO;
+        if ([SparkSetupCustomization sharedInstance].productMode) // TODO: fix that so it'll work for non-org too
         {
-            [[SparkCloud sharedInstance] requestPasswordResetForCustomer:[SparkSetupCustomization sharedInstance].organizationName email:self.emailTextField.text completion:passwordResetCallback];
+            [[SparkCloud sharedInstance] requestPasswordResetForCustomer:self.emailTextField.text productId:[SparkSetupCustomization sharedInstance].productId completion:passwordResetCallback];
         }
         else
         {

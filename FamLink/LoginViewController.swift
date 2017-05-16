@@ -75,11 +75,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UNUserNotifica
     func getDevice() {
         let deviceName = self.deviceNameTextField.text!
         
-        SparkCloud.sharedInstance().getDevices({(sparkDevices: [Any]?, error: Error?) -> Void in
+        SparkCloud.sharedInstance().getDevices({(sparkDevices: [SparkDevice]?, error: Error?) -> Void in
             if let e = error {
                 print("Something went wrong! \(e)")
             } else {
-                if let devices = sparkDevices as? [SparkDevice] {
+                if let devices = sparkDevices {
                     var deviceFound = false
                     for device in devices {
                         if device.name == deviceName {

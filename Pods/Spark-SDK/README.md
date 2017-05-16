@@ -2,7 +2,7 @@
 <img src="http://oi60.tinypic.com/116jd51.jpg" alt="Particle" title="Particle">
 </p>
 # Particle iOS Cloud SDK
-[![Build Status](https://api.travis-ci.org/spark/spark-sdk-ios.svg)](https://travis-ci.org/spark/spark-sdk-ios) [![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/spark/spark-sdk-ios/blob/master/LICENSE) [![version](https://img.shields.io/badge/cocoapods-0.5.0-green.svg)](https://github.com/spark/spark-sdk-ios/blob/master/CHANGELOG.md)
+[![Build Status](https://api.travis-ci.org/spark/spark-sdk-ios.svg)](https://travis-ci.org/spark/spark-sdk-ios) [![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/spark/spark-sdk-ios/blob/master/LICENSE) [![version](https://img.shields.io/badge/cocoapods-0.5.2-green.svg)](https://github.com/spark/spark-sdk-ios/blob/master/CHANGELOG.md)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Particle iOS Cloud SDK enables iOS apps to interact with Particle-powered connected products via the Particle Cloud. It’s an easy-to-use wrapper for Particle REST API. The Cloud SDK will allow you to:
@@ -88,7 +88,7 @@ You don't need to worry about access tokens and session expiry, SDK takes care o
 ```
 **Swift**
 ```swift
-SparkCloud.sharedInstance().loginWithUser("username@email.com", password: "userpass") { (error:NSError?) -> Void in
+SparkCloud.sharedInstance().loginWithUser("username@email.com", password: "userpass") { (error:Error?) -> Void in
     if let _ = error {
         print("Wrong credentials or no internet connectivity, please try again")
     }
@@ -138,13 +138,13 @@ __block SparkDevice *myPhoton;
 
 ```swift
 var myPhoton : SparkDevice?
-SparkCloud.sharedInstance().getDevices { (sparkDevices:[AnyObject]?, error:NSError?) -> Void in
+SparkCloud.sharedInstance().getDevices { (devices:[SparkDevice]?, error:Error?) -> Void in
     if let _ = error {
         print("Check your internet connectivity")
     }
     else {
-        if let devices = sparkDevices as? [SparkDevice] {
-            for device in devices {
+        if let d = devices {
+            for device in d {
                 if device.name == "myNewPhotonName" {
                     myPhoton = device
                 }
@@ -172,13 +172,13 @@ Assuming here that `myPhoton` is an active instance of `SparkDevice` class which
 ```
 **Swift**
 ```swift
-myPhoton!.getVariable("temperature", completion: { (result:AnyObject?, error:NSError?) -> Void in
+myPhoton!.getVariable("temperature", completion: { (result:Any?, error:Error?) -> Void in
     if let _ = error {
         print("Failed reading temperature from device")
     }
     else {
-        if let temp = result as? Float {
-            print("Room temperature is \(temp) degrees")
+        if let temp = result as? NSNumber {
+            print("Room temperature is \(temp.stringValue) degrees")
         }
     }
 })
@@ -202,7 +202,7 @@ int64_t bytesToReceive  = task.countOfBytesExpectedToReceive;
 **Swift**
 ```swift
 let funcArgs = ["D7",1]
-var task = myPhoton!.callFunction("digitalWrite", withArguments: funcArgs) { (resultCode : NSNumber?, error : NSError?) -> Void in
+var task = myPhoton!.callFunction("digitalWrite", withArguments: funcArgs) { (resultCode : NSNumber?, error : Error?) -> Void in
     if (error == nil) {
         print("LED on D7 successfully turned on")
     }
@@ -226,7 +226,7 @@ Assuming here that `myElectron` is an active instance of `SparkDevice` class whi
 ```
 **Swift**
 ```swift
-self.selectedDevice!.getCurrentDataUsage { (dataUsed: Float, error :NSError?) in
+self.selectedDevice!.getCurrentDataUsage { (dataUsed: Float, error :Error?) in
     if (error == nil) {
         print("Device has used "+String(dataUsed)+" MBs this month")
     }
@@ -269,7 +269,7 @@ NSString *deviceID = @"53fa73265066544b16208184";
 **Swift**
 ```swift
 var myOtherDevice : SparkDevice? = nil
-    SparkCloud.sharedInstance().getDevice("53fa73265066544b16208184", completion: { (device:SparkDevice?, error:NSError?) -> Void in
+    SparkCloud.sharedInstance().getDevice("53fa73265066544b16208184", completion: { (device:SparkDevice?, error:Error?) -> Void in
         if let d = device {
             myOtherDevice = d
         }
@@ -297,7 +297,7 @@ myPhoton!.name = "myNewDeviceName"
 ```
 _or_
 ```swift
-myPhoton!.rename("myNewDeviceName", completion: { (error:NSError?) -> Void in
+myPhoton!.rename("myNewDeviceName", completion: { (error:Error?) -> Void in
     if (error == nil) {
         print("Device successfully renamed")
     }
@@ -322,7 +322,9 @@ You can make an API call that will open a stream of [Server-Sent Events (SSEs)](
 
 #### Subscribe to events
 
-Subscribe to the firehose of public events, plus private events published by devices one owns:
+Subscribe to the firehose of public events with name that starts with "temp", plus the private events published by devices one owns:
+
+**Objective-C**
 
 ```objc
 // The event handler:
@@ -344,25 +346,67 @@ SparkEventHandler handler = ^(SparkEvent *event, NSError *error) {
 id eventListenerID = [[SparkCloud sharedInstance] subscribeToAllEventsWithPrefix:@"temp" handler:handler];
 ```
 
+**Swift**
+
+```swift
+var handler : Any?
+handler = SparkCloud.sharedInstance().subscribeToAllEvents(withPrefix: "temp", handler: { (event :SparkEvent?, error : Error?) in
+    if let _ = error {
+        print ("could not subscribe to events")
+    } else {
+        DispatchQueue.main.async(execute: {
+            print("got event with data \(event?.data)")
+        })
+    }
+})
+```
+
 *Note:* specifying nil or empty string in the eventNamePrefix parameter will subscribe to ALL events (lots of data!)
 You can have multiple handlers per event name and/or same handler per multiple events names.
 
-Subscribe to all events, public and private, published by devices the user owns:
+Subscribe to all events, public and private, published by devices the user owns (`handler` is a [Obj-C block](http://goshdarnblocksyntax.com/) or [Swift closure](http://fuckingswiftblocksyntax.com/)):
+
+**Objective-C**
 
 ```objc
 id eventListenerID = [[SparkCloud sharedInstance] subscribeToMyDevicesEventsWithPrefix:@"temp" handler:handler];
 ```
 
+**Swift**
+
+```swift
+var eventListenerID : Any?
+eventListenerID = SparkCloud.sharedInstance().subscribeToMyDevicesEvents(withPrefix: "temp", handler: handler)
+```
+
 Subscribe to events from one specific device (by deviceID, second parameter). If the API user owns the device, then he'll receive all events, public and private, published by that device. If the API user does not own the device he will only receive public events.
+
+**Objective-C**
 
 ```objc
 id eventListenerID = [[SparkCloud sharedInstance] subscribeToDeviceEventsWithPrefix:@"temp" deviceID:@"53ff6c065075535119511687" handler:handler];
 ```
 
+**Swift**
+
+```swift
+var eventListenerID : Any?
+eventListenerID = SparkCloud.sharedInstance().subscribeToDeviceEvents(withPrefix: "temp", deviceID: "53ff6c065075535119511687", handler: handler)
+```
+
 other option is calling same method via the `SparkDevice` instance:
+
+**Objective-C**
 
 ```objc
 id eventListenerID = [device subscribeToEventsWithPrefix:@"temp" handler:handler];
+```
+
+**Swift**
+
+```swift
+var eventListenerID : Any?
+eventListenerID = device.subscribeToEvents(withPrefix : "temp", handler : handler)
 ```
 
 this guarantees that private events will be received since having access device instance in your app signifies that the user has this device claimed.
@@ -371,16 +415,32 @@ this guarantees that private events will be received since having access device 
 
 Very straightforward. Keep the id object the subscribe method returned and use it as parameter to call the unsubscribe method:
 
+**Objective-C**
+
 ```objc
-[[SparkCloud sharedInstance] unsubscribeFromEventWithID:self.eventListenerID];
+[[SparkCloud sharedInstance] unsubscribeFromEventWithID:eventListenerID];
 ```
 
+**Swift**
+
+```swift
+if let sid = eventListenerID {
+    SparkCloud.sharedInstance().unsubscribeFromEvent(withID: sid)
+}
+```
 or via the `SparkDevice` instance (if applicable):
+
+**Objective-C**
 
 ```objc
 [device unsubscribeFromEventWithID:self.eventListenerID];
 ```
 
+**Swift**
+
+```swift
+device.unsubscribeFromEvent(withID : eventListenerID)
+```
 #### Publishing an event
 
 You can also publish an event from your app to the Particle Cloud:
@@ -399,7 +459,7 @@ You can also publish an event from your app to the Particle Cloud:
 **Swift**
 
 ```swift
-SparkCloud.sharedInstance().publishEventWithName("event_from_app", data: "event_payload", isPrivate: false, ttl: 60, completion: { (error:NSError?) -> Void in
+SparkCloud.sharedInstance().publishEventWithName("event_from_app", data: "event_payload", isPrivate: false, ttl: 60, completion: { (error:Error?) -> Void in
     if let e = error
     {
         print("Error publishing event" + e.localizedDescription)
@@ -443,8 +503,8 @@ Please follow the procedure decribed [in our guide](https://docs.particle.io/gui
 then in your `AppDelegate` class you can supply those credentials by setting the following properties in `SparkCloud` singleton:
 
 ```objc
-@property (nonatomic, strong) NSString *OAuthClientId;
-@property (nonatomic, strong) NSString *OAuthClientSecret;
+@property (nonatomic, strong) NSString *oAuthClientId;
+@property (nonatomic, strong) NSString *oAuthClientSecret;
 ```
 
 **Important**
@@ -460,28 +520,35 @@ After adding the following additional lines your project `Podfile`:
 plugin 'cocoapods-keys', {
     :project => "YourAppName",
     :keys => [
-        "OAuthClientId",
-        "OAuthSecret"
+        "oAuthClientId",
+        "oAuthSecret"
     ]}
 ```
 
-go to your project folder in shell and run `pod install` - it will now ask you for "OAuthClientId", "OAuthSecret" - you can copy/paste the generated keys there
+go to your project folder in shell and run `pod install` - it will now ask you for "oAuthClientId", "oAuthSecret" - you can copy/paste the generated keys there
 and from that point on you can feed those keys into `SparkCloud` by adding this code to your AppDelegate `didFinishLaunchingWithOptions` function which gets called
 when your app starts:
 
 *Swift example code*
 
 ```swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     var keys = YourappnameKeys()
-    SparkCloud.sharedInstance().OAuthClientId = keys.oAuthClientId()
-    SparkCloud.sharedInstance().OAuthClientSecret = keys.oAuthSecret()
+    SparkCloud.sharedInstance().oAuthClientId = keys.oAuthClientId()
+    SparkCloud.sharedInstance().oAuthClientSecret = keys.oAuthSecret()
 
     return true
 }
 ```
 
 Be sure to replace `YourAppName` with your project name.
+
+### Deploying apps with Particle cloud SDK
+
+Starting iOS 10 / XCode 8, Apple requires the developer to enable *Keychain sharing* under the app Capabilities tab when clicking on your target in the project navigator pane. Otherwise an exception will be thrown when a user logs in, the the SDK tries to write the session token to the secure keychain and will fail without this capability enabled.
+
+Consult this screenshot for reference:
+![Keychain sharing screenshot](http://i63.tinypic.com/szc3nc.png "Enable keychain sharing capability before deploying")
 
 ### Additional reference
 For additional reference check out the [Reference in Cocoadocs website](http://cocoadocs.org/docsets/Spark-SDK/) for full coverage of `SparkDevice` and `SparkCloud` functions and member variables. In addition you can consult the javadoc style comments in `SparkCloud.h` and `SparkDevice.h` for each public method. If Particle iOS Cloud SDK is integrated in your Xcode project you should be able to press `Esc` to get an auto-complete hints for each cloud and device method.

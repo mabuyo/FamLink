@@ -178,7 +178,7 @@ NS_ASSUME_NONNULL_BEGIN
         {
             if (updatedDevice)
             {
-                // if we got an updated device from the cloud - overwrite ALL self's properies with the new device properties
+                // if we got an updated device from the cloud - overwrite ALL self's properies with the new device properties (except for delegate which should be copied over)
                 NSMutableSet *propNames = [NSMutableSet set];
                 unsigned int outCount, i;
                 objc_property_t *properties = class_copyPropertyList([updatedDevice class], &outCount);
@@ -188,6 +188,10 @@ NS_ASSUME_NONNULL_BEGIN
                     [propNames addObject:propertyName];
                 }
                 free(properties);
+                
+                if (self.delegate) {
+                    updatedDevice.delegate = self.delegate;
+                }
                 
                 for (NSString *property in propNames)
                 {
@@ -573,9 +577,10 @@ NS_ASSUME_NONNULL_BEGIN
                                   {
                                       if (completion)
                                       {
-                                          NSArray *responseArr = responseObject;
+                                          NSDictionary *responseDict = responseObject;
+                                          NSDictionary *responseUsageDict = responseDict[@"usage_by_day"];
                                           float maxUsage = 0;
-                                          for (NSDictionary *usageDict in responseArr) {
+                                          for (NSDictionary *usageDict in responseUsageDict) {
                                               if (usageDict[@"mbs_used_cumulative"]) {
                                                   float usage = [usageDict[@"mbs_used_cumulative"] floatValue];
                                                   if (usage > maxUsage) {
