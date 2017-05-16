@@ -56,7 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UNUserNotifica
         let famlinkName = self.deviceNameTextField.text!
         ref.child("famlink_codes").observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             let value = snapshot.value as? NSDictionary
-            print("FAMLINK_CODES VALUES \(value)")
+            print("FAMLINK_CODES VALUES \(String(describing: value))")
             
             if let _ = value?[famlinkName] {
                 FamLinkClock.sharedInstance.famlink_code = famlinkName

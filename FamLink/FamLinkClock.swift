@@ -93,7 +93,7 @@ class FamLinkClock {
                 print("error: \(e)")
             } else {
                 print("Got event: \(event!.event)")
-                print("Event details: \(event!.data)")
+                print("Event details: \(String(describing: event!.data))")
             }
         })
         
@@ -125,7 +125,7 @@ class FamLinkClock {
                 
             } else {
                 print("Got event: \(event!.event)")
-                print("Initial locations: \(event!.data)")
+                print("Initial locations: \(String(describing: event!.data))")
                 
                 var data = event!.data!
                 

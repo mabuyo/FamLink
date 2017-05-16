@@ -29,7 +29,7 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
         let famlinkCode = FamLinkClock.sharedInstance.famlink_code!
         ref.child(famlinkCode).observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             let usersList = snapshot.value as? NSDictionary
-            print("FAMLINK_CODES VALUES \(usersList)")
+            print("FAMLINK_CODES VALUES \(String(describing: usersList))")
             let users = usersList?["users"] as! NSArray
             
             for user in users as! [String] {
@@ -39,7 +39,7 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
             let usersString = users.componentsJoined(by: "\n")
             print("\(usersString)")
             self.userListTextLabel.text = usersString
-            print("\(self.userListTextLabel.text)")
+            print("\(String(describing: self.userListTextLabel.text))")
         }
         self.userListTextLabel.text = "testing"
         
