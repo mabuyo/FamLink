@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7274D8F90B01B87EE7A56403 /* libPods-FamLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 045A2CD0680D5F6A884A442D /* libPods-FamLink.a */; };
+		00BDB38BF04B0BEFA2A0B2ED /* Pods_FamLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048F015D33787DC714739C3F /* Pods_FamLink.framework */; };
+		FF1208781ECBF80100D1E1EE /* AccountLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1208771ECBF80100D1E1EE /* AccountLoginViewController.swift */; };
 		FF298C451E1DC95200E88931 /* FamLinkClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF298C441E1DC95200E88931 /* FamLinkClock.swift */; };
 		FF42B6B81DAAE8AC00D8A3FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */; };
 		FF42B6BA1DAAE8AC00D8A3FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42B6B91DAAE8AC00D8A3FF /* ViewController.swift */; };
@@ -55,9 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		045A2CD0680D5F6A884A442D /* libPods-FamLink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FamLink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		048F015D33787DC714739C3F /* Pods_FamLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FamLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		487DC3AD4BA1257911E7D60F /* Pods-FamLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-FamLink/Pods-FamLink.release.xcconfig"; sourceTree = "<group>"; };
 		C685AAB2840D7B987F3871FA /* Pods-FamLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FamLink/Pods-FamLink.debug.xcconfig"; sourceTree = "<group>"; };
+		FF1208771ECBF80100D1E1EE /* AccountLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLoginViewController.swift; sourceTree = "<group>"; };
 		FF298C441E1DC95200E88931 /* FamLinkClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamLinkClock.swift; sourceTree = "<group>"; };
 		FF3D36241E0601A80045C133 /* LocationTestAppleGoogle.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LocationTestAppleGoogle.gpx; sourceTree = "<group>"; };
 		FF42B6B41DAAE8AC00D8A3FF /* FamLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7274D8F90B01B87EE7A56403 /* libPods-FamLink.a in Frameworks */,
+				00BDB38BF04B0BEFA2A0B2ED /* Pods_FamLink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +126,7 @@
 		6D7C4DB260881C446C8B5AC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				045A2CD0680D5F6A884A442D /* libPods-FamLink.a */,
+				048F015D33787DC714739C3F /* Pods_FamLink.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +165,7 @@
 		FF42B6B61DAAE8AC00D8A3FF /* FamLink */ = {
 			isa = PBXGroup;
 			children = (
+				FF1208771ECBF80100D1E1EE /* AccountLoginViewController.swift */,
 				FF42B6B71DAAE8AC00D8A3FF /* AppDelegate.swift */,
 				FF42B6C11DAAE8AC00D8A3FF /* Assets.xcassets */,
 				FFD36E9A1E5B6878007E8DEA /* BaseTabBarController.swift */,
@@ -434,6 +437,7 @@
 				FFCC132F1DB0725F005252CB /* LocationsCollectionViewController.swift in Sources */,
 				FFA1B5551DB33A76000D6041 /* LocationSearchResultsTableViewController.swift in Sources */,
 				FFCC13311DB0727E005252CB /* LocationsIconCollectionViewCell.swift in Sources */,
+				FF1208781ECBF80100D1E1EE /* AccountLoginViewController.swift in Sources */,
 				FF5763021E5B8FF3008CB49A /* ColorHandler.swift in Sources */,
 				FF42B6C01DAAE8AC00D8A3FF /* FamJamClock.xcdatamodeld in Sources */,
 				FF65BF131DC6BEC400A226A3 /* ClockViewController.swift in Sources */,

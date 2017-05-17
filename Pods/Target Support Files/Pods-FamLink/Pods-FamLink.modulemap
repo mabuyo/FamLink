@@ -1,0 +1,6 @@
+framework module Pods_FamLink {
+  umbrella header "Pods-FamLink-umbrella.h"
+
+  export *
+  module * { export * }
+}
