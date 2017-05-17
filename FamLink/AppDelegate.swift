@@ -11,14 +11,16 @@ import CoreData
 import CoreLocation
 import Firebase
 import FirebaseAuthUI
+import FirebaseGoogleAuthUI
+import GoogleSignIn
 import UserNotifications
 import Fabric
 import Crashlytics
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
     var window: UIWindow?
     let locationManager = CLLocationManager()
 //    var mainUser = User(name: "Michelle", color: "green", current_location: nil)
@@ -42,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         FIRApp.configure()
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
         
     
         return true
@@ -53,8 +57,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         // other URL handling goes here.
-        return false
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: [:])
     }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("test")
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -83,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -129,8 +140,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
+
+
 
 extension AppDelegate: CLLocationManagerDelegate {
     func handleEvent(forRegion region: CLRegion!, forEvent event: String!) {

@@ -9,12 +9,20 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import FirebaseGoogleAuthUI
+
 
 class AccountLoginViewController: UIViewController, FUIAuthDelegate {
     @IBOutlet weak var signInButton: UIButton!
     
     fileprivate(set) var auth: FIRAuth? = FIRAuth.auth()
-//    fileprivate(set) var authUI: FUIAuth? = FUIAuth.defaultAuthUI()
+    fileprivate(set) var authUI: FUIAuth? = FUIAuth.defaultAuthUI()
+    
+    let providers: [FUIAuthProvider] = [
+        FUIGoogleAuth(),
+//        FUIFacebookAuth(),
+//        FUITwitterAuth(),
+        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +42,11 @@ class AccountLoginViewController: UIViewController, FUIAuthDelegate {
             }
         } else {
             // You need to adopt a FUIAuthDelegate protocol to receive callback
-            let authUI = FUIAuth.defaultAuthUI()
-            authUI?.delegate = self
-            let authViewController = authUI!.authViewController()
+            self.authUI = FUIAuth.defaultAuthUI()
+            self.authUI?.providers = providers
+
+            self.authUI?.delegate = self
+            let authViewController = self.authUI!.authViewController()
             present(authViewController, animated: true, completion: nil)
         }
     }

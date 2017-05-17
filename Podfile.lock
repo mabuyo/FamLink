@@ -43,6 +43,14 @@ PODS:
     - FirebaseCore (~> 3.6)
   - FirebaseUI/Auth (1.0.0):
     - Firebase/Auth
+  - FirebaseUI/Google (1.0.0):
+    - FirebaseUI/Auth
+    - GoogleSignIn (~> 4.0)
+  - GoogleSignIn (4.0.2):
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -53,7 +61,13 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMOAuth2 (1.1.4):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.9):
+    - GTMSessionFetcher/Full (= 1.1.9)
   - GTMSessionFetcher/Core (1.1.9)
+  - GTMSessionFetcher/Full (1.1.9):
+    - GTMSessionFetcher/Core (= 1.1.9)
   - Spark-SDK (0.6.0):
     - Spark-SDK/Helpers (= 0.6.0)
     - Spark-SDK/SDK (= 0.6.0)
@@ -76,6 +90,8 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - FirebaseUI/Auth (~> 1.0)
+  - FirebaseUI/Google (~> 1.0)
+  - GoogleSignIn
   - Spark-SDK (~> 0.6)
   - SparkSetup (~> 0.7.0)
 
@@ -91,11 +107,13 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   FirebaseUI: 82bd64fc3fc5a9451c37a720aee813990e727cf1
+  GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Spark-SDK: abb1436245a3e43cbc00cfdaddcad66e047666ef
   SparkSetup: 313503482dd322529c1f113ff47d44ea30fabc9c
 
-PODFILE CHECKSUM: 631376453d7704a9bd2988d2f3ae4a06f6672010
+PODFILE CHECKSUM: 0592bc6d61e5edd616611b207bc93b9d0ba8008c
 
 COCOAPODS: 1.2.1

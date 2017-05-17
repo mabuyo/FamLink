@@ -8,6 +8,8 @@ target "FamLink" do
     pod "Firebase/Database"	
     pod "Firebase/Core"
     pod 'FirebaseUI/Auth', '~> 1.0'
+    pod 'FirebaseUI/Google', '~> 1.0'
+    pod 'GoogleSignIn'
     pod "Fabric"
     pod "Crashlytics"
 end
