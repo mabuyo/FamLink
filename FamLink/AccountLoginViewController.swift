@@ -29,11 +29,13 @@ class AccountLoginViewController: UIViewController, FUIAuthDelegate {
         
     }
     
-    
-    @IBAction func signIn(_ sender: Any) {
+    override func viewDidAppear(_ animated: Bool) {
         if (self.auth?.currentUser) != nil {
             do {
-                try FUIAuth.defaultAuthUI()?.signOut()
+//                try FUIAuth.defaultAuthUI()?.signOut()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainAppView = storyboard.instantiateViewController(withIdentifier: "clockLogin")
+                present(mainAppView, animated: true, completion: nil)
             } catch let error {
                 // Again, fatalError is not a graceful way to handle errors.
                 // This error is most likely a network error, so retrying here
@@ -44,20 +46,26 @@ class AccountLoginViewController: UIViewController, FUIAuthDelegate {
             // You need to adopt a FUIAuthDelegate protocol to receive callback
             self.authUI = FUIAuth.defaultAuthUI()
             self.authUI?.providers = providers
-
+            
             self.authUI?.delegate = self
             let authViewController = self.authUI!.authViewController()
             present(authViewController, animated: true, completion: nil)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
-        print("IDK")
+        if (error == nil) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainAppView = storyboard.instantiateViewController(withIdentifier: "clockLogin")
+            self.navigationController?.present(mainAppView, animated: true, completion: nil)
+//            self.present(mainAppView, animated: true, completion: nil)
+        }
+        
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {

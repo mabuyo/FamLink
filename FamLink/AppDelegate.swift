@@ -19,12 +19,18 @@ import Crashlytics
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FUIAuthDelegate {
+    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+        print("signed in!")
+    }
+
     
     var window: UIWindow?
     let locationManager = CLLocationManager()
 //    var mainUser = User(name: "Michelle", color: "green", current_location: nil)
 
+    fileprivate(set) var auth: FIRAuth? = FIRAuth.auth()
+    fileprivate(set) var authUI: FUIAuth? = FUIAuth.defaultAuthUI()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -47,6 +53,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        if (self.auth?.currentUser != nil) {
+              print("current user is logged in")
+            // already logged in
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let mainAppView = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
+//            self.window?.rootViewController = mainAppView
+//            UIApplication.shared.keyWindow?.rootViewController = mainAppView
+          
+        } else {
+            print("current user nil")
+            // You need to adopt a FUIAuthDelegate protocol to receive callback
+//            self.authUI = FUIAuth.defaultAuthUI()
+//            let providers: [FUIAuthProvider] = [
+//                FUIGoogleAuth()]
+//            self.authUI?.providers = providers
+//            
+//            self.authUI?.delegate = self
+//            let authViewController = self.authUI!.authViewController()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let accountLoginVC = storyboard.instantiateViewController(withIdentifier: "accountLogin")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = accountLoginVC
+            self.window?.makeKeyAndVisible()
+//            UIApplication.shared.keyWindow?.rootViewController  = authViewController
+        }
     
         return true
     }

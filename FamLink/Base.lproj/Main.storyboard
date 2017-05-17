@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="keP-fL-i0I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -865,7 +865,7 @@
         <!--Account Login View Controller-->
         <scene sceneID="9TJ-HK-eWR">
             <objects>
-                <viewController id="keP-fL-i0I" customClass="AccountLoginViewController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountLogin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="keP-fL-i0I" customClass="AccountLoginViewController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gsW-N6-wmh"/>
                         <viewControllerLayoutGuide type="bottom" id="cUU-In-ad9"/>
@@ -874,32 +874,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-Cj-nX0">
-                                <rect key="frame" x="164" y="318" width="47" height="30"/>
-                                <state key="normal" title="Sign in"/>
-                                <connections>
-                                    <action selector="signIn:" destination="keP-fL-i0I" eventType="touchUpInside" id="L2o-el-Gfs"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="famlink" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVU-yA-3So">
+                                <rect key="frame" x="115" y="314" width="145" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="43"/>
+                                <color key="textColor" red="0.97254902124404907" green="0.78431373834609985" blue="0.20784313976764679" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hEk-Cj-nX0" firstAttribute="centerY" secondItem="FZ6-Xe-KGk" secondAttribute="centerY" id="cqP-j2-rpe"/>
-                            <constraint firstItem="hEk-Cj-nX0" firstAttribute="centerX" secondItem="FZ6-Xe-KGk" secondAttribute="centerX" id="fVP-du-fHQ"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.13333334028720856" green="0.45098039507865906" blue="0.61568629741668701" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="signInButton" destination="hEk-Cj-nX0" id="YWw-Ho-FvS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4q-q1-USD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="-1832"/>
+            <point key="canvasLocation" x="-106.40000000000001" y="-1832.833583208396"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="BJP-iG-L1q">
             <objects>
-                <viewController id="p6g-zU-0Wt" customClass="LoginViewController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="p6g-zU-0Wt" customClass="LoginViewController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MAW-FB-8Ju"/>
                         <viewControllerLayoutGuide type="bottom" id="06c-78-eQh"/>
@@ -1364,10 +1357,10 @@
             </objects>
             <point key="canvasLocation" x="-607" y="2863"/>
         </scene>
-        <!--Base Tab Bar Controller-->
+        <!--MainAppView-->
         <scene sceneID="IWa-rP-BAz">
             <objects>
-                <tabBarController storyboardIdentifier="mainTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSb-UA-CHK" customClass="BaseTabBarController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" title="MainAppView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cSb-UA-CHK" customClass="BaseTabBarController" customModule="FamLink" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="D8S-74-dBe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1436,7 +1429,7 @@
         <!--Navigation Controller-->
         <scene sceneID="AD3-8H-auc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="BHH-sV-k5H" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="clockLogin" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="BHH-sV-k5H" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gca-Rq-aqh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
