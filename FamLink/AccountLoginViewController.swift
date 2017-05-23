@@ -11,7 +11,6 @@ import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 
-
 class AccountLoginViewController: UIViewController, FUIAuthDelegate {
     @IBOutlet weak var signInButton: UIButton!
     
@@ -19,34 +18,27 @@ class AccountLoginViewController: UIViewController, FUIAuthDelegate {
     fileprivate(set) var authUI: FUIAuth? = FUIAuth.defaultAuthUI()
     
     let providers: [FUIAuthProvider] = [
-        FUIGoogleAuth(),
-//        FUIFacebookAuth(),
-//        FUITwitterAuth(),
-        ]
+        FUIGoogleAuth()
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        print("on accountLogin screen")
-        print("current user: \(String(describing: self.auth?.currentUser))")
-        
+        // If already signed in, go straight to the main app. Else, login using FirebaseAuth
         if (self.auth?.currentUser) != nil {
             do {
-//               try FUIAuth.defaultAuthUI()?.signOut()
+                // get account info
                 if let accountInfo = (NSKeyedUnarchiver.unarchiveObject(withFile: FamLinkClock.archiveURL.path) as? AccountInfo) {
-                    print("Transitioning to main app screen")
-                    print(accountInfo)
                     FamLinkClock.sharedInstance.famlink_code = accountInfo.famlink_code
                     FamLinkClock.sharedInstance.user = accountInfo.username
 
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let mainVC = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
                     present(mainVC, animated: false, completion: nil)
-                } else {
+                    
+                } else { // no account info? create one through ClockLogin
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let clockLoginVC = storyboard.instantiateViewController(withIdentifier: "clockLogin")
                     present(clockLoginVC, animated: true, completion: nil)
@@ -59,8 +51,6 @@ class AccountLoginViewController: UIViewController, FUIAuthDelegate {
             }
         }
         else {
-            print("Transitioining to Firebase Login AuthUI")
-            // You need to adopt a FUIAuthDelegate protocol to receive callback
             self.authUI = FUIAuth.defaultAuthUI()
             self.authUI?.providers = providers
             
@@ -70,19 +60,12 @@ class AccountLoginViewController: UIViewController, FUIAuthDelegate {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    // user signed in with email, go to clockLogin
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
         if (error == nil) {
-            if let _ = (NSKeyedUnarchiver.unarchiveObject(withFile: FamLinkClock.archiveURL.path) as? [FamLinkClock]) {
-                let _ = FamLinkClock.sharedInstance
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainAppView = storyboard.instantiateViewController(withIdentifier: "clockLogin")
-                self.navigationController?.present(mainAppView, animated: true, completion: nil)
-            }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let clockLoginVC = storyboard.instantiateViewController(withIdentifier: "clockLogin")
+            present(clockLoginVC, animated: true, completion: nil)
         }
         
     }

@@ -20,14 +20,9 @@ import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FUIAuthDelegate {
-    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
-        print("signed in!")
-    }
 
-    
     var window: UIWindow?
     let locationManager = CLLocationManager()
-//    var mainUser = User(name: "Michelle", color: "green", current_location: nil)
 
     fileprivate(set) var auth: FIRAuth? = FIRAuth.auth()
     fileprivate(set) var authUI: FUIAuth? = FUIAuth.defaultAuthUI()
@@ -40,35 +35,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FUIAut
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         
+        // MARK: Notifications
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            if granted {
-                print("Yay!")
-            } else {
-                print("D'oh")
-            }
-        }
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in }
         
+        // MARK: Firebase and Authentication
         FIRApp.configure()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        print("current user: \(String(describing: self.auth?.currentUser))")
-        
-        if (self.auth?.currentUser != nil) {
-            
-        } else {
-            print("Transitioning to accountLogin screen")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let accountLoginVC = storyboard.instantiateViewController(withIdentifier: "accountLogin")
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = accountLoginVC
-            self.window?.makeKeyAndVisible()
-        }
+       
+        // Go to AccountLogin screen
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let accountLoginVC = storyboard.instantiateViewController(withIdentifier: "accountLogin")
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = accountLoginVC
+        self.window?.makeKeyAndVisible()
     
         return true
-        
     }
     
+    // TODO: is this needed?
+    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+        print("signed in!")
+    }
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?
         if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {

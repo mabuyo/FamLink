@@ -11,7 +11,7 @@ import Firebase
 
 let userLocationsDidUpdateNotification = "userLocationsDidUpdate"
 
-class FamLinkClock: NSObject, NSCoding {
+class FamLinkClock {
     var device: SparkDevice!
     var users: [String:String] {
         didSet {
@@ -25,13 +25,6 @@ class FamLinkClock: NSObject, NSCoding {
     
     var firebaseDB: FIRDatabaseReference!
     
-    // MARK: types
-    struct PropertyKey {
-        static let codeKey = "code"
-        static let userKey = "user"
-    }
-    
-
     static let sharedInstance: FamLinkClock = {
         let instance = FamLinkClock(user: nil, code: nil)
         
@@ -64,21 +57,6 @@ class FamLinkClock: NSObject, NSCoding {
         })
     }
     
-    func loadLocations() {
-        self.firebaseDB.child(self.famlink_code).child("user-locations").observe(.value, with: {(snapshot: FIRDataSnapshot) -> Void in
-            let results = snapshot.value as? [String : AnyObject] ?? [:]
-            self.users = results as! [String : String]
-            print("users set from firebase")
-        })
-        
-        self.firebaseDB.child(self.famlink_code).child("user-colors").observe(.value, with: {(snapshot: FIRDataSnapshot) -> Void in
-            let results = snapshot.value as? [String : AnyObject] ?? [:]
-            self.user_colors = results as! [String : String]
-            print("user colors set from firebase")
-        })
-        
-    }
-    
     func updateLocation(_ newLocation: String) {
         print("Updating Location!!")
         users[user] = newLocation
@@ -89,18 +67,6 @@ class FamLinkClock: NSObject, NSCoding {
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     static let archiveURL = documentsDirectory.appendingPathComponent("account")
     
-    // MARK: NSCoding
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(famlink_code, forKey: PropertyKey.codeKey)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        let famlink_code = aDecoder.decodeObject(forKey: PropertyKey.codeKey) as! String
-        let user = aDecoder.decodeObject(forKey: PropertyKey.userKey) as? String
-
-        self.init(user: user, code: famlink_code)
-    }
-
     
     
     // leftover Photon functions below

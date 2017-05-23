@@ -206,35 +206,22 @@ class ClockViewController: UIViewController {
             clock_icon?.image = location.icon
         }
         
-//        FamLinkClock.sharedInstance.loadLocations()
-        
         let fclock = FamLinkClock.sharedInstance
         fclock.firebaseDB.child(fclock.famlink_code).observe(.value, with: {(snapshot: FIRDataSnapshot) -> Void in
-            print(snapshot)
             let results = snapshot.value as? [String : AnyObject] ?? [:]
             fclock.user_colors = results["user-colors"] as! [String: String]
             fclock.users = results["user-locations"] as! [String: String]
-//            fclock.user_colors = results as! [String : String]
-//            print("user colors set from firebase")
+            
             self.setUserLocations()
             self.updateLegend()
         })
-        
-        fclock.firebaseDB.child(fclock.famlink_code).child("user-locations").observe(.value, with: {(snapshot: FIRDataSnapshot) -> Void in
-            let results = snapshot.value as? [String : AnyObject] ?? [:]
-            fclock.users = results as! [String : String]
-            print("users set from firebase")
-//            self.setUserLocations()
-        })
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        setUserLocations()
-//        updateLegend()
 //        NotificationCenter.default.addObserver(self, selector: #selector(setUserLocations), name: NSNotification.Name(rawValue: userLocationsDidUpdateNotification), object: nil)
     }
     
+    // draws the clock view with user and corresponding locations
     func setUserLocations() {
         reset()
         let user_locations = FamLinkClock.sharedInstance.users  
@@ -265,13 +252,13 @@ class ClockViewController: UIViewController {
                     }
                 }
             } else {  // it is "none" so let's fade out on last visited
-            
+                // TODO
             }
         }
         
     }
     
-    
+    // resets the view to default
     func reset() {
         for i in 0...hands.count-1 {
             for hand in hands[i] {
@@ -316,9 +303,10 @@ extension ClockViewController {
 
 // MARK: - Legend
 extension ClockViewController {
+    // shows legend for user and user colors
     func updateLegend() {
         let fclock = FamLinkClock.sharedInstance
-        let users = FamLinkClock.sharedInstance.user_colors
+        let users = fclock.user_colors
         let sortedNames = users.keys.sorted()
         var names = ""
         var nameLengths = [Int]()
