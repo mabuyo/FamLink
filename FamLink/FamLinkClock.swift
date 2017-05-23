@@ -11,7 +11,7 @@ import Firebase
 
 let userLocationsDidUpdateNotification = "userLocationsDidUpdate"
 
-class FamLinkClock {
+class FamLinkClock: NSObject, NSCoding {
     var device: SparkDevice!
     var users: [String:String] {
         didSet {
@@ -25,26 +25,31 @@ class FamLinkClock {
     
     var firebaseDB: FIRDatabaseReference!
     
+    // MARK: types
+    struct PropertyKey {
+        static let codeKey = "code"
+        static let userKey = "user"
+    }
+    
 
     static let sharedInstance: FamLinkClock = {
-        let instance = FamLinkClock()
+        let instance = FamLinkClock(user: nil, code: nil)
         
         // setup code
         return instance
     }()
     
-    private init() {
+    init(user: String?, code: String?) {
         self.device = nil
         self.users = [:]
         self.user_colors = [:]
-        self.famlink_code = ""
+        self.famlink_code = code == nil ? "" : code!
         self.user_list = []
-        self.user = ""
+        self.user = user == nil ? "" : user!
         self.firebaseDB = FIRDatabase.database().reference()
-
     }
     
-    func setUser(_ username: String) {
+    func setFamlinkUser(_ username: String) {
         self.user = username
     }
     
@@ -60,14 +65,16 @@ class FamLinkClock {
     }
     
     func loadLocations() {
-        self.firebaseDB.child(self.famlink_code).child("user-locations").observe(.value, with: {(snapshot) -> Void in
+        self.firebaseDB.child(self.famlink_code).child("user-locations").observe(.value, with: {(snapshot: FIRDataSnapshot) -> Void in
             let results = snapshot.value as? [String : AnyObject] ?? [:]
             self.users = results as! [String : String]
+            print("users set from firebase")
         })
         
-        self.firebaseDB.child(self.famlink_code).child("user-colors").observe(.value, with: {(snapshot) -> Void in
+        self.firebaseDB.child(self.famlink_code).child("user-colors").observe(.value, with: {(snapshot: FIRDataSnapshot) -> Void in
             let results = snapshot.value as? [String : AnyObject] ?? [:]
             self.user_colors = results as! [String : String]
+            print("user colors set from firebase")
         })
         
     }
@@ -76,6 +83,22 @@ class FamLinkClock {
         print("Updating Location!!")
         users[user] = newLocation
         self.firebaseDB.child(self.famlink_code).child("user-locations/" + user).setValue(newLocation)
+    }
+    
+    // MARK: archiving paths
+    static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    static let archiveURL = documentsDirectory.appendingPathComponent("account")
+    
+    // MARK: NSCoding
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(famlink_code, forKey: PropertyKey.codeKey)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let famlink_code = aDecoder.decodeObject(forKey: PropertyKey.codeKey) as! String
+        let user = aDecoder.decodeObject(forKey: PropertyKey.userKey) as? String
+
+        self.init(user: user, code: famlink_code)
     }
 
     

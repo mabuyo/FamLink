@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import Firebase
 
 
 class ClockViewController: UIViewController {
@@ -205,20 +206,38 @@ class ClockViewController: UIViewController {
             clock_icon?.image = location.icon
         }
         
-        setUserLocations()
-        NotificationCenter.default.addObserver(self, selector: #selector(setUserLocations), name: NSNotification.Name(rawValue: userLocationsDidUpdateNotification), object: nil)
+//        FamLinkClock.sharedInstance.loadLocations()
         
-        updateLegend()
+        let fclock = FamLinkClock.sharedInstance
+        fclock.firebaseDB.child(fclock.famlink_code).observe(.value, with: {(snapshot: FIRDataSnapshot) -> Void in
+            print(snapshot)
+            let results = snapshot.value as? [String : AnyObject] ?? [:]
+            fclock.user_colors = results["user-colors"] as! [String: String]
+            fclock.users = results["user-locations"] as! [String: String]
+//            fclock.user_colors = results as! [String : String]
+//            print("user colors set from firebase")
+            self.setUserLocations()
+            self.updateLegend()
+        })
+        
+        fclock.firebaseDB.child(fclock.famlink_code).child("user-locations").observe(.value, with: {(snapshot: FIRDataSnapshot) -> Void in
+            let results = snapshot.value as? [String : AnyObject] ?? [:]
+            fclock.users = results as! [String : String]
+            print("users set from firebase")
+//            self.setUserLocations()
+        })
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//         setUserLocations()
+//        setUserLocations()
+//        updateLegend()
+//        NotificationCenter.default.addObserver(self, selector: #selector(setUserLocations), name: NSNotification.Name(rawValue: userLocationsDidUpdateNotification), object: nil)
     }
     
     func setUserLocations() {
         reset()
-        let user_locations = FamLinkClock.sharedInstance.users
-        
+        let user_locations = FamLinkClock.sharedInstance.users  
         for (user, loc) in user_locations {
             var isLastLocation = false
             var location: String
@@ -298,6 +317,7 @@ extension ClockViewController {
 // MARK: - Legend
 extension ClockViewController {
     func updateLegend() {
+        let fclock = FamLinkClock.sharedInstance
         let users = FamLinkClock.sharedInstance.user_colors
         let sortedNames = users.keys.sorted()
         var names = ""
@@ -308,6 +328,7 @@ extension ClockViewController {
             names += name + "    "
             nameLengths.append(name.characters.count as Int)
         }
+        
         
         let legendText = NSMutableAttributedString(string: names)
         legendText.addAttribute(NSForegroundColorAttributeName, value: ch.hexStringToUIColor(hex: users[sortedNames[0]]!), range: NSRange(location: 0, length: nameLengths[0]))

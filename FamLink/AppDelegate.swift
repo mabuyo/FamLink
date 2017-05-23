@@ -52,34 +52,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FUIAut
         FIRApp.configure()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        print("current user: \(String(describing: self.auth?.currentUser))")
         
         if (self.auth?.currentUser != nil) {
-              print("current user is logged in")
-            // already logged in
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let mainAppView = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
-//            self.window?.rootViewController = mainAppView
-//            UIApplication.shared.keyWindow?.rootViewController = mainAppView
-          
+            
         } else {
-            print("current user nil")
-            // You need to adopt a FUIAuthDelegate protocol to receive callback
-//            self.authUI = FUIAuth.defaultAuthUI()
-//            let providers: [FUIAuthProvider] = [
-//                FUIGoogleAuth()]
-//            self.authUI?.providers = providers
-//            
-//            self.authUI?.delegate = self
-//            let authViewController = self.authUI!.authViewController()
+            print("Transitioning to accountLogin screen")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let accountLoginVC = storyboard.instantiateViewController(withIdentifier: "accountLogin")
             self.window = UIWindow(frame: UIScreen.main.bounds)
             self.window?.rootViewController = accountLoginVC
             self.window?.makeKeyAndVisible()
-//            UIApplication.shared.keyWindow?.rootViewController  = authViewController
         }
     
         return true
+        
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {

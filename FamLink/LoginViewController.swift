@@ -15,6 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UNUserNotifica
     
     @IBOutlet weak var deviceNameTextField: UITextField!
     @IBOutlet weak var enterNameButton: UIButton!
+    @IBOutlet weak var usernameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,17 +60,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UNUserNotifica
             print("FAMLINK_CODES VALUES \(String(describing: value))")
             
             if let _ = value?[famlinkName] {
-                FamLinkClock.sharedInstance.famlink_code = famlinkName
-                FamLinkClock.sharedInstance.loadLocations()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let controller = storyboard.instantiateViewController(withIdentifier: "usernameSetup")
-                self.present(controller, animated: true, completion: nil)
+                self.setup()
             } else {
                 print("Not found")
             }
         }
         
         
+    }
+    
+    func setup() {
+        print("FamLinkClock setup")
+        // store this in device
+        FamLinkClock.sharedInstance.famlink_code = self.deviceNameTextField.text!
+        FamLinkClock.sharedInstance.user = self.usernameTextField.text!
+        print("set famlink_code")
+        
+        let url = FamLinkClock.archiveURL.path
+        let code = self.deviceNameTextField.text!
+        let name = self.usernameTextField.text!
+        let accountInfo = AccountInfo(famlink_code: code, username: name)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(accountInfo, toFile: url)
+        if (!isSuccessfulSave) {
+            print("Was not able to save fclock code.")
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
+        self.present(controller, animated: true, completion: nil)
     }
     
     func getDevice() {

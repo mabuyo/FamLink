@@ -721,7 +721,7 @@
                                 <rect key="frame" x="16" y="501" width="343" height="97"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-eg-viW">
-                                        <rect key="frame" x="144.5" y="0.0" width="55" height="30.5"/>
+                                        <rect key="frame" x="145" y="0.0" width="54" height="26"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -907,20 +907,20 @@
                                 <color key="textColor" red="0.95294117647058818" green="0.75294117647058822" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your FamLink Clock name?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBK-iI-ab1">
-                                <rect key="frame" x="36" y="129" width="303" height="71"/>
-                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your name and famlink clock name." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBK-iI-ab1">
+                                <rect key="frame" x="36" y="129" width="303" height="57.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="21"/>
                                 <color key="textColor" red="0.92941176470588238" green="0.94509803921568625" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yo_fam" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XRz-LF-xKH">
-                                <rect key="frame" x="16" y="225" width="343" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="clock" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XRz-LF-xKH">
+                                <rect key="frame" x="16" y="249.5" width="343" height="30"/>
                                 <color key="textColor" red="0.082352941176470587" green="0.10196078431372549" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERR-a2-UFK">
-                                <rect key="frame" x="98" y="280" width="179" height="40"/>
+                                <rect key="frame" x="98" y="304.5" width="179" height="40"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <state key="normal" title="Let's FamLink it up!">
                                     <color key="titleColor" red="0.97647058823529409" green="0.93333333333333335" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
@@ -929,18 +929,27 @@
                                     <action selector="famLinkSetup:" destination="p6g-zU-0Wt" eventType="touchUpInside" id="TaL-f6-pPm"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wr6-ry-v28">
+                                <rect key="frame" x="16" y="209.5" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="23"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.44705882352941179" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XRz-LF-xKH" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="2wS-Yy-KFk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XRz-LF-xKH" secondAttribute="trailing" id="3Jq-r6-U2Y"/>
                             <constraint firstItem="rBK-iI-ab1" firstAttribute="top" secondItem="KUh-kg-LDp" secondAttribute="bottom" constant="25" id="55T-A6-qFB"/>
+                            <constraint firstItem="XRz-LF-xKH" firstAttribute="top" secondItem="Wr6-ry-v28" secondAttribute="bottom" constant="10" id="CY7-Ai-gqk"/>
+                            <constraint firstItem="Wr6-ry-v28" firstAttribute="leading" secondItem="baO-u0-eNa" secondAttribute="leadingMargin" id="IUr-to-RUK"/>
                             <constraint firstItem="KUh-kg-LDp" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="IeC-bZ-iCy"/>
-                            <constraint firstItem="XRz-LF-xKH" firstAttribute="top" secondItem="rBK-iI-ab1" secondAttribute="bottom" constant="25" id="LC5-VO-riY"/>
                             <constraint firstItem="ERR-a2-UFK" firstAttribute="top" secondItem="XRz-LF-xKH" secondAttribute="bottom" constant="25" id="MUL-VJ-zFc"/>
                             <constraint firstItem="ERR-a2-UFK" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="Rw1-Qt-D4Q"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="rBK-iI-ab1" secondAttribute="trailing" constant="20" id="VCF-xf-dhQ"/>
                             <constraint firstItem="rBK-iI-ab1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="baO-u0-eNa" secondAttribute="leadingMargin" constant="20" id="cKC-Ns-26a"/>
+                            <constraint firstItem="Wr6-ry-v28" firstAttribute="top" secondItem="rBK-iI-ab1" secondAttribute="bottom" constant="23" id="d8G-7K-Xn5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wr6-ry-v28" secondAttribute="trailing" id="dzk-F0-Vhu"/>
                             <constraint firstItem="KUh-kg-LDp" firstAttribute="top" secondItem="MAW-FB-8Ju" secondAttribute="bottom" constant="25" id="lU0-ST-QqB"/>
                             <constraint firstItem="rBK-iI-ab1" firstAttribute="centerX" secondItem="baO-u0-eNa" secondAttribute="centerX" id="w74-rb-3XW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="XRz-LF-xKH" secondAttribute="leading" id="zyz-4d-bke"/>
@@ -950,6 +959,7 @@
                     <connections>
                         <outlet property="deviceNameTextField" destination="XRz-LF-xKH" id="R0m-qt-kDT"/>
                         <outlet property="enterNameButton" destination="ERR-a2-UFK" id="TeA-Ff-yJy"/>
+                        <outlet property="usernameTextField" destination="Wr6-ry-v28" id="Xkh-5T-Hkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnp-rI-nbn" userLabel="First Responder" sceneMemberID="firstResponder"/>

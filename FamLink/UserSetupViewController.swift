@@ -23,7 +23,7 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
         userNameTextInput.delegate = self
         let famlinkClock = FamLinkClock.sharedInstance
         
-        self.ref = FIRDatabase.database().reference()
+//        self.ref = FIRDatabase.database().reference()
         
         // list any users already in that family
         let famlinkCode = FamLinkClock.sharedInstance.famlink_code!
@@ -80,7 +80,7 @@ class UserSetupViewController: UIViewController, UITextFieldDelegate {
         if (!famlinkClock.user_list.contains(userName)) {
             famlinkClock.createUser(username: userName)
         } else {
-            famlinkClock.setUser(userName)
+//            famlinkClock.setUser(userName)
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

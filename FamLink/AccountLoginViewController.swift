@@ -30,19 +30,36 @@ class AccountLoginViewController: UIViewController, FUIAuthDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        print("on accountLogin screen")
+        print("current user: \(String(describing: self.auth?.currentUser))")
+        
         if (self.auth?.currentUser) != nil {
             do {
-//                try FUIAuth.defaultAuthUI()?.signOut()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainAppView = storyboard.instantiateViewController(withIdentifier: "clockLogin")
-                present(mainAppView, animated: true, completion: nil)
+//               try FUIAuth.defaultAuthUI()?.signOut()
+                if let accountInfo = (NSKeyedUnarchiver.unarchiveObject(withFile: FamLinkClock.archiveURL.path) as? AccountInfo) {
+                    print("Transitioning to main app screen")
+                    print(accountInfo)
+                    FamLinkClock.sharedInstance.famlink_code = accountInfo.famlink_code
+                    FamLinkClock.sharedInstance.user = accountInfo.username
+
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainVC = storyboard.instantiateViewController(withIdentifier: "mainTabBarController")
+                    present(mainVC, animated: false, completion: nil)
+                } else {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let clockLoginVC = storyboard.instantiateViewController(withIdentifier: "clockLogin")
+                    present(clockLoginVC, animated: true, completion: nil)
+                }
             } catch let error {
                 // Again, fatalError is not a graceful way to handle errors.
                 // This error is most likely a network error, so retrying here
                 // makes sense.
                 fatalError("Could not sign out: \(error)")
             }
-        } else {
+        }
+        else {
+            print("Transitioining to Firebase Login AuthUI")
             // You need to adopt a FUIAuthDelegate protocol to receive callback
             self.authUI = FUIAuth.defaultAuthUI()
             self.authUI?.providers = providers
@@ -60,10 +77,12 @@ class AccountLoginViewController: UIViewController, FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
         if (error == nil) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainAppView = storyboard.instantiateViewController(withIdentifier: "clockLogin")
-            self.navigationController?.present(mainAppView, animated: true, completion: nil)
-//            self.present(mainAppView, animated: true, completion: nil)
+            if let _ = (NSKeyedUnarchiver.unarchiveObject(withFile: FamLinkClock.archiveURL.path) as? [FamLinkClock]) {
+                let _ = FamLinkClock.sharedInstance
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainAppView = storyboard.instantiateViewController(withIdentifier: "clockLogin")
+                self.navigationController?.present(mainAppView, animated: true, completion: nil)
+            }
         }
         
     }
